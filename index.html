@@ -1,14 +1,417 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="0; url=SF%20Powerplay%20Reimagined.dc.html">
-<title>Powerplay</title>
-<style>html,body{margin:0;height:100%;background:#F2F1ED;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}</style>
+<script src="./support.js"></script>
 </head>
 <body>
-<script>location.replace("SF%20Powerplay%20Reimagined.dc.html");</script>
-<noscript><a href="SF%20Powerplay%20Reimagined.dc.html">Enter site</a></noscript>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#F2F1ED;}
+  ::selection{background:#FF0055;color:#fff;}
+  .pp-root{--g:linear-gradient(96deg,#E505F5,#FF0055);--a:#FF0055;}
+  .pp-card figure,.pp-card{overflow:hidden;}
+  body{text-wrap:pretty;}
+  h1,h2,h3,h4{text-wrap:balance;}
+  .pp-card img{transition:transform .8s cubic-bezier(.19,.7,.2,1);}
+  .pp-card:hover img{transform:scale(1.05);}
+  .pp-link{position:relative;text-decoration:none;color:inherit;}
+  .pp-link::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
+  .pp-link:hover::after{transform:scaleX(1);}
+  .pp-link[data-active]::after{transform:scaleX(1);}
+  .pp-link.pp-active{color:#FF0055;}
+  .pp-link.pp-active::after{transform:scaleX(1);}
+  #work,#services,#team{scroll-margin-top:112px;}
+  .pp-cta{transition:box-shadow .2s;}
+  .pp-cta:hover{box-shadow:inset 0 0 0 999px rgba(255,255,255,0.16);}
+  .pp-arrow{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
+  .pp-cta:hover .pp-arrow{transform:translateX(5px);}
+  .pp-nav:hover{background:#202024;color:#fff;border-color:#202024;}
+  .pp-nav{transition:background .25s,color .25s,border-color .25s;}
+
+  /* ===== responsive ===== */
+  .r-burger{display:none;}
+  .r-mobile-menu{display:none !important;}
+  .r-wscroll{scrollbar-width:none;-ms-overflow-style:none;}
+  .r-wscroll::-webkit-scrollbar{display:none;}
+  @media (max-width:1023px){
+    .r-2col{grid-template-columns:1fr !important;gap:36px !important;}
+    .r-logos{grid-template-columns:repeat(5,1fr) !important;gap:28px 22px !important;}
+    .r-pad{padding-left:32px !important;padding-right:32px !important;}
+  }
+  @media (max-width:900px){
+    .r-navlinks{display:none !important;}
+    .r-cta-desktop{display:none !important;}
+    .r-burger{display:flex !important;}
+    .r-mobile-menu.open{display:flex !important;}
+  }
+  @media (max-width:639px){
+    .r-logos{grid-template-columns:repeat(3,1fr) !important;}
+    .r-srow{grid-template-columns:1fr !important;gap:6px !important;padding:22px 6px !important;}
+    .r-pad{padding-left:20px !important;padding-right:20px !important;}
+    .r-feat{height:340px !important;}
+    .r-wcard{flex:0 0 82vw !important;scroll-snap-align:start !important;}
+    .r-modal{flex-direction:column !important;max-height:88vh !important;overflow:auto !important;}
+    .r-modal-img{width:100% !important;height:200px !important;}
+    h1{font-size:clamp(38px,10vw,84px) !important;line-height:1 !important;}
+    h2{font-size:clamp(30px,7.5vw,68px) !important;}
+  }
+</style>
+</helmet>
+
+<div class="pp-root" style="font-family:'Inter Tight',sans-serif;color:#011829;background:#F2F1ED;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:clip;">
+
+  <!-- NAV -->
+  <nav class="r-pad" style="display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 56px;border-bottom:1px solid #E0DED6;position:sticky;top:0;background:rgba(242,241,237,.82);backdrop-filter:blur(12px);z-index:60;box-shadow:0 2px 16px rgba(1,24,41,.07);">
+    <a href="index.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:26px;width:auto;display:block;"></a>
+    <div class="r-navlinks" style="display:flex;gap:44px;font-size:18px;font-weight:500;color:#42423c;">
+      <a class="pp-link" href="work.html">Work</a>
+      <a class="pp-link {{ servicesClass }}" href="#services">Services</a>
+      <a class="pp-link {{ teamClass }}" href="#team">Team</a>
+      <a class="pp-link" href="case-studies.html">Case Studies</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a class="pp-cta r-cta-desktop" href="contact.html" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Start a project <span class="pp-arrow">&rarr;</span></a>
+      <button class="r-burger" onClick="{{ toggleNav }}" aria-label="Menu" style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:42px;height:42px;border:1px solid #d8d6cd;border-radius:9px;background:transparent;cursor:pointer;">
+        <span style="display:block;width:18px;height:2px;background:#011829;"></span>
+        <span style="display:block;width:18px;height:2px;background:#011829;"></span>
+        <span style="display:block;width:18px;height:2px;background:#011829;"></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="r-mobile-menu {{ navMenuClass }}" style="flex-direction:column;gap:2px;background:rgba(242,241,237,.98);backdrop-filter:blur(12px);border-bottom:1px solid #E0DED6;padding:10px 20px 18px;position:sticky;top:96px;z-index:59;">
+    <a href="work.html" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Work</a>
+    <a href="#services" onClick="{{ closeNav }}" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Services</a>
+    <a href="#team" onClick="{{ closeNav }}" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Team</a>
+    <a href="case-studies.html" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Case Studies</a>
+    <a class="pp-cta" href="contact.html" style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:#011829;color:#fff;font-size:14px;font-weight:600;padding:13px 22px;border-radius:100px;text-decoration:none;margin-top:16px;">Start a project <span class="pp-arrow">&rarr;</span></a>
+  </div>
+
+  <!-- HERO -->
+  <header class="r-pad" style="padding:96px 56px 60px;">
+    <h1 style="font-size:84px;line-height:0.99;letter-spacing:-0.038em;font-weight:600;margin:0;max-width:1240px;text-wrap:balance">Presentations, events, and visual content for brands that can&rsquo;t afford to be <span style="background:linear-gradient(96deg,#E505F5,#FF0055);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">forgettable.</span></h1>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:48px;gap:40px;flex-wrap:wrap;">
+      <p style="font-size:20px;line-height:1.5;color:#48473f;max-width:500px;margin:0;">We provide design and production individually or as your embedded team.</p>
+      <div style="display:flex;gap:13px;">
+        <a class="pp-cta" href="work.html" style="display:flex;align-items:center;gap:9px;background:linear-gradient(96deg,#E505F5,#FF0055);color:#fff;font-size:15px;font-weight:600;padding:16px 28px;border-radius:100px;text-decoration:none;">See the work <span class="pp-arrow">&rarr;</span></a>
+        <a href="#team" style="font-size:15px;font-weight:600;padding:16px 26px;border-radius:100px;border:1px solid #cdcbc1;color:#011829;text-decoration:none;transition:background .2s;" style-hover="background:#E7E4DC">About the studio</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- FEATURED FULL-BLEED IMAGE -->
+  <section class="r-pad" style="padding:24px 56px 0;">
+    <div class="pp-card r-feat" style="position:relative;height:580px;border-radius:8px;background:#e6e4dd;">
+      <img src="site-images/featured.jpg" alt="Powerplay live event production" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div style="position:absolute;left:22px;bottom:22px;display:flex;gap:9px;align-items:center;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.13em;color:#fff;background:rgba(18,18,22,.5);backdrop-filter:blur(8px);padding:10px 15px;border-radius:100px;">
+        <span style="width:7px;height:7px;border-radius:50%;background:linear-gradient(96deg,#E505F5,#FF0055);"></span>LIVE EVENT PRODUCTION
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT WALL -->
+  <section class="r-pad" style="padding:62px 56px 78px;">
+    <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.2em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:34px;">A FEW OF OUR RECENT CLIENTS</div>
+    <div class="r-logos" style="display:grid;grid-template-columns:repeat(5,1fr);gap:44px 40px;align-items:center;">
+      <img src="https://cdn.simpleicons.org/google/46443d" alt="Google" style="height:54px;width:100%;object-fit:contain;opacity:.82;">
+      <img src="https://cdn.simpleicons.org/meta/46443d" alt="Meta" style="height:54px;width:100%;object-fit:contain;opacity:.82;">
+      <img src="https://cdn.simpleicons.org/splunk/46443d" alt="Splunk" style="height:54px;width:100%;object-fit:contain;opacity:.82;">
+      <img src="https://cdn.simpleicons.org/intuit/46443d" alt="Intuit" style="height:54px;width:100%;object-fit:contain;opacity:.82;">
+      <img src="https://cdn.simpleicons.org/airbnb/46443d" alt="Airbnb" style="height:54px;width:100%;object-fit:contain;opacity:.82;">
+    </div>
+  </section>
+
+  <!-- SELECTED WORK — CAROUSEL -->
+  <section id="work" class="r-pad" style="padding:8px 56px 64px;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid #E0DED6;padding-top:30px;margin-bottom:32px;">
+      <div>
+        <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.18em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:10px;">SELECTED WORK &nbsp;/&nbsp; {{ counter }}</div>
+        <h2 style="font-size:40px;letter-spacing:-0.03em;font-weight:700;margin:0;">Recent projects</h2>
+      </div>
+      <div class="r-warrows" style="display:flex;gap:11px;">
+        <button onClick="{{ prev }}" style="{{ prevStyle }}" aria-label="Previous">&larr;</button>
+        <button onClick="{{ next }}" style="{{ nextStyle }}" aria-label="Next">&rarr;</button>
+      </div>
+    </div>
+    <div class="r-wscroll" id="pp-wscroll" style="overflow-x:auto;margin:0 -10px;padding:0 10px 8px;scroll-snap-type:x mandatory;scroll-padding-left:10px;">
+      <div class="r-wtrack" style="display:flex;gap:24px;">
+        <sc-for list="{{ work }}" as="w" hint-placeholder-count="4">
+          <a class="pp-card r-wcard" href="{{ w.href }}" target="_blank" rel="noopener" style="flex:0 0 300px;scroll-snap-align:start;text-decoration:none;color:inherit;cursor:pointer;">
+            <div style="height:300px;border-radius:6px;overflow:hidden;background:{{ w.bg }};padding:{{ w.pad }};box-sizing:border-box;">
+              <img src="{{ w.img }}" alt="{{ w.name }}" style="width:100%;height:100%;object-fit:{{ w.fit }};display:block;">
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;">
+              <span style="font-size:19px;font-weight:600;letter-spacing:-0.01em;">{{ w.name }}</span>
+              <span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;">{{ w.tag }}</span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:46px;">
+      <a class="pp-link" href="work.html" style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.12em;color:#011829;">VIEW FULL PORTFOLIO &nbsp;&rarr;</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="r-pad" style="padding:80px 56px;background:#011829;color:#F2F1ED;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:54px;gap:40px;flex-wrap:wrap;">
+      <h2 style="font-size:52px;line-height:1.0;letter-spacing:-0.03em;font-weight:700;margin:0;max-width:none;flex:1 1 100%;color:#FF0055;">Everything it takes to make the work land.</h2>
+      <p style="font-size:16px;line-height:1.6;color:#a3a199;max-width:330px;margin:8px 0 0;">From the first concept deck to live show graphics on the day &mdash; designed and produced in-house.</p>
+    </div>
+    <div style="border-top:1px solid #2c2c30;">
+      <div class="r-srow" style="display:grid;grid-template-columns:62px 1fr 1.4fr;align-items:center;gap:24px;padding:30px 16px;border-bottom:1px solid #2c2c30;">
+        <span style="font-family:'Space Mono',monospace;font-size:13px;color:#76746c;">01</span>
+        <span style="font-size:30px;font-weight:600;letter-spacing:-0.02em;">Presentation Design</span>
+        <span style="font-size:15px;color:#a3a199;line-height:1.5;">Keynotes, pitch decks, and investor narratives that hold a room.</span>
+      </div>
+      <div class="r-srow" style="display:grid;grid-template-columns:62px 1fr 1.4fr;align-items:center;gap:24px;padding:30px 16px;border-bottom:1px solid #2c2c30;">
+        <span style="font-family:'Space Mono',monospace;font-size:13px;color:#76746c;">02</span>
+        <span style="font-size:30px;font-weight:600;letter-spacing:-0.02em;">Event Graphics &amp; Production</span>
+        <span style="font-size:15px;color:#a3a199;line-height:1.5;">Stage, screen, and environmental design for live and broadcast events.</span>
+      </div>
+      <div class="r-srow" style="display:grid;grid-template-columns:62px 1fr 1.4fr;align-items:center;gap:24px;padding:30px 16px;border-bottom:1px solid #2c2c30;">
+        <span style="font-family:'Space Mono',monospace;font-size:13px;color:#76746c;">03</span>
+        <span style="font-size:30px;font-weight:600;letter-spacing:-0.02em;">AI Visual Content</span>
+        <span style="font-size:15px;color:#a3a199;line-height:1.5;">AI-assisted image, motion, and content systems built for scale.</span>
+      </div>
+      <div class="r-srow" style="display:grid;grid-template-columns:62px 1fr 1.4fr;align-items:center;gap:24px;padding:30px 16px;border-bottom:1px solid #2c2c30;">
+        <span style="font-family:'Space Mono',monospace;font-size:13px;color:#76746c;">04</span>
+        <span style="font-size:30px;font-weight:600;letter-spacing:-0.02em;">Brand &amp; Visual Systems</span>
+        <span style="font-size:15px;color:#a3a199;line-height:1.5;">Identity, templates, and guidelines your team can run with.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" class="r-pad" style="padding:96px 56px;">
+    <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:56px;">
+      <div>
+        <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.22em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:24px;">THE STUDIO</div>
+        <h2 style="font-size:44px;line-height:1.05;letter-spacing:-0.03em;font-weight:700;margin:0;">Senior designers, no handoffs, no fluff.</h2>
+      </div>
+      <div>
+        <p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">Powerplay is a studio built for teams that need design at the pace of the work. We plug in where you need us &mdash; one project or a full embedded team &mdash; and own it end to end.</p>
+        <p style="font-size:18px;line-height:1.6;color:#48473f;margin:0;">The result is work that looks inevitable, ships on time, and earns the room.</p>
+      </div>
+    </div>
+
+    <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+
+      <div class="pp-card" onClick="{{ openSkott }}" style="display:flex;gap:24px;align-items:stretch;background:#FBFAF7;border:1px solid #E0DED6;border-radius:12px;padding:20px;cursor:pointer;">
+        <div style="width:148px;flex-shrink:0;border-radius:8px;overflow:hidden;background:#e6e4dd;align-self:stretch;">
+          <img src="site-images/team-skott-2.jpg" alt="Skott Reader" style="width:100%;height:100%;min-height:180px;object-fit:cover;object-position:center 18%;display:block;">
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;padding:6px 0;">
+          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:#FF0055;margin-bottom:10px;">FOUNDER</span>
+          <span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;line-height:1.05;">Skott Reader</span>
+          <span style="font-size:15px;color:#6a685f;margin-top:6px;">Visual &amp; Graphic Designer</span>
+          <span class="pp-link" style="margin-top:18px;align-self:flex-start;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.12em;color:#011829;">READ BIO &nbsp;&rarr;</span>
+        </div>
+      </div>
+
+      <div class="pp-card" onClick="{{ openDarla }}" style="display:flex;gap:24px;align-items:stretch;background:#FBFAF7;border:1px solid #E0DED6;border-radius:12px;padding:20px;cursor:pointer;">
+        <div style="width:148px;flex-shrink:0;border-radius:8px;overflow:hidden;background:#e6e4dd;align-self:stretch;">
+          <img src="site-images/team-darla.jpg" alt="Darla" style="width:100%;height:100%;min-height:180px;object-fit:cover;object-position:center 12%;display:block;">
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;padding:6px 0;">
+          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:#FF0055;margin-bottom:10px;">CO-FOUNDER</span>
+          <span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;line-height:1.05;">Darla Wigginton</span>
+          <span style="font-size:15px;color:#6a685f;margin-top:6px;">Presentation Designer</span>
+          <span class="pp-link" style="margin-top:18px;align-self:flex-start;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.12em;color:#011829;">READ BIO &nbsp;&rarr;</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="r-pad" style="padding:0 56px 56px;">
+    <div style="position:relative;border-radius:10px;background:linear-gradient(96deg,#E505F5,#FF0055);color:#fff;padding:88px 64px;overflow:hidden;">
+      <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.22em;color:rgba(255,255,255,.82);margin-bottom:26px;">LET&rsquo;S WORK TOGETHER</div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;">
+        <h2 style="font-size:68px;line-height:0.98;letter-spacing:-0.035em;font-weight:700;margin:0;max-width:760px;">Got something big coming up?</h2>
+        <a class="pp-cta" href="contact.html" style="display:flex;align-items:center;gap:10px;background:#011829;color:#fff;font-size:16px;font-weight:600;padding:18px 32px;border-radius:100px;text-decoration:none;white-space:nowrap;">Start a project <span class="pp-arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="r-pad" style="background:#011829;color:#F2F1ED;padding:64px 56px 40px;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;margin-bottom:56px;">
+      <div style="max-width:360px;">
+        <img src="site-images/powerplay-white.png" alt="Powerplay" style="height:26px;width:auto;display:block;margin-bottom:20px;">
+        <p style="font-size:15px;line-height:1.6;color:#8a887f;margin:0;">A presentation, events, graphic, and visual design studio.</p>
+      </div>
+      <div style="display:flex;gap:64px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
+          <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:4px;">EXPLORE</span>
+          <a class="pp-link" href="work.html" style="color:#c9c7be;">Work</a>
+          <a class="pp-link" href="#services" style="color:#c9c7be;">Services</a>
+          <a class="pp-link" href="#team" style="color:#c9c7be;">Team</a>
+          <a class="pp-link" href="case-studies.html" style="color:#c9c7be;">Case Studies</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
+          <a class="pp-link" href="contact.html" style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:4px;text-decoration:none;">CONTACT</a>
+          <a class="pp-link" href="mailto:sfpowerplay@gmail.com?subject=Let's work together" style="color:#c9c7be;">sfpowerplay@gmail.com</a>
+          <a class="pp-link" href="tel:415-573-7576" style="color:#c9c7be;">415-573-7576</a>
+          <a class="pp-link" href="https://www.linkedin.com/company/74351980" target="_blank" rel="noopener" style="color:#c9c7be;">LinkedIn</a>
+          <a class="pp-link" href="https://www.instagram.com/sfpowerplay" target="_blank" rel="noopener" style="color:#c9c7be;">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #2c2c30;padding-top:24px;font-family:'Space Mono',monospace;font-size:12px;color:#76746c;flex-wrap:wrap;gap:12px;">
+      <span>&copy; 2026 Powerplay. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- TEAM BIO MODAL -->
+  <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeBio }}" style="position:fixed;inset:0;z-index:120;background:rgba(20,20,24,.55);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:32px;">
+      <div onClick="{{ stop }}" class="r-modal" style="position:relative;display:flex;background:#FBFAF7;border-radius:16px;max-width:680px;width:100%;max-height:86vh;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.34);">
+        <div class="r-modal-img" style="width:240px;flex-shrink:0;background:#e6e4dd;">
+          <img src="{{ member.img }}" alt="{{ member.name }}" style="width:100%;height:100%;object-fit:cover;object-position:{{ member.objPos }};display:block;">
+        </div>
+        <div style="flex:1;padding:38px 36px 34px;overflow:auto;">
+          <button onClick="{{ closeBio }}" aria-label="Close" style="position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;border:1px solid #d8d5cb;background:#FBFAF7;color:#011829;font-size:18px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;">&times;</button>
+          <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:#FF0055;margin-bottom:14px;">{{ member.kicker }}</div>
+          <h3 style="font-size:34px;font-weight:700;letter-spacing:-0.025em;margin:0;line-height:1.04;">{{ member.name }}</h3>
+          <div style="font-size:15px;color:#6a685f;margin-top:8px;margin-bottom:24px;">{{ member.title }}</div>
+          <sc-for list="{{ member.bio }}" as="para" hint-placeholder-count="2">
+            <p style="font-size:15.5px;line-height:1.65;color:#3c3b34;margin:0 0 16px;">{{ para }}</p>
+          </sc-for>
+          <div style="display:flex;gap:12px;margin-top:24px;">
+            <a class="pp-cta" href="{{ member.ig }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Instagram <span class="pp-arrow">&#8599;</span></a>
+            <a class="pp-cta" href="{{ member.li }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:transparent;border:1px solid #cdcbc1;color:#011829;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">LinkedIn <span class="pp-arrow">&#8599;</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { i: 0, openId: null, navOpen: false, activeSection: '' };
+  componentDidMount() {
+    const h = location.hash && location.hash.slice(1);
+    if (h) {
+      const tryScroll = (n) => {
+        const el = document.getElementById(h);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 112;
+          window.scrollTo(0, y);
+        } else if (n < 30) {
+          setTimeout(() => tryScroll(n + 1), 100);
+        }
+      };
+      setTimeout(() => tryScroll(0), 150);
+    }
+
+    // scroll-spy: light up the Services / Team nav links when their section is centered in view
+    this._visible = new Set();
+    const ids = ['services', 'team'];
+    this._spy = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) this._visible.add(e.target.id);
+        else this._visible.delete(e.target.id);
+      });
+      const active = ids.find((id) => this._visible.has(id)) || '';
+      if (active !== this.state.activeSection) this.setState({ activeSection: active });
+    }, { rootMargin: '-50% 0px -50% 0px' });
+    const attach = (n) => {
+      const s = document.getElementById('services');
+      const t = document.getElementById('team');
+      if (s && t) { this._spy.observe(s); this._spy.observe(t); }
+      else if (n < 30) setTimeout(() => attach(n + 1), 100);
+    };
+    attach(0);
+  }
+  componentWillUnmount() { if (this._spy) this._spy.disconnect(); }
+  renderVals() {
+    const members = {
+      skott: {
+        name: "Skott Reader",
+        title: "Visual & Graphic Designer",
+        img: "site-images/team-skott-2.jpg",
+        objPos: "center 18%",
+        kicker: "FOUNDER",
+        bio: [
+          "Skott is a seasoned visual and graphic designer. With a career spanning two decades working on both UX and marketing teams, he has left his creative mark on a diverse range of industries, including education, fintech, blockchain, retail, and social media.",
+          "Skott takes an empathetic approach to design that is deeply rooted in understanding business objectives, user needs, and customer expectations. Clients and peers alike have praised him for his patient demeanor, ability to articulate design decisions and rationales, and talent for quickly grasping a brand or design system and extending it to any deliverable.",
+          "His collaborative spirit ensures that clients, stakeholders, and executives who aren\u2019t designers are included in the creative process, resulting in well-informed and successful design outcomes.",
+          "Prior to his career as a visual designer in the Bay Area, Skott worked in the film and television industry in Los Angeles as a music coordinator\u2014working on a few films for Oliver Stone, among other directors\u2014set production assistant, set designer, and assistant cameraperson on features, television, and commercials.",
+        ],
+        ig: "https://www.instagram.com/omegaequalsone",
+        li: "https://www.linkedin.com/in/skottreader/",
+      },
+      darla: {
+        name: "Darla Wigginton",
+        title: "Presentation Designer",
+        img: "site-images/team-darla.jpg",
+        objPos: "center 12%",
+        kicker: "CO-FOUNDER",
+        bio: [
+          "Darla\u2019s years as a presentation designer have included designing for tech, social media, education, finance, healthcare, blockchain, retail, pharmaceutical, e-commerce, cyber security, fashion, and the performing arts.",
+          "Her superpower is understanding what it takes to tell a story in a compelling way, while having the experience to juggle all the complexities of getting it there.",
+          "Her approach to presentation design is built on developing partnerships with people who span all areas of a business, from sales teams to C-suite, from solo business owners to large event management teams.",
+          "Darla uses a strategic system for project intake and management, and iterates in a way that delivers creative and compelling stories and designs.",
+          "Her early career as a professional classical singer (with leading opera and symphony companies) have shaped the way she designs presentations and tells stories visually. The skills learned and honed in decades of onstage performances have helped her bring the same creativity and passion for world-class experiences to her clients.",
+        ],
+        ig: "https://www.instagram.com/wiggydarlington",
+        li: "https://www.linkedin.com/in/dwigginton",
+      },
+    };
+    const member = this.state.openId ? members[this.state.openId] : null;
+    const work = [
+      { name: "OpenAI",           tag: "EVENT GRAPHICS",  img: "site-images/openai.jpg",      href: "portfolio.html?p=openai" },
+      { name: "Meta Brand Summit",tag: "EVENT",           img: "site-images/meta.png",        href: "portfolio.html?p=meta" },
+      { name: "BitGo",            tag: "VISUAL DESIGN",   img: "site-images/bitgo.png",       href: "portfolio.html?p=bitgo" },
+      { name: "Google I/O 2024",  tag: "EVENT GRAPHICS",  img: "site-images/googleio.jpg",    href: "portfolio.html?p=googleio" },
+      { name: "ServiceNow",       tag: "PRESENTATION",    img: "site-images/servicenow.jpeg", href: "portfolio.html?p=servicenow" },
+      { name: "Sui",              tag: "PRESENTATION",    img: "site-images/sui.jpg",         href: "portfolio.html?p=sui" },
+      { name: "SF Symphony",      tag: "VISUAL CONTENT",  img: "site-images/sfsymphony.jpg",  href: "portfolio.html?p=sfsymphony" },
+      { name: "Swimlane",         tag: "EVENT",           img: "site-images/swimlane-logo.png", href: "portfolio.html?p=swimlane", bg: "#fff", fit: "contain", pad: "30px" },
+      { name: "Psilo",            tag: "PACKAGE & GRAPHIC DESIGN", img: "site-images/psilo-thumb.jpg", href: "portfolio.html?p=psilo" },
+    ].map(w => ({ bg: "#e6e4dd", fit: "cover", pad: "0px", ...w }));
+    const scrollW = (dir) => { const el = document.getElementById('pp-wscroll'); if (el) el.scrollBy({ left: dir * Math.max(324, Math.round(el.clientWidth * 0.8)), behavior: 'smooth' }); };
+    const btn = () => ({
+      width: "48px", height: "48px", borderRadius: "50%",
+      border: "1px solid #cdcbc1", background: "transparent",
+      fontFamily: "'Inter Tight',sans-serif", fontSize: "18px", color: "#011829",
+      display: "flex", alignItems: "center", justifyContent: "center",
+      cursor: "pointer", opacity: 1,
+      transition: "background .2s, opacity .2s",
+    });
+    return {
+      work,
+      navMenuClass: this.state.navOpen ? 'open' : '',
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      closeNav: () => this.setState({ navOpen: false }),
+      servicesClass: this.state.activeSection === 'services' ? 'pp-active' : '',
+      teamClass: this.state.activeSection === 'team' ? 'pp-active' : '',
+      openSkott: () => this.setState({ openId: "skott" }),
+      openDarla: () => this.setState({ openId: "darla" }),
+      closeBio: () => this.setState({ openId: null }),
+      stop: (e) => e.stopPropagation(),
+      modalOpen: !!member,
+      member: member || { bio: [] },
+      counter: "01–" + String(work.length).padStart(2, "0"),
+      prev: () => scrollW(-1),
+      next: () => scrollW(1),
+      prevStyle: btn(),
+      nextStyle: btn(),
+    };
+  }
+}
+</script>
 </body>
 </html>
