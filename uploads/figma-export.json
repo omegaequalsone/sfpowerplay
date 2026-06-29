@@ -1,0 +1,792 @@
+{
+  "styles": {
+    "colors": [
+      {
+        "name": "Data Viz/Sequential/Flame/01",
+        "token": "data-viz-sequential-flame-01",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Flame/02",
+        "token": "data-viz-sequential-flame-02",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Flame/03",
+        "token": "data-viz-sequential-flame-03",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Flame/04",
+        "token": "data-viz-sequential-flame-04",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Flame/05",
+        "token": "data-viz-sequential-flame-05",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Flame/07",
+        "token": "data-viz-sequential-flame-07",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Flame/08",
+        "token": "data-viz-sequential-flame-08",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Flame/06",
+        "token": "data-viz-sequential-flame-06",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Flame/09",
+        "token": "data-viz-sequential-flame-09",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Flame/10",
+        "token": "data-viz-sequential-flame-10",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Flame/11",
+        "token": "data-viz-sequential-flame-11",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Dark Delft/01",
+        "token": "data-viz-sequential-dark-delft-01",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Dark Delft/02",
+        "token": "data-viz-sequential-dark-delft-02",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Dark Delft/03",
+        "token": "data-viz-sequential-dark-delft-03",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Dark Delft/04",
+        "token": "data-viz-sequential-dark-delft-04",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Dark Delft/05",
+        "token": "data-viz-sequential-dark-delft-05",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Dark Delft/06",
+        "token": "data-viz-sequential-dark-delft-06",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Dark Delft/07",
+        "token": "data-viz-sequential-dark-delft-07",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Dark Delft/08",
+        "token": "data-viz-sequential-dark-delft-08",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Dark Delft/09",
+        "token": "data-viz-sequential-dark-delft-09",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Dark Delft/10",
+        "token": "data-viz-sequential-dark-delft-10",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Dark Delft/11",
+        "token": "data-viz-sequential-dark-delft-11",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Space Cadet/01",
+        "token": "data-viz-sequential-space-cadet-01",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Space Cadet/02",
+        "token": "data-viz-sequential-space-cadet-02",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Space Cadet/03",
+        "token": "data-viz-sequential-space-cadet-03",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Space Cadet/04",
+        "token": "data-viz-sequential-space-cadet-04",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Space Cadet/05",
+        "token": "data-viz-sequential-space-cadet-05",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Space Cadet/06",
+        "token": "data-viz-sequential-space-cadet-06",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Space Cadet/07",
+        "token": "data-viz-sequential-space-cadet-07",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Space Cadet/08",
+        "token": "data-viz-sequential-space-cadet-08",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Space Cadet/09",
+        "token": "data-viz-sequential-space-cadet-09",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Space Cadet/10",
+        "token": "data-viz-sequential-space-cadet-10",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Sequential/Space Cadet/11",
+        "token": "data-viz-sequential-space-cadet-11",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Paired/01 Flame 600",
+        "token": "data-viz-qualitative-paired-01-flame-600",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Paired/02 Flame 200",
+        "token": "data-viz-qualitative-paired-02-flame-200",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Paired/03 Delft 400",
+        "token": "data-viz-qualitative-paired-03-delft-400",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Paired/04 Delft 100",
+        "token": "data-viz-qualitative-paired-04-delft-100",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Paired/05 Brulee 600",
+        "token": "data-viz-qualitative-paired-05-brulee-600",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Paired/06 Brulee 300",
+        "token": "data-viz-qualitative-paired-06-brulee-300",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Paired/07 Cadet 400",
+        "token": "data-viz-qualitative-paired-07-cadet-400",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Paired/08 Cadet 100",
+        "token": "data-viz-qualitative-paired-08-cadet-100",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Paired/09 Slate 600",
+        "token": "data-viz-qualitative-paired-09-slate-600",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Paired/10 Slate 200",
+        "token": "data-viz-qualitative-paired-10-slate-200",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Soft/01 Flame 500",
+        "token": "data-viz-qualitative-soft-01-flame-500",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Soft/02 Flame 200",
+        "token": "data-viz-qualitative-soft-02-flame-200",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Soft/03 Delft 300",
+        "token": "data-viz-qualitative-soft-03-delft-300",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Soft/04 Delft 50",
+        "token": "data-viz-qualitative-soft-04-delft-50",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Soft/05 Brulee 500",
+        "token": "data-viz-qualitative-soft-05-brulee-500",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Soft/06 Brulee 200",
+        "token": "data-viz-qualitative-soft-06-brulee-200",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Soft/07 Cadet 400",
+        "token": "data-viz-qualitative-soft-07-cadet-400",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Soft/08 Cadet 50",
+        "token": "data-viz-qualitative-soft-08-cadet-50",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Soft/09 Slate 500",
+        "token": "data-viz-qualitative-soft-09-slate-500",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Qualitative/Soft/10 Slate 100",
+        "token": "data-viz-qualitative-soft-10-slate-100",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Cadet To Coral/01 Cadet 400",
+        "token": "data-viz-diverging-cadet-to-coral-01-cadet-400",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Cadet To Coral/02 Cadet 300",
+        "token": "data-viz-diverging-cadet-to-coral-02-cadet-300",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Cadet To Coral/03 Cadet 200",
+        "token": "data-viz-diverging-cadet-to-coral-03-cadet-200",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Cadet To Coral/04 Cadet 100",
+        "token": "data-viz-diverging-cadet-to-coral-04-cadet-100",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Cadet To Coral/05 Cadet 50",
+        "token": "data-viz-diverging-cadet-to-coral-05-cadet-50",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Cadet To Coral/07 Coral 400",
+        "token": "data-viz-diverging-cadet-to-coral-07-coral-400",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Cadet To Coral/08 Coral 500",
+        "token": "data-viz-diverging-cadet-to-coral-08-coral-500",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Cadet To Coral/06 Slate 50",
+        "token": "data-viz-diverging-cadet-to-coral-06-slate-50",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Cadet To Coral/09 Coral 700",
+        "token": "data-viz-diverging-cadet-to-coral-09-coral-700",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Cadet To Coral/10 Coral 800",
+        "token": "data-viz-diverging-cadet-to-coral-10-coral-800",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Cadet To Coral/11 Coral 900",
+        "token": "data-viz-diverging-cadet-to-coral-11-coral-900",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Delft To Flame/01 Delft 400",
+        "token": "data-viz-diverging-delft-to-flame-01-delft-400",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Delft To Flame/02 Delft 300",
+        "token": "data-viz-diverging-delft-to-flame-02-delft-300",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Delft To Flame/03 Delft 200",
+        "token": "data-viz-diverging-delft-to-flame-03-delft-200",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Delft To Flame/04 Delft 100",
+        "token": "data-viz-diverging-delft-to-flame-04-delft-100",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Delft To Flame/05 Delft 50",
+        "token": "data-viz-diverging-delft-to-flame-05-delft-50",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Delft To Flame/06 Slate 50",
+        "token": "data-viz-diverging-delft-to-flame-06-slate-50",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Delft To Flame/07 Flame 200",
+        "token": "data-viz-diverging-delft-to-flame-07-flame-200",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Delft To Flame/08 Flame 300",
+        "token": "data-viz-diverging-delft-to-flame-08-flame-300",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Delft To Flame/09 Flame 400",
+        "token": "data-viz-diverging-delft-to-flame-09-flame-400",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Delft To Flame/10 Flame 600",
+        "token": "data-viz-diverging-delft-to-flame-10-flame-600",
+        "type": "solid"
+      },
+      {
+        "name": "Data Viz/Diverging/Delft To Flame/11 Flame 800",
+        "token": "data-viz-diverging-delft-to-flame-11-flame-800",
+        "type": "solid"
+      }
+    ],
+    "textStyles": [
+      {
+        "name": "Headline 1 & 2",
+        "token": "headline-1-2",
+        "type": "text",
+        "description": "headline font",
+        "fontFamily": "DM Serif Display",
+        "fontWeight": "400",
+        "fontSize": "96px",
+        "lineHeight": "120px",
+        "letterSpacing": "0%"
+      },
+      {
+        "name": "Body",
+        "token": "body",
+        "type": "text",
+        "fontFamily": "Inter Tight",
+        "fontWeight": "500",
+        "fontSize": "30px",
+        "lineHeight": "40px",
+        "letterSpacing": "0%"
+      }
+    ],
+    "effectStyles": [],
+    "gridStyles": []
+  },
+  "collections": {
+    "Variable collection": {
+      "id": "VariableCollectionId:7:263",
+      "modes": [
+        {
+          "id": "7:2",
+          "name": "Mode 1"
+        }
+      ],
+      "variables": {
+        "colors": [
+          {
+            "name": "Space Cadet/500",
+            "token": "space-cadet-500",
+            "type": "color",
+            "value": "#171837"
+          },
+          {
+            "name": "Dark Delft/500",
+            "token": "dark-delft-500",
+            "type": "color",
+            "value": "#203059"
+          },
+          {
+            "name": "Slate/500",
+            "token": "slate-500",
+            "type": "color",
+            "value": "#6e7b98"
+          },
+          {
+            "name": "Flame/500",
+            "token": "flame-500",
+            "type": "color",
+            "value": "#f86447"
+          },
+          {
+            "name": "Coral/500",
+            "token": "coral-500",
+            "type": "color",
+            "value": "#fc8765"
+          },
+          {
+            "name": "Brulee/500",
+            "token": "brulee-500",
+            "type": "color",
+            "value": "#d5be88"
+          },
+          {
+            "name": "Space Cadet/400",
+            "token": "space-cadet-400",
+            "type": "color",
+            "value": "#373983"
+          },
+          {
+            "name": "Dark Delft/600",
+            "token": "dark-delft-600",
+            "type": "color",
+            "value": "#1b294c"
+          },
+          {
+            "name": "Slate/900",
+            "token": "slate-900",
+            "type": "color",
+            "value": "#394050"
+          },
+          {
+            "name": "Flame/900",
+            "token": "flame-900",
+            "type": "color",
+            "value": "#a02006"
+          },
+          {
+            "name": "Coral/900",
+            "token": "coral-900",
+            "type": "color",
+            "value": "#b52d04"
+          },
+          {
+            "name": "Brulee/900",
+            "token": "brulee-900",
+            "type": "color",
+            "value": "#3f3523"
+          },
+          {
+            "name": "Space Cadet/900",
+            "token": "space-cadet-900",
+            "type": "color",
+            "value": "#0c0d1d"
+          },
+          {
+            "name": "Space Cadet/50",
+            "token": "space-cadet-50",
+            "type": "color",
+            "value": "#b7b8e1"
+          },
+          {
+            "name": "Space Cadet/100",
+            "token": "space-cadet-100",
+            "type": "color",
+            "value": "#9fa1d7"
+          },
+          {
+            "name": "Space Cadet/200",
+            "token": "space-cadet-200",
+            "type": "color",
+            "value": "#7f81c9"
+          },
+          {
+            "name": "Space Cadet/300",
+            "token": "space-cadet-300",
+            "type": "color",
+            "value": "#5457b7"
+          },
+          {
+            "name": "Space Cadet/600",
+            "token": "space-cadet-600",
+            "type": "color",
+            "value": "#14142f"
+          },
+          {
+            "name": "Space Cadet/700",
+            "token": "space-cadet-700",
+            "type": "color",
+            "value": "#111128"
+          },
+          {
+            "name": "Space Cadet/800",
+            "token": "space-cadet-800",
+            "type": "color",
+            "value": "#0e0f22"
+          },
+          {
+            "name": "Dark Delft/50",
+            "token": "dark-delft-50",
+            "type": "color",
+            "value": "#bbc7e7"
+          },
+          {
+            "name": "Dark Delft/100",
+            "token": "dark-delft-100",
+            "type": "color",
+            "value": "#a4b5de"
+          },
+          {
+            "name": "Dark Delft/300",
+            "token": "dark-delft-300",
+            "type": "color",
+            "value": "#5e7bc5"
+          },
+          {
+            "name": "Dark Delft/400",
+            "token": "dark-delft-400",
+            "type": "color",
+            "value": "#3a57a0"
+          },
+          {
+            "name": "Dark Delft/700",
+            "token": "dark-delft-700",
+            "type": "color",
+            "value": "#172340"
+          },
+          {
+            "name": "Dark Delft/800",
+            "token": "dark-delft-800",
+            "type": "color",
+            "value": "#141e37"
+          },
+          {
+            "name": "Slate/50",
+            "token": "slate-50",
+            "type": "color",
+            "value": "#dde0e7"
+          },
+          {
+            "name": "Dark Delft/900",
+            "token": "dark-delft-900",
+            "type": "color",
+            "value": "#11192e"
+          },
+          {
+            "name": "Slate/100",
+            "token": "slate-100",
+            "type": "color",
+            "value": "#d1d5de"
+          },
+          {
+            "name": "Slate/200",
+            "token": "slate-200",
+            "type": "color",
+            "value": "#c2c7d4"
+          },
+          {
+            "name": "Slate/300",
+            "token": "slate-300",
+            "type": "color",
+            "value": "#aeb5c5"
+          },
+          {
+            "name": "Slate/400",
+            "token": "slate-400",
+            "type": "color",
+            "value": "#929cb2"
+          },
+          {
+            "name": "Slate/600",
+            "token": "slate-600",
+            "type": "color",
+            "value": "#5d6982"
+          },
+          {
+            "name": "Slate/700",
+            "token": "slate-700",
+            "type": "color",
+            "value": "#4f596f"
+          },
+          {
+            "name": "Slate/800",
+            "token": "slate-800",
+            "type": "color",
+            "value": "#434c5e"
+          },
+          {
+            "name": "Flame/50",
+            "token": "flame-50",
+            "type": "color",
+            "value": "#fddad3"
+          },
+          {
+            "name": "Flame/100",
+            "token": "flame-100",
+            "type": "color",
+            "value": "#fdcec5"
+          },
+          {
+            "name": "Flame/200",
+            "token": "flame-200",
+            "type": "color",
+            "value": "#fcbeb1"
+          },
+          {
+            "name": "Flame/300",
+            "token": "flame-300",
+            "type": "color",
+            "value": "#fba897"
+          },
+          {
+            "name": "Flame/400",
+            "token": "flame-400",
+            "type": "color",
+            "value": "#fa8b75"
+          },
+          {
+            "name": "Flame/600",
+            "token": "flame-600",
+            "type": "color",
+            "value": "#f63e19"
+          },
+          {
+            "name": "Flame/700",
+            "token": "flame-700",
+            "type": "color",
+            "value": "#de2c08"
+          },
+          {
+            "name": "Flame/800",
+            "token": "flame-800",
+            "type": "color",
+            "value": "#bd2507"
+          },
+          {
+            "name": "Coral/50",
+            "token": "coral-50",
+            "type": "color",
+            "value": "#fee3da"
+          },
+          {
+            "name": "Coral/100",
+            "token": "coral-100",
+            "type": "color",
+            "value": "#fed9ce"
+          },
+          {
+            "name": "Coral/200",
+            "token": "coral-200",
+            "type": "color",
+            "value": "#fecdbe"
+          },
+          {
+            "name": "Coral/300",
+            "token": "coral-300",
+            "type": "color",
+            "value": "#fdbca8"
+          },
+          {
+            "name": "Coral/400",
+            "token": "coral-400",
+            "type": "color",
+            "value": "#fda68b"
+          },
+          {
+            "name": "Coral/600",
+            "token": "coral-600",
+            "type": "color",
+            "value": "#fb6031"
+          },
+          {
+            "name": "Coral/700",
+            "token": "coral-700",
+            "type": "color",
+            "value": "#fa3e05"
+          },
+          {
+            "name": "Coral/800",
+            "token": "coral-800",
+            "type": "color",
+            "value": "#d53504"
+          },
+          {
+            "name": "Brulee/50",
+            "token": "brulee-50",
+            "type": "color",
+            "value": "#f8f5ec"
+          },
+          {
+            "name": "Brulee/100",
+            "token": "brulee-100",
+            "type": "color",
+            "value": "#f1e8d5"
+          },
+          {
+            "name": "Brulee/200",
+            "token": "brulee-200",
+            "type": "color",
+            "value": "#ede2ca"
+          },
+          {
+            "name": "Brulee/300",
+            "token": "brulee-300",
+            "type": "color",
+            "value": "#e5d6b4"
+          },
+          {
+            "name": "Brulee/400",
+            "token": "brulee-400",
+            "type": "color",
+            "value": "#d9c493"
+          },
+          {
+            "name": "Brulee/600",
+            "token": "brulee-600",
+            "type": "color",
+            "value": "#c3a777"
+          },
+          {
+            "name": "Brulee/700",
+            "token": "brulee-700",
+            "type": "color",
+            "value": "#ad9469"
+          },
+          {
+            "name": "Brulee/800",
+            "token": "brulee-800",
+            "type": "color",
+            "value": "#6b5b3f"
+          },
+          {
+            "name": "Dark Delft/200",
+            "token": "dark-delft-200",
+            "type": "color",
+            "value": "#869cd4"
+          }
+        ],
+        "numbers": [],
+        "strings": [],
+        "booleans": []
+      }
+    }
+  },
+  "metadata": {
+    "exportDate": "2026-06-28T00:53:53.639Z",
+    "figmaFileKey": "unknown",
+    "fileName": "Standard Model Design Library (Copy)",
+    "pluginVersion": "1.0.0",
+    "collectionsFound": 1,
+    "collectionsExported": 1
+  }
+}

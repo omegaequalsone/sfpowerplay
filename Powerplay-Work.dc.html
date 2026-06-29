@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#F2F1ED;}
+  ::selection{background:#FF0055;color:#fff;}
+  .pp-card{overflow:hidden;}
+  body{text-wrap:pretty;}
+  h1,h2,h3,h4{text-wrap:balance;}
+  .pp-card img{transition:transform .8s cubic-bezier(.19,.7,.2,1);}
+  .pp-card:hover img{transform:scale(1.05);}
+  .pp-link{position:relative;text-decoration:none;color:inherit;}
+  .pp-link::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
+  .pp-link:hover::after{transform:scaleX(1);}
+  .pp-cta{transition:box-shadow .2s;}
+  .pp-cta:hover{box-shadow:inset 0 0 0 999px rgba(255,255,255,0.16);}
+  .pp-arrow{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
+  .pp-cta:hover .pp-arrow{transform:translateX(5px);}
+
+  /* ===== responsive ===== */
+  .r-burger{display:none;}
+  .r-mobile-menu{display:none !important;}
+  #pp-navtog{display:none;}
+  @media (max-width:1023px){
+    .r-grid4{grid-template-columns:repeat(2,1fr) !important;}
+    .r-pad{padding-left:32px !important;padding-right:32px !important;}
+  }
+  @media (max-width:900px){
+    .r-navlinks{display:none !important;}
+    .r-cta-desktop{display:none !important;}
+    .r-burger{display:flex !important;}
+    #pp-navtog:checked ~ .r-mobile-menu{display:flex !important;}
+  }
+  @media (max-width:639px){
+    .r-grid4{grid-template-columns:1fr !important;}
+    .r-pad{padding-left:20px !important;padding-right:20px !important;}
+    h1{font-size:clamp(38px,10vw,76px) !important;line-height:1.02 !important;}
+    h2{font-size:clamp(30px,8vw,58px) !important;}
+  }
+</style>
+</helmet>
+
+<div style="font-family:'Inter Tight',sans-serif;color:#011829;background:#F2F1ED;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:hidden;">
+
+  <input type="checkbox" id="pp-navtog" aria-hidden="true">
+
+  <nav class="r-pad" style="display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 56px;border-bottom:1px solid #E0DED6;position:sticky;top:0;background:rgba(242,241,237,.82);backdrop-filter:blur(12px);z-index:60;">
+    <a href="SF Powerplay Reimagined.dc.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:26px;width:auto;display:block;"></a>
+    <div class="r-navlinks" style="display:flex;gap:44px;font-size:18px;font-weight:500;color:#42423c;">
+      <a class="pp-link" href="Powerplay-Work.dc.html" style="color:#FF0055;border-bottom:2px solid #FF0055;padding-bottom:5px;">Work</a>
+      <a class="pp-link" href="SF Powerplay Reimagined.dc.html#services">Services</a>
+      <a class="pp-link" href="SF Powerplay Reimagined.dc.html#team">Team</a>
+      <a class="pp-link" href="Powerplay-CaseStudies.dc.html">Case Studies</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a class="pp-cta r-cta-desktop" href="Powerplay-Contact.dc.html" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Start a project <span class="pp-arrow">&rarr;</span></a>
+      <label class="r-burger" for="pp-navtog" aria-label="Menu" style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:42px;height:42px;border:1px solid #d8d6cd;border-radius:9px;background:transparent;cursor:pointer;">
+        <span style="display:block;width:18px;height:2px;background:#011829;"></span>
+        <span style="display:block;width:18px;height:2px;background:#011829;"></span>
+        <span style="display:block;width:18px;height:2px;background:#011829;"></span>
+      </label>
+    </div>
+  </nav>
+
+  <div class="r-mobile-menu" style="flex-direction:column;gap:2px;background:rgba(242,241,237,.98);backdrop-filter:blur(12px);border-bottom:1px solid #E0DED6;padding:10px 20px 18px;position:sticky;top:96px;z-index:59;">
+    <a href="Powerplay-Work.dc.html" style="text-decoration:none;color:#FF0055;font-size:17px;font-weight:600;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Work</a>
+    <a href="SF Powerplay Reimagined.dc.html#services" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Services</a>
+    <a href="SF Powerplay Reimagined.dc.html#team" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Team</a>
+    <a href="Powerplay-CaseStudies.dc.html" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Case Studies</a>
+    <a class="pp-cta" href="Powerplay-Contact.dc.html" style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:#011829;color:#fff;font-size:14px;font-weight:600;padding:13px 22px;border-radius:100px;text-decoration:none;margin-top:16px;">Start a project <span class="pp-arrow">&rarr;</span></a>
+  </div>
+
+  <!-- HEADER -->
+  <header class="r-pad" style="padding:84px 56px 44px;">
+    <div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.22em;color:#FF0055;margin-bottom:28px;">PORTFOLIO / 2021&ndash;2025</div>
+    <h1 style="font-size:76px;line-height:1.0;letter-spacing:-0.035em;font-weight:600;margin:0;max-width:1000px;text-wrap:balance">Work we&rsquo;ve shipped for teams that needed it to be <span style="background:linear-gradient(96deg,#E505F5,#FF0055);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">unforgettable.</span></h1>
+  </header>
+
+  <!-- GRID -->
+  <section class="r-pad" style="padding:24px 56px 80px;">
+    <div class="r-grid4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
+
+      <a class="pp-card" href="Powerplay-Portfolio.dc.html?p=openai" style="text-decoration:none;color:inherit;">
+        <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6e4dd;"><img src="site-images/openai.jpg" alt="OpenAI" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">OpenAI</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">EVENT &middot; 2024</span></div>
+      </a>
+      <a class="pp-card" href="Powerplay-Portfolio.dc.html?p=meta" style="text-decoration:none;color:inherit;">
+        <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6e4dd;"><img src="site-images/meta.png" alt="Meta Brand Summit" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">Meta Brand Summit</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">EVENT &middot; 2024</span></div>
+      </a>
+      <a class="pp-card" href="Powerplay-Portfolio.dc.html?p=bitgo" style="text-decoration:none;color:inherit;">
+        <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6e4dd;"><img src="site-images/bitgo.png" alt="BitGo" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">BitGo</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">VISUAL &middot; 2023</span></div>
+      </a>
+      <a class="pp-card" href="Powerplay-Portfolio.dc.html?p=googleio" style="text-decoration:none;color:inherit;">
+        <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6e4dd;"><img src="site-images/googleio.jpg" alt="Google I/O 2024" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">Google I/O 2024</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">EVENT &middot; 2024</span></div>
+      </a>
+      <a class="pp-card" href="Powerplay-Portfolio.dc.html?p=servicenow" style="text-decoration:none;color:inherit;">
+        <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6e4dd;"><img src="site-images/servicenow.jpeg" alt="ServiceNow" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">ServiceNow</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">PRESENTATION &middot; 2023</span></div>
+      </a>
+      <a class="pp-card" href="Powerplay-CaseStudy-Sui.dc.html" style="text-decoration:none;color:inherit;">
+        <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6e4dd;"><img src="site-images/sui.jpg" alt="Sui" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">Sui</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">CASE STUDY &middot; 2022</span></div>
+      </a>
+      <a class="pp-card" href="Powerplay-Portfolio.dc.html?p=sfsymphony" style="text-decoration:none;color:inherit;">
+        <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6e4dd;"><img src="site-images/sfsymphony.jpg" alt="SF Symphony" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">SF Symphony</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">VISUAL &middot; 2023</span></div>
+      </a>
+      <a class="pp-card" href="Powerplay-Portfolio.dc.html?p=swimlane" style="text-decoration:none;color:inherit;">
+        <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6e4dd;"><img src="site-images/swimlane.png" alt="Swimlane" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center;"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">Swimlane</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">EVENT &middot; 2023</span></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="r-pad" style="padding:0 56px 56px;">
+    <div style="border-radius:10px;background:linear-gradient(96deg,#E505F5,#FF0055);color:#fff;padding:80px 64px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;">
+      <h2 style="font-size:58px;line-height:0.98;letter-spacing:-0.035em;font-weight:700;margin:0;max-width:680px;">Have a project in mind?</h2>
+      <a class="pp-cta" href="Powerplay-Contact.dc.html" style="display:flex;align-items:center;gap:10px;background:#011829;color:#fff;font-size:16px;font-weight:600;padding:18px 32px;border-radius:100px;text-decoration:none;white-space:nowrap;">Start a project <span class="pp-arrow">&rarr;</span></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="r-pad" style="background:#011829;color:#F2F1ED;padding:64px 56px 40px;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;margin-bottom:56px;">
+      <div style="max-width:360px;">
+        <img src="site-images/powerplay-white.png" alt="Powerplay" style="height:26px;width:auto;display:block;margin-bottom:20px;">
+        <p style="font-size:15px;line-height:1.6;color:#8a887f;margin:0;">A presentation, events, graphic, and visual design studio.</p>
+      </div>
+      <div style="display:flex;gap:64px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
+          <span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:4px;">EXPLORE</span>
+          <a class="pp-link" href="Powerplay-Work.dc.html" style="color:#c9c7be;">Work</a>
+          <a class="pp-link" href="SF Powerplay Reimagined.dc.html#services" style="color:#c9c7be;">Services</a>
+          <a class="pp-link" href="SF Powerplay Reimagined.dc.html#team" style="color:#c9c7be;">Team</a>
+          <a class="pp-link" href="Powerplay-CaseStudies.dc.html" style="color:#c9c7be;">Case Studies</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
+          <span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:4px;">CONTACT</span>
+          <a class="pp-link" href="mailto:sfpowerplay@gmail.com?subject=Let's work together" style="color:#c9c7be;">sfpowerplay@gmail.com</a>
+          <a class="pp-link" href="tel:415-573-7576" style="color:#c9c7be;">415-573-7576</a>
+          <a class="pp-link" href="https://www.linkedin.com/company/74351980" target="_blank" rel="noopener" style="color:#c9c7be;">LinkedIn</a>
+          <a class="pp-link" href="https://www.instagram.com/sfpowerplay" target="_blank" rel="noopener" style="color:#c9c7be;">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #2c2c30;padding-top:24px;font-family:'Space Mono',monospace;font-size:12px;color:#76746c;flex-wrap:wrap;gap:12px;">
+      <span>&copy; 2025 Powerplay. All rights reserved.</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

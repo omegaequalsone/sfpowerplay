@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Mono:wght@400;700&family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  @keyframes ts-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style>
+</helmet>
+
+<!-- ============ CONCEPT 1 — EDITORIAL INDEX ============ -->
+<div style="position:absolute;left:0;top:0;width:1440px;">
+  <div data-drags-parent="1" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#6b675c;margin-bottom:14px;cursor:grab;">01 — Editorial Index · warm paper / Inter Tight + mono</div>
+  <div style="background:#F4F1EA;color:#1A1916;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.08);overflow:hidden;font-family:'Space Mono',monospace;">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:34px 48px;border-bottom:1px solid #d9d4c6;">
+      <div style="font-size:14px;letter-spacing:.24em;font-weight:700;">SKOTT READER</div>
+      <div style="display:flex;gap:36px;font-size:12px;letter-spacing:.18em;color:#46433b;">
+        <span>WORK</span><span>ABOUT</span><span>CONTACT</span>
+      </div>
+    </div>
+    <div style="padding:84px 48px 58px;">
+      <div style="font-size:12px;letter-spacing:.2em;color:#8a8475;margin-bottom:40px;">VISUAL · BRAND · PRESENTATION DESIGN — SAN FRANCISCO</div>
+      <h1 style="font-family:'Inter Tight',sans-serif;letter-spacing:-0.02em;font-weight:600;font-size:90px;line-height:0.98;letter-spacing:-0.035em;margin:0;max-width:1120px;text-wrap:balance;">Designing brands, decks, and the <span style="color:oklch(0.6 0.19 34);">spaces</span> in between.</h1>
+    </div>
+    <div style="padding:0 48px;">
+      <div style="position:relative;height:540px;border-radius:2px;background:repeating-linear-gradient(135deg,#e8e4d9 0 13px,#f0ede4 13px 26px);border:1px solid #ded9cc;">
+        <span style="position:absolute;bottom:18px;left:18px;font-size:11px;letter-spacing:.16em;color:oklch(0.6 0.19 34);background:#F4F1EA;padding:6px 11px;">FEATURED IMAGE — BITGO / BRAND SYSTEM</span>
+      </div>
+    </div>
+    <div style="padding:84px 48px 24px;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;">
+        <div style="font-size:12px;letter-spacing:.2em;color:#8a8475;">SELECTED WORK</div>
+        <div style="font-size:12px;letter-spacing:.2em;color:oklch(0.6 0.19 34);">(11)</div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr 250px 70px;align-items:center;gap:20px;padding:24px 14px;border-top:1px solid #d9d4c6;margin:0 -14px;transition:background .2s;" style-hover="background:#ece8dd;">
+        <div style="font-size:12px;color:oklch(0.6 0.19 34);">01</div><div style="font-family:'Inter Tight',sans-serif;letter-spacing:-0.02em;font-size:36px;">BitGo</div><div style="font-size:12px;letter-spacing:.12em;color:#46433b;">BRAND IDENTITY</div><div style="font-size:12px;color:#8a8475;text-align:right;">2024</div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr 250px 70px;align-items:center;gap:20px;padding:24px 14px;border-top:1px solid #d9d4c6;margin:0 -14px;transition:background .2s;" style-hover="background:#ece8dd;">
+        <div style="font-size:12px;color:oklch(0.6 0.19 34);">02</div><div style="font-family:'Inter Tight',sans-serif;letter-spacing:-0.02em;font-size:36px;">Swimlane</div><div style="font-size:12px;letter-spacing:.12em;color:#46433b;">BRAND &amp; WEB</div><div style="font-size:12px;color:#8a8475;text-align:right;">2023</div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr 250px 70px;align-items:center;gap:20px;padding:24px 14px;border-top:1px solid #d9d4c6;margin:0 -14px;transition:background .2s;" style-hover="background:#ece8dd;">
+        <div style="font-size:12px;color:oklch(0.6 0.19 34);">03</div><div style="font-family:'Inter Tight',sans-serif;letter-spacing:-0.02em;font-size:36px;">Citrix</div><div style="font-size:12px;letter-spacing:.12em;color:#46433b;">VISUAL SYSTEM</div><div style="font-size:12px;color:#8a8475;text-align:right;">2023</div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr 250px 70px;align-items:center;gap:20px;padding:24px 14px;border-top:1px solid #d9d4c6;margin:0 -14px;transition:background .2s;" style-hover="background:#ece8dd;">
+        <div style="font-size:12px;color:oklch(0.6 0.19 34);">04</div><div style="font-family:'Inter Tight',sans-serif;letter-spacing:-0.02em;font-size:36px;">Movement Labs</div><div style="font-size:12px;letter-spacing:.12em;color:#46433b;">IDENTITY</div><div style="font-size:12px;color:#8a8475;text-align:right;">2023</div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr 250px 70px;align-items:center;gap:20px;padding:24px 14px;border-top:1px solid #d9d4c6;margin:0 -14px;transition:background .2s;" style-hover="background:#ece8dd;">
+        <div style="font-size:12px;color:oklch(0.6 0.19 34);">05</div><div style="font-family:'Inter Tight',sans-serif;letter-spacing:-0.02em;font-size:36px;">Sunrun</div><div style="font-size:12px;letter-spacing:.12em;color:#46433b;">BRAND</div><div style="font-size:12px;color:#8a8475;text-align:right;">2022</div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr 250px 70px;align-items:center;gap:20px;padding:24px 14px;border-top:1px solid #d9d4c6;margin:0 -14px;transition:background .2s;" style-hover="background:#ece8dd;">
+        <div style="font-size:12px;color:oklch(0.6 0.19 34);">06</div><div style="font-family:'Inter Tight',sans-serif;letter-spacing:-0.02em;font-size:36px;">Sui</div><div style="font-size:12px;letter-spacing:.12em;color:#46433b;">VISUAL DESIGN</div><div style="font-size:12px;color:#8a8475;text-align:right;">2022</div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr 250px 70px;align-items:center;gap:20px;padding:24px 14px;border-top:1px solid #d9d4c6;margin:0 -14px;transition:background .2s;" style-hover="background:#ece8dd;">
+        <div style="font-size:12px;color:oklch(0.6 0.19 34);">07</div><div style="font-family:'Inter Tight',sans-serif;letter-spacing:-0.02em;font-size:36px;">Uber</div><div style="font-size:12px;letter-spacing:.12em;color:#46433b;">GRAPHIC DESIGN</div><div style="font-size:12px;color:#8a8475;text-align:right;">2022</div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr 250px 70px;align-items:center;gap:20px;padding:24px 14px;border-top:1px solid #d9d4c6;margin:0 -14px;transition:background .2s;" style-hover="background:#ece8dd;">
+        <div style="font-size:12px;color:oklch(0.6 0.19 34);">08</div><div style="font-family:'Inter Tight',sans-serif;letter-spacing:-0.02em;font-size:36px;">Dybbuk Streetwear</div><div style="font-size:12px;letter-spacing:.12em;color:#46433b;">BRAND &amp; PACKAGING</div><div style="font-size:12px;color:#8a8475;text-align:right;">2021</div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr 250px 70px;align-items:center;gap:20px;padding:24px 14px;border-top:1px solid #d9d4c6;border-bottom:1px solid #d9d4c6;margin:0 -14px;transition:background .2s;" style-hover="background:#ece8dd;">
+        <div style="font-size:12px;color:oklch(0.6 0.19 34);">09</div><div style="font-family:'Inter Tight',sans-serif;letter-spacing:-0.02em;font-size:36px;">Psilo Lifestyle</div><div style="font-size:12px;letter-spacing:.12em;color:#46433b;">PACKAGING</div><div style="font-size:12px;color:#8a8475;text-align:right;">2021</div>
+      </div>
+    </div>
+    <div style="padding:64px 48px 0;">
+      <div style="font-size:12px;letter-spacing:.2em;color:#8a8475;margin-bottom:28px;">PRESENTATION DESIGN</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;">
+        <div><div style="position:relative;height:230px;border-radius:2px;background:repeating-linear-gradient(135deg,#e8e4d9 0 13px,#f0ede4 13px 26px);border:1px solid #ded9cc;"></div><div style="font-family:'Inter Tight',sans-serif;letter-spacing:-0.02em;font-size:28px;margin-top:14px;">ServiceNow</div></div>
+        <div><div style="position:relative;height:230px;border-radius:2px;background:repeating-linear-gradient(135deg,#e8e4d9 0 13px,#f0ede4 13px 26px);border:1px solid #ded9cc;"></div><div style="font-family:'Inter Tight',sans-serif;letter-spacing:-0.02em;font-size:28px;margin-top:14px;">OpenAI</div></div>
+        <div><div style="position:relative;height:230px;border-radius:2px;background:repeating-linear-gradient(135deg,#e8e4d9 0 13px,#f0ede4 13px 26px);border:1px solid #ded9cc;"></div><div style="font-family:'Inter Tight',sans-serif;letter-spacing:-0.02em;font-size:28px;margin-top:14px;">Swimlane</div></div>
+      </div>
+    </div>
+    <div style="margin-top:96px;padding:80px 48px 56px;border-top:1px solid #d9d4c6;display:flex;justify-content:space-between;align-items:flex-end;">
+      <h2 style="font-family:'Inter Tight',sans-serif;letter-spacing:-0.02em;font-weight:600;font-size:64px;line-height:0.98;letter-spacing:-0.03em;margin:0;">Let&rsquo;s work<br><span style="color:oklch(0.6 0.19 34);">together.</span></h2>
+      <div style="text-align:right;font-size:12px;letter-spacing:.14em;color:#46433b;line-height:2.1;">
+        <div>HELLO@SKOTTREADER.COM</div><div>WORK · ABOUT · CONTACT</div><div style="color:#8a8475;margin-top:18px;">© 2025 SKOTT READER</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CONCEPT 2 — IMAGE-FIRST GALLERY ============ -->
+<div style="position:absolute;left:1600px;top:0;width:1440px;">
+  <div data-drags-parent="1" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#6b675c;margin-bottom:14px;cursor:grab;">02 — Image-First Gallery · bright / grotesk</div>
+  <div style="background:#FCFCFB;color:#15140F;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.08);overflow:hidden;font-family:'Schibsted Grotesk',sans-serif;">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:30px 44px;border-bottom:1px solid #ececeb;">
+      <div style="font-size:19px;font-weight:700;letter-spacing:-0.01em;">Skott Reader</div>
+      <div style="font-size:13px;color:#9a988f;">Visual · Brand · Presentation Designer</div>
+      <div style="display:flex;gap:28px;font-size:13px;font-weight:500;"><span>Work</span><span>About</span><span style="color:oklch(0.5 0.17 252);">Contact</span></div>
+    </div>
+    <div style="padding:72px 44px 48px;">
+      <h1 style="font-size:46px;font-weight:500;line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:920px;text-wrap:balance;">Independent visual &amp; brand designer building identities, systems, and decks that <span style="color:oklch(0.5 0.17 252);">carry their weight</span>. Selected work, 2020&ndash;2025.</h1>
+    </div>
+    <div style="padding:0 44px 44px;display:grid;grid-template-columns:repeat(12,1fr);gap:18px;">
+      <figure style="grid-column:span 7;margin:0;">
+        <div style="height:560px;border-radius:2px;background:repeating-linear-gradient(135deg,#ececec 0 13px,#f6f6f5 13px 26px);border:1px solid #ededed;"></div>
+        <figcaption style="display:flex;justify-content:space-between;margin-top:12px;font-size:13px;"><span style="font-weight:600;">BitGo</span><span style="color:#9a988f;">Brand Identity</span></figcaption>
+      </figure>
+      <figure style="grid-column:span 5;margin:0;">
+        <div style="height:560px;border-radius:2px;background:repeating-linear-gradient(135deg,#ececec 0 13px,#f6f6f5 13px 26px);border:1px solid #ededed;"></div>
+        <figcaption style="display:flex;justify-content:space-between;margin-top:12px;font-size:13px;"><span style="font-weight:600;">Sunrun</span><span style="color:#9a988f;">Brand</span></figcaption>
+      </figure>
+      <figure style="grid-column:span 5;margin:0;">
+        <div style="height:480px;border-radius:2px;background:repeating-linear-gradient(135deg,#ececec 0 13px,#f6f6f5 13px 26px);border:1px solid #ededed;"></div>
+        <figcaption style="display:flex;justify-content:space-between;margin-top:12px;font-size:13px;"><span style="font-weight:600;">Sui</span><span style="color:#9a988f;">Visual Design</span></figcaption>
+      </figure>
+      <figure style="grid-column:span 7;margin:0;">
+        <div style="height:480px;border-radius:2px;background:repeating-linear-gradient(135deg,#ececec 0 13px,#f6f6f5 13px 26px);border:1px solid #ededed;"></div>
+        <figcaption style="display:flex;justify-content:space-between;margin-top:12px;font-size:13px;"><span style="font-weight:600;">Uber</span><span style="color:#9a988f;">Graphic Design</span></figcaption>
+      </figure>
+      <figure style="grid-column:span 4;margin:0;">
+        <div style="height:380px;border-radius:2px;background:repeating-linear-gradient(135deg,#ececec 0 13px,#f6f6f5 13px 26px);border:1px solid #ededed;"></div>
+        <figcaption style="display:flex;justify-content:space-between;margin-top:12px;font-size:13px;"><span style="font-weight:600;">Citrix</span><span style="color:#9a988f;">Visual System</span></figcaption>
+      </figure>
+      <figure style="grid-column:span 4;margin:0;">
+        <div style="height:380px;border-radius:2px;background:repeating-linear-gradient(135deg,#ececec 0 13px,#f6f6f5 13px 26px);border:1px solid #ededed;"></div>
+        <figcaption style="display:flex;justify-content:space-between;margin-top:12px;font-size:13px;"><span style="font-weight:600;">Movement Labs</span><span style="color:#9a988f;">Identity</span></figcaption>
+      </figure>
+      <figure style="grid-column:span 4;margin:0;">
+        <div style="height:380px;border-radius:2px;background:repeating-linear-gradient(135deg,#ececec 0 13px,#f6f6f5 13px 26px);border:1px solid #ededed;"></div>
+        <figcaption style="display:flex;justify-content:space-between;margin-top:12px;font-size:13px;"><span style="font-weight:600;">Dybbuk Streetwear</span><span style="color:#9a988f;">Packaging</span></figcaption>
+      </figure>
+      <figure style="grid-column:span 6;margin:0;">
+        <div style="height:440px;border-radius:2px;background:repeating-linear-gradient(135deg,#ececec 0 13px,#f6f6f5 13px 26px);border:1px solid #ededed;"></div>
+        <figcaption style="display:flex;justify-content:space-between;margin-top:12px;font-size:13px;"><span style="font-weight:600;">Psilo Lifestyle</span><span style="color:#9a988f;">Packaging</span></figcaption>
+      </figure>
+      <figure style="grid-column:span 6;margin:0;">
+        <div style="height:440px;border-radius:2px;background:repeating-linear-gradient(135deg,#ececec 0 13px,#f6f6f5 13px 26px);border:1px solid #ededed;"></div>
+        <figcaption style="display:flex;justify-content:space-between;margin-top:12px;font-size:13px;"><span style="font-weight:600;">Werk Salon</span><span style="color:#9a988f;">Identity</span></figcaption>
+      </figure>
+    </div>
+    <div style="padding:72px 44px;border-top:1px solid #ececeb;display:flex;justify-content:space-between;align-items:flex-end;">
+      <div style="font-size:30px;font-weight:500;letter-spacing:-0.01em;max-width:560px;">Available for select brand &amp; presentation projects.</div>
+      <div style="text-align:right;font-size:13px;color:#9a988f;line-height:1.9;"><div style="color:#15140F;font-weight:600;">hello@skottreader.com</div><div>© 2025 Skott Reader</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CONCEPT 3 — BOLD STUDIO ============ -->
+<div style="position:absolute;left:3200px;top:0;width:1440px;">
+  <div data-drags-parent="1" style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#6b675c;margin-bottom:14px;cursor:grab;">03 — Bold Studio · dark / oversized display + accent</div>
+  <div style="background:#0C0C0D;color:#F2F0EB;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.08);overflow:hidden;font-family:'Space Grotesk',sans-serif;">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:30px 46px;border-bottom:1px solid #1f1f22;">
+      <div style="display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;letter-spacing:.16em;"><span style="width:9px;height:9px;border-radius:50%;background:oklch(0.72 0.18 46);display:inline-block;"></span>SKOTT READER</div>
+      <div style="display:flex;gap:30px;font-size:13px;color:#8a877f;"><span>Work</span><span>About</span><span>Contact</span></div>
+    </div>
+    <div style="padding:96px 46px 64px;">
+      <div style="font-size:12px;letter-spacing:.24em;color:oklch(0.72 0.18 46);margin-bottom:40px;font-family:'Space Mono',monospace;">VISUAL · BRAND · DECK DESIGN</div>
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:132px;line-height:0.9;letter-spacing:-0.03em;margin:0;">Brands with<br>a point of<br><span style="color:oklch(0.72 0.18 46);">view.</span></h1>
+    </div>
+    <div style="border-top:1px solid #1f1f22;border-bottom:1px solid #1f1f22;padding:26px 0;overflow:hidden;white-space:nowrap;">
+      <div style="display:inline-flex;gap:46px;align-items:center;animation:ts-marquee 32s linear infinite;font-size:28px;font-weight:500;color:#6b6960;">
+        <span>BitGo</span><span style="color:oklch(0.72 0.18 46);">/</span><span>Citrix</span><span style="color:oklch(0.72 0.18 46);">/</span><span>Uber</span><span style="color:oklch(0.72 0.18 46);">/</span><span>Sunrun</span><span style="color:oklch(0.72 0.18 46);">/</span><span>Sui</span><span style="color:oklch(0.72 0.18 46);">/</span><span>OpenAI</span><span style="color:oklch(0.72 0.18 46);">/</span><span>ServiceNow</span><span style="color:oklch(0.72 0.18 46);">/</span><span>Swimlane</span><span style="color:oklch(0.72 0.18 46);">/</span><span>Movement Labs</span><span style="color:oklch(0.72 0.18 46);">/</span>
+        <span>BitGo</span><span style="color:oklch(0.72 0.18 46);">/</span><span>Citrix</span><span style="color:oklch(0.72 0.18 46);">/</span><span>Uber</span><span style="color:oklch(0.72 0.18 46);">/</span><span>Sunrun</span><span style="color:oklch(0.72 0.18 46);">/</span><span>Sui</span><span style="color:oklch(0.72 0.18 46);">/</span><span>OpenAI</span><span style="color:oklch(0.72 0.18 46);">/</span><span>ServiceNow</span><span style="color:oklch(0.72 0.18 46);">/</span><span>Swimlane</span><span style="color:oklch(0.72 0.18 46);">/</span><span>Movement Labs</span><span style="color:oklch(0.72 0.18 46);">/</span>
+      </div>
+    </div>
+    <div style="padding:84px 46px 40px;display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+      <div style="cursor:pointer;">
+        <div style="height:380px;border-radius:2px;background:repeating-linear-gradient(135deg,#17171a 0 14px,#1e1e22 14px 28px);border:1px solid #242428;transition:border-color .25s;" style-hover="border-color:oklch(0.72 0.18 46)"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:20px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:32px;">BitGo</span><span style="font-size:13px;color:#8a877f;">Brand Identity ↗</span></div>
+      </div>
+      <div style="cursor:pointer;">
+        <div style="height:380px;border-radius:2px;background:repeating-linear-gradient(135deg,#17171a 0 14px,#1e1e22 14px 28px);border:1px solid #242428;transition:border-color .25s;" style-hover="border-color:oklch(0.72 0.18 46)"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:20px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:32px;">Movement Labs</span><span style="font-size:13px;color:#8a877f;">Identity ↗</span></div>
+      </div>
+      <div style="cursor:pointer;">
+        <div style="height:380px;border-radius:2px;background:repeating-linear-gradient(135deg,#17171a 0 14px,#1e1e22 14px 28px);border:1px solid #242428;transition:border-color .25s;" style-hover="border-color:oklch(0.72 0.18 46)"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:20px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:32px;">OpenAI</span><span style="font-size:13px;color:#8a877f;">Presentation ↗</span></div>
+      </div>
+      <div style="cursor:pointer;">
+        <div style="height:380px;border-radius:2px;background:repeating-linear-gradient(135deg,#17171a 0 14px,#1e1e22 14px 28px);border:1px solid #242428;transition:border-color .25s;" style-hover="border-color:oklch(0.72 0.18 46)"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:20px;"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:32px;">Sui</span><span style="font-size:13px;color:#8a877f;">Visual Design ↗</span></div>
+      </div>
+    </div>
+    <div style="padding:90px 46px 64px;border-top:1px solid #1f1f22;margin-top:48px;display:flex;justify-content:space-between;align-items:flex-end;">
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:74px;line-height:0.92;letter-spacing:-0.02em;margin:0;">Start a<br>project <span style="color:oklch(0.72 0.18 46);">→</span></h2>
+      <div style="text-align:right;font-size:13px;color:#8a877f;line-height:2;"><div style="color:#F2F0EB;">hello@skottreader.com</div><div>San Francisco · Remote</div><div style="margin-top:16px;">© 2025 Skott Reader</div></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,163 @@
+/* Generated from Figma Variables. First mode = :root default.
+   FLOAT tokens are unitless — multiply by 1px in calc() where a length is needed. */
+
+:root {
+  --brulee-100: rgb(241,232,213); /* @kind color */
+  --brulee-200: rgb(237,226,202); /* @kind color */
+  --brulee-300: rgb(229,214,180); /* @kind color */
+  --brulee-400: rgb(217,196,147); /* @kind color */
+  --brulee-500: rgb(213,190,136); /* @kind color */
+  --brulee-50: rgb(248,245,236); /* @kind color */
+  --brulee-600: rgb(195,167,119); /* @kind color */
+  --brulee-700: rgb(173,148,105); /* @kind color */
+  --brulee-800: rgb(107,91,63); /* @kind color */
+  --brulee-900: rgb(63,53,35); /* @kind color */
+  --color-azure-12-65: rgba(26,29,36,0.65); /* @kind color */
+  --color-azure-12: rgb(26,29,36); /* @kind color */
+  --color-azure-24: rgb(32,48,89); /* @kind color */
+  --color-azure-64: rgb(146,156,178); /* @kind color */
+  --color-azure-70: rgb(158,173,199); /* @kind color */
+  --color-azure-82-2: rgb(187,199,231); /* @kind color */
+  --color-azure-82: rgb(196,205,222); /* @kind color */
+  --color-black-solid: rgb(0,0,0); /* @kind color */
+  --color-blue-13: rgb(20,20,47); /* @kind color */
+  --color-blue-22: rgb(29,41,81); /* @kind color */
+  --color-blue-8: rgb(12,13,29); /* @kind color */
+  --color-grey-10: rgb(26,23,24); /* @kind color */
+  --color-grey-94-58: rgba(245,241,234,0.58); /* @kind color */
+  --color-grey-94-62: rgba(245,241,234,0.62); /* @kind color */
+  --color-grey-94-70: rgba(245,241,234,0.7); /* @kind color */
+  --color-grey-94: rgb(245,241,234); /* @kind color */
+  --color-grey-95-3: rgb(248,245,236); /* @kind color */
+  --color-grey-95: rgb(248,244,235); /* @kind color */
+  --color-grey-96: rgb(245,245,245); /* @kind color */
+  --color-orange-19: rgb(63,53,35); /* @kind color */
+  --color-orange-71-45: rgba(217,196,147,0.45); /* @kind color */
+  --color-orange-71: rgb(217,196,147); /* @kind color */
+  --color-orange-80: rgb(220,207,189); /* @kind color */
+  --color-red-45-2: rgb(222,44,8); /* @kind color */
+  --color-red-45: rgb(215,15,27); /* @kind color */
+  --color-red-63: rgb(248,100,71); /* @kind color */
+  --color-red-72: rgb(250,139,117); /* @kind color */
+  --color-red-76: rgb(238,165,148); /* @kind color */
+  --color-red-77: rgb(253,166,139); /* @kind color */
+  --color-red-87: rgb(254,205,190); /* @kind color */
+  --color-white-0-2: rgba(255,255,255,0.002); /* @kind color */
+  --color-white-solid: rgb(255,255,255); /* @kind color */
+  --coral-100: rgb(254,217,206); /* @kind color */
+  --coral-200: rgb(254,205,190); /* @kind color */
+  --coral-300: rgb(253,188,168); /* @kind color */
+  --coral-400: rgb(253,166,139); /* @kind color */
+  --coral-500: rgb(252,135,101); /* @kind color */
+  --coral-50: rgb(254,227,218); /* @kind color */
+  --coral-600: rgb(251,96,49); /* @kind color */
+  --coral-700: rgb(250,62,5); /* @kind color */
+  --coral-800: rgb(213,53,4); /* @kind color */
+  --coral-900-2: rgb(181,45,4); /* @kind color */
+  --coral-900: rgb(181,45,4); /* @kind color */
+  --cream-900-2: rgb(187,150,65); /* @kind color */
+  --cream: rgb(248,244,235); /* @kind color */
+  --dark-delft-100: rgb(164,181,222); /* @kind color */
+  --dark-delft-200: rgb(134,156,212); /* @kind color */
+  --dark-delft-300: rgb(94,123,197); /* @kind color */
+  --dark-delft-400: rgb(58,87,160); /* @kind color */
+  --dark-delft-500: rgb(32,48,89); /* @kind color */
+  --dark-delft-50: rgb(187,199,231); /* @kind color */
+  --dark-delft-600: rgb(27,41,76); /* @kind color */
+  --dark-delft-700: rgb(23,35,64); /* @kind color */
+  --dark-delft-800: rgb(20,30,55); /* @kind color */
+  --dark-delft-900: rgb(17,25,46); /* @kind color */
+  --dark-delft: rgb(32,48,89); /* @kind color */
+  --flame-100-2: rgb(253,206,197); /* @kind color */
+  --flame-100: rgb(253,206,197); /* @kind color */
+  --flame-200: rgb(252,190,177); /* @kind color */
+  --flame-300-2: rgb(251,168,151); /* @kind color */
+  --flame-300: rgb(251,168,151); /* @kind color */
+  --flame-400: rgb(250,139,117); /* @kind color */
+  --flame-50-2: rgb(253,218,211); /* @kind color */
+  --flame-500-2: rgb(248,100,71); /* @kind color */
+  --flame-500: rgb(248,100,71); /* @kind color */
+  --flame-50: rgb(253,218,211); /* @kind color */
+  --flame-600: rgb(246,62,25); /* @kind color */
+  --flame-700: rgb(222,44,8); /* @kind color */
+  --flame-800: rgb(189,37,7); /* @kind color */
+  --flame-900-2: rgb(160,32,6); /* @kind color */
+  --flame-900: rgb(160,32,6); /* @kind color */
+  --flame: rgb(248,100,71); /* @kind color */
+  --font-family-font-1: "DM Serif Display";
+  --font-family-font-2: "Inter Tight";
+  --font-size-11: 11;
+  --font-size-12: 12;
+  --font-size-14-5: 14.5;
+  --font-size-16: 16;
+  --font-size-17: 17;
+  --font-size-20: 20;
+  --font-size-22: 22;
+  --font-size-28: 28;
+  --font-size-32: 32;
+  --font-size-56: 56;
+  --font-size-70: 70;
+  --font-size-72: 72;
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --item-spacing-30: 30;
+  --item-spacing-40: 40;
+  --letter-spacing-0-27: -0.268;
+  --letter-spacing-0-28: -0.28;
+  --letter-spacing-0-38: -0.384;
+  --letter-spacing-0-72: -0.72;
+  --letter-spacing-0-82: -0.823;
+  --letter-spacing-0-96: -0.96;
+  --letter-spacing-1-05: -1.048;
+  --letter-spacing-1-12: -1.12;
+  --letter-spacing-1-26: -1.26;
+  --letter-spacing-1-44: -1.44;
+  --letter-spacing-1-98: 1.98;
+  --letter-spacing-2-16: 2.16;
+  --letter-spacing-2-42: 2.42;
+  --line-height-16-5: 16.5;
+  --line-height-18: 18;
+  --line-height-21-75: 21.75;
+  --line-height-22-95: 22.95;
+  --line-height-23-2: 23.2;
+  --line-height-24-8: 24.8;
+  --line-height-24: 24;
+  --line-height-27: 27;
+  --line-height-32-1: 32.1;
+  --line-height-33-6: 33.6;
+  --line-height-33: 33;
+  --line-height-37-76: 37.76;
+  --line-height-43-2: 43.2;
+  --line-height-48: 48;
+  --line-height-49-38: 49.38;
+  --line-height-50-4: 50.4;
+  --line-height-57-12: 57.12;
+  --line-height-58-8: 58.8;
+  --line-height-62-86: 62.86;
+  --line-height-73-44: 73.44;
+  --line-height-75-6: 75.6;
+  --slate-100: rgb(209,213,222); /* @kind color */
+  --slate-200: rgb(194,199,212); /* @kind color */
+  --slate-300: rgb(174,181,197); /* @kind color */
+  --slate-400: rgb(146,156,178); /* @kind color */
+  --slate-500: rgb(110,123,152); /* @kind color */
+  --slate-50: rgb(221,224,231); /* @kind color */
+  --slate-600: rgb(93,105,130); /* @kind color */
+  --slate-700: rgb(79,89,111); /* @kind color */
+  --slate-800: rgb(67,76,94); /* @kind color */
+  --slate-900: rgb(57,64,80); /* @kind color */
+  --slate-grey: rgb(110,123,152); /* @kind color */
+  --space-cadet-100: rgb(159,161,215); /* @kind color */
+  --space-cadet-200: rgb(127,129,201); /* @kind color */
+  --space-cadet-300: rgb(84,87,183); /* @kind color */
+  --space-cadet-400: rgb(55,57,131); /* @kind color */
+  --space-cadet-500: rgb(23,24,55); /* @kind color */
+  --space-cadet-50: rgb(183,184,225); /* @kind color */
+  --space-cadet-600: rgb(20,20,47); /* @kind color */
+  --space-cadet-700: rgb(17,17,40); /* @kind color */
+  --space-cadet-800: rgb(14,15,34); /* @kind color */
+  --space-cadet-900: rgb(12,13,29); /* @kind color */
+  --space-cadet: rgb(23,24,55); /* @kind color */
+}

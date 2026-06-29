@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#F2F1ED;}
+  ::selection{background:#FF0055;color:#fff;}
+  body{text-wrap:pretty;}
+  h1,h2,h3,h4{text-wrap:balance;}
+  .pp-card{overflow:hidden;}
+  .pp-card img{transition:transform .8s cubic-bezier(.19,.7,.2,1);}
+  .pp-card:hover img{transform:scale(1.04);}
+  .pp-link{position:relative;text-decoration:none;color:inherit;}
+  .pp-link::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
+  .pp-link:hover::after{transform:scaleX(1);}
+  .pp-cta{transition:box-shadow .2s;}
+  .pp-cta:hover{box-shadow:inset 0 0 0 999px rgba(255,255,255,0.16);}
+  .pp-arrow{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
+  .pp-cta:hover .pp-arrow,.pp-next:hover .pp-arrow{transform:translateX(6px);}
+  .pp-back .pp-arrow{transition:transform .3s cubic-bezier(.2,.7,.2,1);}
+  .pp-back:hover .pp-arrow{transform:translateX(-5px);}
+
+  /* ===== responsive ===== */
+  .r-burger{display:none;}
+  .r-mobile-menu{display:none !important;}
+  @media (max-width:1023px){
+    .r-2col{grid-template-columns:1fr !important;gap:28px !important;}
+    .r-g3{grid-template-columns:repeat(2,1fr) !important;}
+    .r-pad{padding-left:32px !important;padding-right:32px !important;}
+  }
+  @media (max-width:900px){
+    .r-navlinks{display:none !important;}
+    .r-cta-desktop{display:none !important;}
+    .r-burger{display:flex !important;}
+    .r-mobile-menu.open{display:flex !important;}
+  }
+  @media (max-width:639px){
+    .r-g3{grid-template-columns:1fr !important;}
+    .r-pad{padding-left:20px !important;padding-right:20px !important;}
+    h1{font-size:clamp(40px,11vw,72px) !important;line-height:1 !important;}
+  }
+</style>
+</helmet>
+
+<div style="font-family:'Inter Tight',sans-serif;color:#011829;background:#F2F1ED;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:hidden;">
+
+  <nav class="r-pad" style="display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 56px;border-bottom:1px solid #E0DED6;position:sticky;top:0;background:rgba(242,241,237,.82);backdrop-filter:blur(12px);z-index:60;">
+    <a href="SF Powerplay Reimagined.dc.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:26px;width:auto;display:block;"></a>
+    <div class="r-navlinks" style="display:flex;gap:44px;font-size:18px;font-weight:500;color:#42423c;">
+      <a class="pp-link" href="Powerplay-Work.dc.html" style="color:#FF0055;border-bottom:2px solid #FF0055;padding-bottom:5px;">Work</a>
+      <a class="pp-link" href="SF Powerplay Reimagined.dc.html#services">Services</a>
+      <a class="pp-link" href="SF Powerplay Reimagined.dc.html#team">Team</a>
+      <a class="pp-link" href="Powerplay-CaseStudies.dc.html">Case Studies</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a class="pp-cta r-cta-desktop" href="Powerplay-Contact.dc.html" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Start a project <span class="pp-arrow">&rarr;</span></a>
+      <button class="r-burger" onClick="{{ toggleNav }}" aria-label="Menu" style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:42px;height:42px;border:1px solid #d8d6cd;border-radius:9px;background:transparent;cursor:pointer;">
+        <span style="display:block;width:18px;height:2px;background:#011829;"></span>
+        <span style="display:block;width:18px;height:2px;background:#011829;"></span>
+        <span style="display:block;width:18px;height:2px;background:#011829;"></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="r-mobile-menu {{ navMenuClass }}" style="flex-direction:column;gap:2px;background:rgba(242,241,237,.98);backdrop-filter:blur(12px);border-bottom:1px solid #E0DED6;padding:10px 20px 18px;position:sticky;top:96px;z-index:59;">
+    <a href="Powerplay-Work.dc.html" style="text-decoration:none;color:#FF0055;font-size:17px;font-weight:600;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Work</a>
+    <a href="SF Powerplay Reimagined.dc.html#services" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Services</a>
+    <a href="SF Powerplay Reimagined.dc.html#team" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Team</a>
+    <a href="Powerplay-CaseStudies.dc.html" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Case Studies</a>
+    <a class="pp-cta" href="Powerplay-Contact.dc.html" style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:#011829;color:#fff;font-size:14px;font-weight:600;padding:13px 22px;border-radius:100px;text-decoration:none;margin-top:16px;">Start a project <span class="pp-arrow">&rarr;</span></a>
+  </div>
+
+  <!-- HEADER -->
+  <header class="r-pad" style="padding:40px 56px 8px;">
+    <a class="pp-back pp-link" href="Powerplay-Work.dc.html" style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:40px;"><span class="pp-arrow">&larr;</span> BACK TO WORK</a>
+    <div class="r-2col" style="display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:end;">
+      <div>
+        <div style="font-family:'Space Mono',monospace;font-size:15px;font-weight:700;letter-spacing:.2em;color:#FF0055;margin-bottom:18px;">{{ titleLine }}</div>
+        <h1 style="font-size:72px;line-height:0.98;letter-spacing:-0.035em;font-weight:600;margin:0;">{{ client }}</h1>
+        <div style="font-family:'Space Mono',monospace;font-size:14px;color:#8c897e;margin-top:20px;">{{ year }}</div>
+      </div>
+      <div>
+        <sc-for list="{{ blurbs }}" as="para" hint-placeholder-count="2">
+          <p style="font-size:17px;line-height:1.65;color:#48473f;margin:0 0 16px;">{{ para }}</p>
+        </sc-for>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="r-pad" style="padding:40px 56px 0;">
+    <div class="pp-card" data-gallery="folio" onClick="{{ openLb }}" style="border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;aspect-ratio:16/9;">
+      <img class="pp-shot" data-gallery="folio" data-full="{{ heroFull }}" data-thumb="{{ heroThumb }}" alt="{{ client }}" style="width:100%;height:100%;object-fit:cover;display:block;background:#e6e4dd;">
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="r-pad" style="padding:24px 56px 0;">
+    <div class="r-g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+      <sc-for list="{{ gridShots }}" as="g" hint-placeholder-count="9">
+        <div class="pp-card" data-gallery="folio" onClick="{{ openLb }}" style="border-radius:8px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;aspect-ratio:16/9;">
+          <img class="pp-shot" data-gallery="folio" data-full="{{ g.full }}" data-thumb="{{ g.thumb }}" alt="{{ g.alt }}" style="width:100%;height:100%;object-fit:cover;display:block;background:#e6e4dd;">
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- NEXT PROJECT -->
+  <section class="r-pad" style="padding:80px 56px 56px;">
+    <a class="pp-next" href="{{ nextHref }}" style="display:block;text-decoration:none;color:inherit;">
+      <div style="border-top:1px solid #E0DED6;padding-top:34px;display:flex;justify-content:space-between;align-items:center;gap:24px;">
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:10px;">NEXT PROJECT</div>
+          <div style="font-size:44px;font-weight:700;letter-spacing:-0.03em;">{{ nextName }}</div>
+        </div>
+        <span class="pp-arrow" style="font-size:38px;color:#FF0055;">&rarr;</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="r-pad" style="background:#011829;color:#F2F1ED;padding:64px 56px 40px;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;margin-bottom:56px;">
+      <div style="max-width:360px;">
+        <img src="site-images/powerplay-white.png" alt="Powerplay" style="height:26px;width:auto;display:block;margin-bottom:20px;">
+        <p style="font-size:15px;line-height:1.6;color:#8a887f;margin:0;">A presentation, events, graphic, and visual design studio.</p>
+      </div>
+      <div style="display:flex;gap:64px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
+          <span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:4px;">EXPLORE</span>
+          <a class="pp-link" href="Powerplay-Work.dc.html" style="color:#c9c7be;">Work</a>
+          <a class="pp-link" href="SF Powerplay Reimagined.dc.html#services" style="color:#c9c7be;">Services</a>
+          <a class="pp-link" href="SF Powerplay Reimagined.dc.html#team" style="color:#c9c7be;">Team</a>
+          <a class="pp-link" href="Powerplay-CaseStudies.dc.html" style="color:#c9c7be;">Case Studies</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
+          <span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:4px;">CONTACT</span>
+          <a class="pp-link" href="mailto:sfpowerplay@gmail.com?subject=Let's work together" style="color:#c9c7be;">sfpowerplay@gmail.com</a>
+          <a class="pp-link" href="tel:415-573-7576" style="color:#c9c7be;">415-573-7576</a>
+          <a class="pp-link" href="https://www.linkedin.com/company/74351980" target="_blank" rel="noopener" style="color:#c9c7be;">LinkedIn</a>
+          <a class="pp-link" href="https://www.instagram.com/sfpowerplay" target="_blank" rel="noopener" style="color:#c9c7be;">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #173040;padding-top:24px;font-family:'Space Mono',monospace;font-size:12px;color:#76746c;flex-wrap:wrap;gap:12px;">
+      <span>&copy; 2025 Powerplay. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLb }}" style="position:fixed;inset:0;z-index:200;background:rgba(1,8,16,.93);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:56px;">
+      <button onClick="{{ closeLb }}" aria-label="Close" style="position:fixed;top:24px;right:28px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;">&times;</button>
+      <button onClick="{{ prev }}" aria-label="Previous" style="position:fixed;left:28px;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;">&larr;</button>
+      <button onClick="{{ next }}" aria-label="Next" style="position:fixed;right:28px;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;">&rarr;</button>
+      <img id="lb-img" onClick="{{ stop }}" alt="" style="max-width:90vw;max-height:86vh;width:auto;height:auto;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6);display:block;">
+      <div style="position:fixed;bottom:26px;left:50%;transform:translateX(-50%);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;color:rgba(255,255,255,.7);">{{ lbCount }}</div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lb: null, shots: [], navOpen: false };
+  componentDidMount() {
+    this._key = (e) => {
+      if (e.key === 'Escape') { this.setState({ lb: null }); return; }
+      if (this.state.lb === null) return;
+      if (e.key === 'ArrowLeft') this.setState(s => ({ lb: (s.lb - 1 + s.shots.length) % s.shots.length }));
+      else if (e.key === 'ArrowRight') this.setState(s => ({ lb: (s.lb + 1) % s.shots.length }));
+    };
+    window.addEventListener('keydown', this._key);
+    requestAnimationFrame(() => this._hydrate());
+  }
+  _hydrate() {
+    document.querySelectorAll('img.pp-shot').forEach(im => {
+      const t = im.getAttribute('data-thumb');
+      if (t && t.indexOf('{{') < 0 && im.getAttribute('src') !== t) im.setAttribute('src', t);
+    });
+  }
+  componentWillUnmount() { if (this._key) window.removeEventListener('keydown', this._key); }
+  componentDidUpdate() {
+    this._hydrate();
+    const lbImg = document.getElementById('lb-img');
+    if (lbImg && this.state.lb !== null && this.state.shots.length) {
+      const sh = this.state.shots[this.state.lb];
+      if (sh && lbImg.getAttribute('src') !== sh.src) { lbImg.setAttribute('src', sh.src); lbImg.alt = sh.alt || ''; }
+    }
+  }
+  renderVals() {
+    const wix = (f, w, h) => 'https://static.wixstatic.com/media/' + f + '/v1/fit/w_' + w + ',h_' + h + ',q_90,enc_avif,quality_auto/' + f;
+    const DATA = {
+      openai: {
+        client: 'OpenAI Slush Event',
+        title: 'Keynote Design',
+        year: '2025',
+        blurbs: [
+          "OpenAI hired us to take the slide designs for their speaker, Maggie Hott, to new levels for an important conference event in Helsinki, Finland — Slush 2024. Slush is a founder-focused event, delivering actionable company-building advice while bringing together the who\u2019s who in startups and tech.",
+          "As a result of our collaboration with Maggie, her talk was met with incredible enthusiasm and recognized as one of the top talks at Slush. We heard from our speaker that she felt delighted and supported by our designs.",
+        ],
+        imgs: ['1e56c4_3e1c3b9f18c04e1f964862ff104fcdba~mv2.png','1e56c4_029c79bfcae248ddaeca1770f265287a~mv2.png','1e56c4_fa22ae535bbc42059c590079c13ffb6e~mv2.png','1e56c4_fe2c96df56f54d5e978ac7212900928a~mv2.png','1e56c4_d2362d1fb49f4e04ba33f283aaf5e6c0~mv2.png','1e56c4_ca2027dd2b914a09aafc596b470e556d~mv2.png','1e56c4_ce0857a9477148fb8dfeab71d9222673~mv2.png','1e56c4_08d8183d0d0f44d2be5a45b6eefebc2b~mv2.png','1e56c4_949b81ea78424ee1b7e8a044fc993b59~mv2.png','1e56c4_a919995f1cdb4032916d5be1f98ba43f~mv2.png','1e56c4_8b6906b9ce2c41fd81b2a46279658eff~mv2.png','1e56c4_046d92438e0049c9af9064c0ca6fe350~mv2.png','1e56c4_684ed0b26bf44d17aecddfc8aea13284~mv2.png','1e56c4_4e2abcd9ef2d45bd81407e3abdac55a7~mv2.png','1e56c4_7426882206774667be034911baa59c8a~mv2.png','1e56c4_2707708e8b384115b571855883317ca2~mv2.png','1e56c4_6b1ca5facbe14407b413b2dcc332dd05~mv2.png','1e56c4_d9c19ee3241d4aadba0895abc8969781~mv2.png','1e56c4_f774d8b232ae45a3a80470f1d665a28a~mv2.png','1e56c4_6b99bca6859d4862a182e7f5d33aa4b8~mv2.png','1e56c4_3f6e4cf9dfe5489babdc1987bfbfc919~mv2.png','1e56c4_b46f6c14d04d4365b0289e9ccbe7f3fb~mv2.png','1e56c4_2aafb1d04dea4f288f23c48e3659bc4d~mv2.png','1e56c4_7eeac00accff4eaf98670d33bca23b85~mv2.png','1e56c4_b95a8ebd2cf748dfaf692ea8d066693f~mv2.png'],
+      },
+      meta: {
+        client: 'Meta Brand Summit',
+        title: 'Presentation & Digital Signage',
+        year: '2024',
+        blurbs: [
+          "We supported the design team by redesigning presenter materials in PowerPoint to match the Brand Summit design and elevate their message.",
+          "We provided floorplan designs for the onsite map, created digital signage in PowerPoint (converting to looping movie files that played when Summit attendees entered the space), and produced assets for the PowerPoint files, per the design team that ran the event.",
+        ],
+        imgs: ['1e56c4_792bc2aa2687421ba2003c3a215f585d~mv2.jpg','1e56c4_621d9d0e0bab460ca466d1b32bc04149~mv2.png','1e56c4_e8f1ff3e2d3a44dbb1c1029eacc450ec~mv2.png','1e56c4_45b8d847b1ae4a0699a654613818cf66~mv2.png','1e56c4_75294395d798452784bb2184dde3e586~mv2.jpg','1e56c4_315e1f4976634cdeb637b05678a5c207~mv2.png','1e56c4_88b6ae1d4dd446b28640dbbcb30ab2cc~mv2.png','1e56c4_ef54cd0d03a847f3b33b84d61c5f0402~mv2.png','1e56c4_e40687514969435784ea06be745470d0~mv2.jpg','1e56c4_12e337f0016d44309cf7c2033068d6ac~mv2.png','1e56c4_8469a61b8401448a8babcb9b479ee239~mv2.png','1e56c4_f7ab07a9ed9740d99ccd2e7c97565da8~mv2.jpg','1e56c4_96ff5578833f429ba641ece9844028b6~mv2.png','1e56c4_a9ad4cc9d0a24f19986d740bc82aa75e~mv2.png','1e56c4_f51270535c2848efb7320aef8ebeb5b9~mv2.png','1e56c4_ffa89f7d3d6844a6bcc1ed103e3e0837~mv2.png','1e56c4_50e37a1828254b63bcd5b41da94a41b1~mv2.png','1e56c4_161a311d0e1b4d279fa3ffc51fb19577~mv2.png','1e56c4_46689fb3ba614e28b81b7a46c2d33b1a~mv2.png','1e56c4_6da7bae74dab4a8e9b63fb2c2241003c~mv2.png','1e56c4_da7ef3f3488b443fbcf5dbf21d745d07~mv2.png','1e56c4_601460a925ba4956b8851e319d89cc9a~mv2.png','1e56c4_b71d2841c0f04712b0169b528e000974~mv2.png','1e56c4_600c6829ee2743ffa6d13cced74155ee~mv2.png'],
+      },
+      bitgo: {
+        client: 'BitGo',
+        title: 'Creative, Web, Print, Branding & Event',
+        year: '2018',
+        blurbs: [
+          "BitGo brought Powerplay in to manage creative direction for an aggressively timed brand and website refresh and relaunch, plus marketing collateral aligned with the new brand.",
+          "Managing a small team of freelance developers, web and graphic designers, illustrators, and motion designers, we created fresh, branded elements \u2014 the corporate logo, large-format print, ad and trade-show collateral, business cards, and letterhead \u2014 and developed a new iconographic system for in-product and web, along with page layouts for the BitGo corporate site.",
+        ],
+        imgs: ['1e56c4_4a014c3634e74b2c9c17afeb768704b3~mv2.jpg','1e56c4_bd41f0c72ee045078a4aee96d780a56d~mv2.png','991c82_f592917cb93e4bffbf2816fd08cd4d4e~mv2.png','991c82_8f3b92b3d6164e1cbe8f65ef15ed9caf~mv2.png','991c82_1987d7a2bf47459f863167edead0102e~mv2.png','991c82_ac4578a654014372b1a5d980c3379ee8~mv2.png','991c82_7328dea3aa2041bca2c1878f3433aa31~mv2.png','991c82_f31cb8a82e084651872a35be5a7c1ea9~mv2.png'],
+      },
+      googleio: {
+        client: 'Google I/O 2024',
+        title: 'Presentation Design',
+        year: '2024',
+        blurbs: [
+          "We supported the design team at Google by redesigning and improving the content design of the Google Slides decks for presenters at Google I/O 2024.",
+          "Following brand guidelines, we worked with their team to ensure every presentation met Google standards, provided the graphical assets presenters requested, and polished the content throughout.",
+        ],
+        imgs: ['1e56c4_1c633bca6b134f56abe312c548b03c9e~mv2.png','1e56c4_4e511fafb3c74d308f9aeb9e63631fc1~mv2.png','1e56c4_0184053918784cdfa1df919a235a5341~mv2.png','1e56c4_2e0265bfffea4e25bc22d191b90af861~mv2.png','1e56c4_1c83e1d16f814f79a9cccbb270b1251d~mv2.png','1e56c4_24dfec7246294f6fb39da84070b77547~mv2.png','1e56c4_5d9d69e1c8b84cad8945d3e063c01932~mv2.png','1e56c4_2724e4ca5ae84b7b9f784abe61a140d7~mv2.png','1e56c4_672f0ebbe1184330987871646d47fed6~mv2.png','1e56c4_8a5258003cc14821ae51be98cc3dc9be~mv2.png','1e56c4_fcab6bbebdab432c8c921551d365f340~mv2.png','1e56c4_8ab0b129c5da4a89a57dbf3a624f47db~mv2.png','1e56c4_10b918cc54754f889de513e3ebef1f6c~mv2.png','1e56c4_b8e7094761aa49b19f7dc87cb7e62d6e~mv2.png','1e56c4_5175478bb1ad41a6ae59f8b0a22938f4~mv2.png','1e56c4_840c034143ef4d24851f18a05b843a6c~mv2.png','1e56c4_d1731b935cdf4e258b62163e95e13a2a~mv2.png','1e56c4_ba6ed27e9eba42de92a77b173944b057~mv2.png','1e56c4_e20c10f0be7a4ac0a3f6b29af42407d9~mv2.png','1e56c4_285a5dabb77d4b3ea4cb5c5007d9aa68~mv2.png','1e56c4_eaf5724cc5e04159ab54c1d2d12885cc~mv2.png','1e56c4_151ca8c67f664c068ceb69a307f0688c~mv2.png','1e56c4_6889a1148b6943e495f45ee2db97f493~mv2.png','1e56c4_dc249cb0f495443c8414ef5684e1b9e8~mv2.png','1e56c4_9e991af8dc68449ca0520525efaacf0d~mv2.png'],
+      },
+      servicenow: {
+        client: 'ServiceNow',
+        title: 'Keynote Presentation Design',
+        year: '2024',
+        blurbs: [
+          "We supported the ServiceNow design team onsite at MGM Grand for their 2024 Sales Kickoff in Las Vegas. Speakers arrived before the show to rehearse and needed last-minute slide redesigns, additional content built, and customized animations.",
+          "We worked backstage to deliver these assets quickly as the team ran through onstage rehearsals \u2014 providing any additional designs they envisioned, supporting their C-suite executives, and making sure the show went off without a hitch.",
+        ],
+        imgs: ['1e56c4_9475c7a2479b4d08a31ceb0226646a91~mv2.jpeg','1e56c4_790bab0646394aba9f6c1e479e4b0b7f~mv2.jpeg','1e56c4_d057f6880d55455088cabbd7e5c61115~mv2.jpeg','1e56c4_2b87d0f1f20944ae9bf595b4e4d0fe94~mv2.jpeg','1e56c4_020d0232e4ae40879f968a12a208e239~mv2.jpeg','1e56c4_91cf59466d5643fc8d0d5c9b02c424df~mv2.jpeg','1e56c4_fdc4bda8b9b14b9785c0f2af2c68ffb8~mv2.jpeg','1e56c4_76190e522b43434f8f56084a30f1564c~mv2.jpeg'],
+      },
+      sfsymphony: {
+        client: 'San Francisco Symphony',
+        title: 'Presentation Design',
+        year: '2021',
+        blurbs: [
+          "San Francisco Symphony commissioned brand-experience company COLLINS to build an evolved visual identity for the orchestra.",
+          "Powerplay drove that vision through the Symphony\u2019s PowerPoint presentation templates \u2014 in a way that empowered their administrative team to deliver visually compelling presentations for fundraising and outreach.",
+        ],
+        imgs: ['1e56c4_89a74081e8d843a9b3862c4a0be65a32~mv2.png','1e56c4_1a79c7ea602a42c9bfe844fc2caf7326~mv2.png','1e56c4_dcef86ab328149c5a5e826003c605df9~mv2.png','1e56c4_c6926e551b6e485d99595e5680d003c7~mv2.png','1e56c4_f112e530f9594770ac70a1e5d9ac7c3c~mv2.png','1e56c4_5eb8a56b23254d698f2c2c5b705843c5~mv2.png','1e56c4_6dbea3c50ede4e3883f9a35a9b7406d0~mv2.png','1e56c4_803b5208f64f40aa8259f5aa21a4d7a4~mv2.png','1e56c4_8c0eddf208a440efaa51667139f2a2a9~mv2.png','1e56c4_f1c9b92327164674896ab8b1223892ad~mv2.png','1e56c4_351ae03ff1cc4f0e903f0976377e805c~mv2.png','1e56c4_7c873ccb86ff4586b967c91216610b00~mv2.png','1e56c4_b1c9a9033a52452caf8950b72082d1fd~mv2.png','1e56c4_cfcdeb0e2c414357a54be141858cc8fa~mv2.png','1e56c4_5cbf60f3f0e44d76b0522e17ac973196~mv2.png','1e56c4_d2acd3dd6598409390c08f6c4bd53616~mv2.png','1e56c4_7ddc0212744d4870a324b4e00aa4abde~mv2.png'],
+      },
+      swimlane: {
+        client: 'Swimlane',
+        title: 'PowerPoint & Event Design',
+        year: '2024',
+        blurbs: [
+          "Powerplay worked with Swimlane\u2019s marketing team for several months leading up to their 2024 Sales Kickoff. We created dynamic visuals for preshow video content, social media graphics, and PowerPoint templates, and redesigned their presentation template.",
+          "Ahead of the SKO, we worked with their C-suite executives to hone content, design custom slides, build data visualizations, and create bespoke, on-brand imagery using generative AI.",
+        ],
+        imgs: ['1e56c4_7ba9b9a51d114a9196534a8f0e1b1adc~mv2.jpg','1e56c4_890677bf7180470eaa759668fff69251~mv2.jpg','1e56c4_eff86525459d4202922418b6c86834a9~mv2.jpg','1e56c4_8ae17c5a73d248a6957b96abc48029aa~mv2.jpg','1e56c4_3f065e7540d34d0daf30ae5ba8a7930c~mv2.jpg','1e56c4_f6c6bfa2ffd6499f8feeac66c3439ca5~mv2.jpg','1e56c4_c42ca99c207949b0940fcc6cd202d587~mv2.jpg','1e56c4_3961e01a4de64710b38476020dfdc580~mv2.jpg','1e56c4_cd1f358851914b5793c2204c7a52f290~mv2.jpg','1e56c4_dab3b5b8229f449192b5b794d096ba68~mv2.jpg','1e56c4_768cfc7b20664c84b742fe1c1ea5c211~mv2.jpg','1e56c4_81fb975eeaaa467f924ef0df26a77f9e~mv2.jpg','1e56c4_72f48bdc4c924267bc419c05ee4430ce~mv2.jpg'],
+      },
+    };
+    const order = Object.keys(DATA);
+    let slug = '';
+    try { slug = new URLSearchParams(window.location.search).get('p') || ''; } catch (e) {}
+    if (!DATA[slug]) slug = order[0];
+    const p = DATA[slug];
+    const allShots = p.imgs.map((f, i) => ({ thumb: wix(f, 900, 507), full: wix(f, 1600, 900), alt: p.client + ' \u2014 ' + (i + 1) }));
+    const idx = order.indexOf(slug);
+    const nextSlug = order[(idx + 1) % order.length];
+
+    const openLb = (e) => {
+      const img = e.currentTarget.querySelector('img.pp-shot');
+      const all = Array.from(document.querySelectorAll('img.pp-shot'));
+      const i = Math.max(0, all.indexOf(img));
+      this.setState({ shots: all.map(im => ({ src: im.getAttribute('data-full') || im.src, alt: im.alt || '' })), lb: i });
+    };
+    const isOpen = this.state.lb !== null && this.state.shots.length > 0;
+    return {
+      client: p.client,
+      titleLine: p.title,
+      year: p.year,
+      blurbs: p.blurbs,
+      heroThumb: allShots[0].thumb,
+      heroFull: allShots[0].full,
+      gridShots: allShots.slice(1),
+      nextName: DATA[nextSlug].client,
+      nextHref: 'Powerplay-Portfolio.dc.html?p=' + nextSlug,
+      navMenuClass: this.state.navOpen ? 'open' : '',
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      openLb,
+      lbOpen: isOpen,
+      closeLb: () => this.setState({ lb: null }),
+      stop: (e) => e.stopPropagation(),
+      lbCount: isOpen ? (this.state.lb + 1) + ' / ' + this.state.shots.length : '',
+      prev: (e) => { e.stopPropagation(); this.setState(s => ({ lb: (s.lb - 1 + s.shots.length) % s.shots.length })); },
+      next: (e) => { e.stopPropagation(); this.setState(s => ({ lb: (s.lb + 1) % s.shots.length })); },
+    };
+  }
+}
+</script>
+</body>
+</html>
