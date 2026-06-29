@@ -24,6 +24,7 @@
   .pp-link{position:relative;text-decoration:none;color:inherit;}
   .pp-link::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
   .pp-link:hover::after{transform:scaleX(1);}
+  .pp-link[data-active]::after{display:none !important;}
   .pp-cta{transition:box-shadow .2s;}
   .pp-cta:hover{box-shadow:inset 0 0 0 999px rgba(255,255,255,0.16);}
   .pp-arrow{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
@@ -34,6 +35,8 @@
   /* ===== responsive ===== */
   .r-burger{display:none;}
   .r-mobile-menu{display:none !important;}
+  .r-wscroll{scrollbar-width:none;-ms-overflow-style:none;}
+  .r-wscroll::-webkit-scrollbar{display:none;}
   @media (max-width:1023px){
     .r-2col{grid-template-columns:1fr !important;gap:36px !important;}
     .r-logos{grid-template-columns:repeat(5,1fr) !important;gap:28px 22px !important;}
@@ -50,9 +53,6 @@
     .r-srow{grid-template-columns:1fr !important;gap:6px !important;padding:22px 6px !important;}
     .r-pad{padding-left:20px !important;padding-right:20px !important;}
     .r-feat{height:340px !important;}
-    .r-warrows{display:none !important;}
-    .r-wscroll{overflow-x:auto !important;-webkit-overflow-scrolling:touch !important;scroll-snap-type:x mandatory !important;}
-    .r-wtrack{transform:none !important;}
     .r-wcard{flex:0 0 82vw !important;scroll-snap-align:start !important;}
     .r-modal{flex-direction:column !important;max-height:88vh !important;overflow:auto !important;}
     .r-modal-img{width:100% !important;height:200px !important;}
@@ -62,10 +62,10 @@
 </style>
 </helmet>
 
-<div class="pp-root" style="font-family:'Inter Tight',sans-serif;color:#011829;background:#F2F1ED;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:hidden;">
+<div class="pp-root" style="font-family:'Inter Tight',sans-serif;color:#011829;background:#F2F1ED;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:clip;">
 
   <!-- NAV -->
-  <nav class="r-pad" style="display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 56px;border-bottom:1px solid #E0DED6;position:sticky;top:0;background:rgba(242,241,237,.82);backdrop-filter:blur(12px);z-index:60;">
+  <nav class="r-pad" style="display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 56px;border-bottom:1px solid #E0DED6;position:sticky;top:0;background:rgba(242,241,237,.82);backdrop-filter:blur(12px);z-index:60;box-shadow:0 2px 16px rgba(1,24,41,.07);">
     <a href="SF Powerplay Reimagined.dc.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:26px;width:auto;display:block;"></a>
     <div class="r-navlinks" style="display:flex;gap:44px;font-size:18px;font-weight:500;color:#42423c;">
       <a class="pp-link" href="Powerplay-Work.dc.html">Work</a>
@@ -115,7 +115,7 @@
 
   <!-- CLIENT WALL -->
   <section class="r-pad" style="padding:62px 56px 78px;">
-    <div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.2em;color:#FF0055;margin-bottom:34px;">A FEW OF OUR RECENT CLIENTS</div>
+    <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.2em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:34px;">A FEW OF OUR RECENT CLIENTS</div>
     <div class="r-logos" style="display:grid;grid-template-columns:repeat(5,1fr);gap:44px 40px;align-items:center;">
       <img src="https://cdn.simpleicons.org/google/46443d" alt="Google" style="height:54px;width:100%;object-fit:contain;opacity:.82;">
       <img src="https://cdn.simpleicons.org/meta/46443d" alt="Meta" style="height:54px;width:100%;object-fit:contain;opacity:.82;">
@@ -129,7 +129,7 @@
   <section id="work" class="r-pad" style="padding:8px 56px 64px;">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid #E0DED6;padding-top:30px;margin-bottom:32px;">
       <div>
-        <div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.18em;color:#FF0055;margin-bottom:10px;">SELECTED WORK &nbsp;/&nbsp; {{ counter }}</div>
+        <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.18em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:10px;">SELECTED WORK &nbsp;/&nbsp; {{ counter }}</div>
         <h2 style="font-size:40px;letter-spacing:-0.03em;font-weight:700;margin:0;">Recent projects</h2>
       </div>
       <div class="r-warrows" style="display:flex;gap:11px;">
@@ -137,12 +137,12 @@
         <button onClick="{{ next }}" style="{{ nextStyle }}" aria-label="Next">&rarr;</button>
       </div>
     </div>
-    <div class="r-wscroll" style="overflow:hidden;margin:0 -10px;padding:0 10px;">
-      <div class="r-wtrack" style="display:flex;gap:24px;transition:transform .6s cubic-bezier(.2,.7,.2,1);transform:{{ trackTransform }};">
+    <div class="r-wscroll" id="pp-wscroll" style="overflow-x:auto;margin:0 -10px;padding:0 10px 8px;scroll-snap-type:x mandatory;scroll-padding-left:10px;">
+      <div class="r-wtrack" style="display:flex;gap:24px;">
         <sc-for list="{{ work }}" as="w" hint-placeholder-count="4">
-          <a class="pp-card r-wcard" href="{{ w.href }}" target="_blank" rel="noopener" style="flex:0 0 300px;text-decoration:none;color:inherit;cursor:pointer;">
-            <div style="height:300px;border-radius:6px;overflow:hidden;background:#e6e4dd;">
-              <img src="{{ w.img }}" alt="{{ w.name }}" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <a class="pp-card r-wcard" href="{{ w.href }}" target="_blank" rel="noopener" style="flex:0 0 300px;scroll-snap-align:start;text-decoration:none;color:inherit;cursor:pointer;">
+            <div style="height:300px;border-radius:6px;overflow:hidden;background:{{ w.bg }};padding:{{ w.pad }};box-sizing:border-box;">
+              <img src="{{ w.img }}" alt="{{ w.name }}" style="width:100%;height:100%;object-fit:{{ w.fit }};display:block;">
             </div>
             <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;">
               <span style="font-size:19px;font-weight:600;letter-spacing:-0.01em;">{{ w.name }}</span>
@@ -191,7 +191,7 @@
   <section id="team" class="r-pad" style="padding:96px 56px;">
     <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:56px;">
       <div>
-        <div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.22em;color:#FF0055;margin-bottom:24px;">THE STUDIO</div>
+        <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.22em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:24px;">THE STUDIO</div>
         <h2 style="font-size:44px;line-height:1.05;letter-spacing:-0.03em;font-weight:700;margin:0;">Senior designers, no handoffs, no fluff.</h2>
       </div>
       <div>
@@ -249,14 +249,14 @@
       </div>
       <div style="display:flex;gap:64px;flex-wrap:wrap;">
         <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
-          <span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:4px;">EXPLORE</span>
+          <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:4px;">EXPLORE</span>
           <a class="pp-link" href="Powerplay-Work.dc.html" style="color:#c9c7be;">Work</a>
           <a class="pp-link" href="#services" style="color:#c9c7be;">Services</a>
           <a class="pp-link" href="#team" style="color:#c9c7be;">Team</a>
           <a class="pp-link" href="Powerplay-CaseStudies.dc.html" style="color:#c9c7be;">Case Studies</a>
         </div>
         <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
-          <span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:4px;">CONTACT</span>
+          <a class="pp-link" href="Powerplay-Contact.dc.html" style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:4px;text-decoration:none;">CONTACT</a>
           <a class="pp-link" href="mailto:sfpowerplay@gmail.com?subject=Let's work together" style="color:#c9c7be;">sfpowerplay@gmail.com</a>
           <a class="pp-link" href="tel:415-573-7576" style="color:#c9c7be;">415-573-7576</a>
           <a class="pp-link" href="https://www.linkedin.com/company/74351980" target="_blank" rel="noopener" style="color:#c9c7be;">LinkedIn</a>
@@ -355,17 +355,15 @@ class Component extends DCLogic {
       { name: "ServiceNow",       tag: "PRESENTATION",    img: "site-images/servicenow.jpeg", href: "Powerplay-Portfolio.dc.html?p=servicenow" },
       { name: "Sui",              tag: "CASE STUDY",      img: "site-images/sui.jpg",         href: "Powerplay-CaseStudy-Sui.dc.html" },
       { name: "SF Symphony",      tag: "VISUAL CONTENT",  img: "site-images/sfsymphony.jpg",  href: "Powerplay-Portfolio.dc.html?p=sfsymphony" },
-      { name: "Swimlane",         tag: "EVENT",           img: "site-images/swimlane.png",    href: "Powerplay-Portfolio.dc.html?p=swimlane" },
-    ];
-    const STEP = 324, perView = 4;
-    const maxI = Math.max(0, work.length - perView);
-    const i = Math.min(this.state.i, maxI);
-    const btn = (disabled) => ({
+      { name: "Swimlane",         tag: "EVENT",           img: "site-images/swimlane-logo.png", href: "Powerplay-Portfolio.dc.html?p=swimlane", bg: "#fff", fit: "contain", pad: "30px" },
+    ].map(w => ({ bg: "#e6e4dd", fit: "cover", pad: "0px", ...w }));
+    const scrollW = (dir) => { const el = document.getElementById('pp-wscroll'); if (el) el.scrollBy({ left: dir * Math.max(324, Math.round(el.clientWidth * 0.8)), behavior: 'smooth' }); };
+    const btn = () => ({
       width: "48px", height: "48px", borderRadius: "50%",
       border: "1px solid #cdcbc1", background: "transparent",
       fontFamily: "'Inter Tight',sans-serif", fontSize: "18px", color: "#011829",
       display: "flex", alignItems: "center", justifyContent: "center",
-      cursor: disabled ? "default" : "pointer", opacity: disabled ? 0.32 : 1,
+      cursor: "pointer", opacity: 1,
       transition: "background .2s, opacity .2s",
     });
     return {
@@ -379,12 +377,11 @@ class Component extends DCLogic {
       stop: (e) => e.stopPropagation(),
       modalOpen: !!member,
       member: member || { bio: [] },
-      trackTransform: "translateX(" + (-i * STEP) + "px)",
-      counter: String(i + 1).padStart(2, "0") + "–" + String(work.length).padStart(2, "0"),
-      prev: () => this.setState(s => ({ i: Math.max(0, Math.min(s.i, maxI) - 1) })),
-      next: () => this.setState(s => ({ i: Math.min(maxI, Math.min(s.i, maxI) + 1) })),
-      prevStyle: btn(i <= 0),
-      nextStyle: btn(i >= maxI),
+      counter: "01–" + String(work.length).padStart(2, "0"),
+      prev: () => scrollW(-1),
+      next: () => scrollW(1),
+      prevStyle: btn(),
+      nextStyle: btn(),
     };
   }
 }

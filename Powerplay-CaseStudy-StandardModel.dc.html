@@ -25,6 +25,7 @@
   .pp-link{position:relative;text-decoration:none;color:inherit;}
   .pp-link::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
   .pp-link:hover::after{transform:scaleX(1);}
+  .pp-link[data-active]::after{display:none !important;}
   .pp-cta{transition:box-shadow .2s;}
   .pp-cta:hover{box-shadow:inset 0 0 0 999px rgba(255,255,255,0.16);}
   .pp-arrow{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
@@ -61,15 +62,15 @@
 </style>
 </helmet>
 
-<div style="font-family:'Inter Tight',sans-serif;color:#011829;background:#F2F1ED;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:hidden;text-wrap:pretty;">
+<div style="font-family:'Inter Tight',sans-serif;color:#011829;background:#F2F1ED;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:clip;text-wrap:pretty;">
 
-  <nav class="r-pad" style="display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 56px;border-bottom:1px solid #E0DED6;position:sticky;top:0;background:rgba(242,241,237,.82);backdrop-filter:blur(12px);z-index:60;">
+  <nav class="r-pad" style="display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 56px;border-bottom:1px solid #E0DED6;position:sticky;top:0;background:rgba(242,241,237,.82);backdrop-filter:blur(12px);z-index:60;box-shadow:0 2px 16px rgba(1,24,41,.07);">
     <a href="SF Powerplay Reimagined.dc.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:26px;width:auto;display:block;"></a>
     <div class="r-navlinks" style="display:flex;gap:44px;font-size:18px;font-weight:500;color:#42423c;">
       <a class="pp-link" href="Powerplay-Work.dc.html">Work</a>
       <a class="pp-link" href="SF Powerplay Reimagined.dc.html#services">Services</a>
       <a class="pp-link" href="SF Powerplay Reimagined.dc.html#team">Team</a>
-      <a class="pp-link" href="Powerplay-CaseStudies.dc.html" style="color:#FF0055;border-bottom:2px solid #FF0055;padding-bottom:5px;">Case Studies</a>
+      <a class="pp-link" href="Powerplay-CaseStudies.dc.html" style="color:#FF0055;border-bottom:2px solid #FF0055;padding-bottom:5px;" data-active="1">Case Studies</a>
     </div>
     <div style="display:flex;align-items:center;gap:14px;">
       <a class="pp-cta r-cta-desktop" href="Powerplay-Contact.dc.html" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Start a project <span class="pp-arrow">&rarr;</span></a>
@@ -123,10 +124,10 @@
   <!-- META BAR -->
   <section class="r-pad" style="padding:48px 56px;border-bottom:1px solid #E0DED6;">
     <div class="r-meta" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
-      <div><div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:10px;">CLIENT</div><div style="font-size:18px;font-weight:600;">The Standard Model</div></div>
-      <div><div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:10px;">SCOPE</div><div style="font-size:18px;font-weight:600;">Brand System · Website · Decks</div></div>
-      <div><div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:10px;">YEAR</div><div style="font-size:18px;font-weight:600;">2025&ndash;26</div></div>
-      <div><div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:10px;">ENGAGEMENT</div><div style="font-size:18px;font-weight:600;">Ongoing</div></div>
+      <div><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#8c897e;margin-bottom:10px;">CLIENT</div><div style="font-size:18px;font-weight:600;">The Standard Model</div></div>
+      <div><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#8c897e;margin-bottom:10px;">SCOPE</div><div style="font-size:18px;font-weight:600;">Brand System · Website · Decks</div></div>
+      <div><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#8c897e;margin-bottom:10px;">YEAR</div><div style="font-size:18px;font-weight:600;">2025&ndash;26</div></div>
+      <div><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#8c897e;margin-bottom:10px;">ENGAGEMENT</div><div style="font-size:18px;font-weight:600;">Ongoing</div></div>
     </div>
   </section>
 
@@ -134,7 +135,7 @@
   <section class="r-split r-pad" style="padding:72px 56px 0;display:grid;grid-template-columns:1fr 1.5fr;gap:80px;">
     <div><div class="r-stick" style="position:sticky;top:170px;">
         <div style="border-top:2px solid #FF0055;width:46px;margin-bottom:20px;"></div>
-        <div style="font-family:'Space Mono',monospace;font-size:15px;font-weight:700;letter-spacing:.18em;color:#FF0055;margin-bottom:10px;">01</div>
+        <div style="font-family:'Space Mono',monospace;font-size:15px;letter-spacing:.18em;color:#FF0055;margin-bottom:10px;">01</div>
         <div style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#011829;line-height:1.1;">Situation</div>
       </div></div>
     <div>
@@ -147,7 +148,7 @@
   <section class="r-split r-pad" style="padding:72px 56px 0;display:grid;grid-template-columns:1fr 1.5fr;gap:80px;">
     <div><div class="r-stick" style="position:sticky;top:170px;">
         <div style="border-top:2px solid #FF0055;width:46px;margin-bottom:20px;"></div>
-        <div style="font-family:'Space Mono',monospace;font-size:15px;font-weight:700;letter-spacing:.18em;color:#FF0055;margin-bottom:10px;">02</div>
+        <div style="font-family:'Space Mono',monospace;font-size:15px;letter-spacing:.18em;color:#FF0055;margin-bottom:10px;">02</div>
         <div style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#011829;line-height:1.1;">Action</div>
       </div></div>
     <div>
@@ -160,7 +161,7 @@
   <section class="r-split r-pad" style="padding:72px 56px 96px;display:grid;grid-template-columns:1fr 1.5fr;gap:80px;">
     <div><div class="r-stick" style="position:sticky;top:170px;">
         <div style="border-top:2px solid #FF0055;width:46px;margin-bottom:20px;"></div>
-        <div style="font-family:'Space Mono',monospace;font-size:15px;font-weight:700;letter-spacing:.18em;color:#FF0055;margin-bottom:10px;">03</div>
+        <div style="font-family:'Space Mono',monospace;font-size:15px;letter-spacing:.18em;color:#FF0055;margin-bottom:10px;">03</div>
         <div style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#011829;line-height:1.1;">Output &amp; Results</div>
       </div></div>
     <div>
@@ -185,7 +186,7 @@
         <div class="pp-card" data-gallery="vl" onClick="{{ openLb }}" style="aspect-ratio:1;background:#F8F5EC;border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;cursor:zoom-in;"><img class="pp-shot" data-gallery="vl" src="site-images/ds/matisse/matisse-11.png" alt="Standard Model Bio — generative visual" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       </div>
       <div style="order:2;">
-        <div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.2em;color:#FF0055;margin-bottom:18px;">THE DESIGN SYSTEM · VISUAL LANGUAGE</div>
+        <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.2em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:18px;">THE DESIGN SYSTEM · VISUAL LANGUAGE</div>
         <h3 style="font-size:38px;line-height:1.04;letter-spacing:-0.025em;font-weight:600;margin:0 0 26px;color:#F4F2EC;">The organic language of data.</h3>
         <p style="font-size:18px;line-height:1.65;color:#aab1bb;margin:0 0 18px;">Standard Model Bio is building one model of the whole human &mdash; fragmented biomedical data resolved into a single picture of a patient. We translated that ambition into a living visual language: organic, abstract forms that read as biology, not the lab.</p>
         <p style="font-size:18px;line-height:1.65;color:#aab1bb;margin:0 0 18px;">Our inspiration was late-period Henri Matisse &mdash; the cut-paper compositions and watercolors where simple, flowing shapes carry profound meaning. That same power of abstraction lets a single form speak to the fundamental nature of life. Warm oranges and reds sit against cooler blues to keep the human body at the center, while watercolor textures and transparent overlays echo the layered complexity of biology. The forms shift in scale, too &mdash; from small cellular structures to sweeping whole-patient systems &mdash; many systems working in harmony, each influencing the next.</p>
@@ -199,7 +200,7 @@
     <div style="max-width:1328px;margin:0 auto;">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:30px;">
         <div>
-          <div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.22em;color:#FF0055;margin-bottom:18px;">THE WEBSITE &amp; SOCIAL</div>
+          <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.22em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:18px;">THE WEBSITE &amp; SOCIAL</div>
           <h2 style="font-size:40px;line-height:1.3;letter-spacing:-0.03em;font-weight:600;margin:0;max-width:720px;"><span style="background:#FF0055;color:#fff;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:2px 12px;border-radius:2px;">From a Wix placeholder to a living flagship.</span></h2>
         </div>
         <p style="font-size:16px;line-height:1.55;color:#6a685f;max-width:380px;margin:0;">The most public surface the company has &mdash; rebuilt around the system, and actively maintained as it grows. Click any frame to view it full size.</p>
@@ -217,7 +218,7 @@
 
       <div class="r-2col" style="border-top:1px solid #E0DED6;padding-top:34px;display:grid;grid-template-columns:1fr 1.6fr;gap:56px;align-items:start;margin-bottom:40px;">
         <div>
-          <div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.2em;color:#FF0055;margin-bottom:12px;">SOCIAL CAMPAIGNS</div>
+          <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.2em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:12px;">SOCIAL CAMPAIGNS</div>
           <div style="font-size:20px;font-weight:600;letter-spacing:-0.02em;color:#011829;">An always-on social presence.</div>
         </div>
         <p style="font-size:17px;line-height:1.7;color:#48473f;margin:0;">We extend the system into social &mdash; a templated kit of profile marks, announcement cards, and quote posts sized for every channel, with a consistent grid, type hierarchy, and motion vocabulary. The result is a feed that looks composed, not assembled: campaign-ready assets the team can ship on cadence while the brand reads as one voice across every platform.</p>
@@ -239,7 +240,7 @@
   <section class="r-sec r-pad" style="background:#011829;padding:104px 56px;">
     <div class="r-2col" style="max-width:1328px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;">
       <div style="order:1;">
-        <div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.2em;color:#FF0055;margin-bottom:18px;">BRANDMARK</div>
+        <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.2em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:18px;">BRANDMARK</div>
         <h3 style="font-size:38px;line-height:1.04;letter-spacing:-0.025em;font-weight:600;margin:0 0 26px;color:#F4F2EC;">The mission, built into the mark.</h3>
         <p style="font-size:18px;line-height:1.65;color:#aab1bb;margin:0 0 18px;">We encoded the company&rsquo;s thesis directly into its symbol. Six nodes orbit a central hub &mdash; at once a chemical-bond diagram and a data graph &mdash; standing for the multimodal model itself: every biomedical signal, at every scale, unified into one representation of a patient.</p>
         <p style="font-size:18px;line-height:1.65;color:#aab1bb;margin:0;">The name borrows its authority from physics, where the Standard Model unifies every force under one theory. Our mark makes the same claim for biology &mdash; and holds it with one confident system of lockups, on <span style="color:#FF6B97;font-weight:600;">light and dark</span>.</p>
@@ -260,7 +261,7 @@
     <div class="r-2col" style="max-width:1328px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;">
       <div data-color-chips style="display:flex;flex-direction:column;gap:16px;order:1;"></div>
       <div style="order:2;">
-        <div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.2em;color:#FF0055;margin-bottom:18px;">COLOR SYSTEM</div>
+        <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.2em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:18px;">COLOR SYSTEM</div>
         <h3 style="font-size:38px;line-height:1.04;letter-spacing:-0.025em;font-weight:600;margin:0 0 26px;color:#011829;">A palette drawn from the body.</h3>
         <p style="font-size:18px;line-height:1.65;color:#48473f;margin:0 0 18px;">We read the brand&rsquo;s essence and built a six-family palette that maps straight onto human biology. Cool navies and slate carry the scientific authority &mdash; the clarity of the lab, the depth of the data. Warm flames and corals carry the human presence, from the blush of living tissue to the heat of physiological intensity, with a warm br&ucirc;l&eacute;e tan standing in for paper and skin.</p>
         <p style="font-size:18px;line-height:1.65;color:#48473f;margin:0;">Cool and warm sit at <span style="color:#FF0055;font-weight:600;">equal weight</span> &mdash; refusing biomedicine&rsquo;s usual clich&eacute;s &mdash; because the science is real, and so is the person behind every measurement.</p>
@@ -272,7 +273,7 @@
   <section class="r-sec r-pad" style="background:#011829;padding:104px 56px;">
     <div class="r-2col" style="max-width:1328px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;">
       <div style="order:1;">
-        <div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.2em;color:#FF0055;margin-bottom:18px;">ICONOGRAPHY</div>
+        <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.2em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:18px;">ICONOGRAPHY</div>
         <h3 style="font-size:38px;line-height:1.04;letter-spacing:-0.025em;font-weight:600;margin:0 0 26px;color:#F4F2EC;">A custom set, drawn for the science.</h3>
         <p style="font-size:18px;line-height:1.65;color:#aab1bb;margin:0 0 18px;">Sixty marks span the company&rsquo;s entire world &mdash; imaging, molecular biology, data and compute, and the clinical layer. One line weight, one corner radius, and the navy-and-flame palette make any combination read as a single voice across decks, the site, and the product.</p>
         <p style="font-size:18px;line-height:1.65;color:#aab1bb;margin:0;">The vocabulary is unmistakably theirs &mdash; <span style="color:#FF6B97;font-weight:600;">built from the science it describes</span>, not pulled from a stock library.</p>
@@ -303,7 +304,7 @@
     <div style="max-width:1328px;margin:0 auto;">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:30px;">
         <div>
-          <div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.22em;color:#FF0055;margin-bottom:18px;">PUBLICATION DESIGN</div>
+          <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.22em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:18px;">PUBLICATION DESIGN</div>
           <h2 style="font-size:40px;line-height:1.3;letter-spacing:-0.03em;font-weight:600;margin:0;max-width:760px;"><span style="background:#FF0055;color:#fff;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:2px 12px;border-radius:2px;">Turning dense science into clear pictures.</span></h2>
         </div>
         <p style="font-size:16px;line-height:1.55;color:#6a685f;max-width:380px;margin:0;">Explanatory figures for scientific publications and pitch decks. Click any diagram to view it full size.</p>
@@ -325,7 +326,7 @@
     <a class="pp-next" href="Powerplay-CaseStudy-MovementLabs.dc.html" style="display:block;text-decoration:none;color:inherit;">
       <div style="border-top:1px solid #E0DED6;padding-top:34px;display:flex;justify-content:space-between;align-items:center;gap:24px;">
         <div>
-          <div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:10px;">NEXT — CASE STUDY 03</div>
+          <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.16em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:10px;">NEXT — CASE STUDY 03</div>
           <div style="font-size:48px;font-weight:700;letter-spacing:-0.03em;">Movement Labs</div>
         </div>
         <span class="pp-arrow" style="font-size:40px;color:#FF0055;">&rarr;</span>
@@ -342,14 +343,14 @@
       </div>
       <div style="display:flex;gap:64px;flex-wrap:wrap;">
         <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
-          <span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:4px;">EXPLORE</span>
+          <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:4px;">EXPLORE</span>
           <a class="pp-link" href="Powerplay-Work.dc.html" style="color:#c9c7be;">Work</a>
           <a class="pp-link" href="SF Powerplay Reimagined.dc.html#services" style="color:#c9c7be;">Services</a>
           <a class="pp-link" href="SF Powerplay Reimagined.dc.html#team" style="color:#c9c7be;">Team</a>
           <a class="pp-link" href="Powerplay-CaseStudies.dc.html" style="color:#c9c7be;">Case Studies</a>
         </div>
         <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
-          <span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:4px;">CONTACT</span>
+          <a class="pp-link" href="Powerplay-Contact.dc.html" style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:4px;text-decoration:none;">CONTACT</a>
           <a class="pp-link" href="mailto:sfpowerplay@gmail.com?subject=Let's work together" style="color:#c9c7be;">sfpowerplay@gmail.com</a>
           <a class="pp-link" href="tel:415-573-7576" style="color:#c9c7be;">415-573-7576</a>
           <a class="pp-link" href="https://www.linkedin.com/company/74351980" target="_blank" rel="noopener" style="color:#c9c7be;">LinkedIn</a>

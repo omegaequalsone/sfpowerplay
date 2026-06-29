@@ -23,6 +23,7 @@
   .pp-link{position:relative;text-decoration:none;color:inherit;}
   .pp-link::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
   .pp-link:hover::after{transform:scaleX(1);}
+  .pp-link[data-active]::after{display:none !important;}
   .pp-cta{transition:box-shadow .2s;}
   .pp-cta:hover{box-shadow:inset 0 0 0 999px rgba(255,255,255,0.16);}
   .pp-arrow{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
@@ -51,14 +52,14 @@
 </style>
 </helmet>
 
-<div style="font-family:'Inter Tight',sans-serif;color:#011829;background:#F2F1ED;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:hidden;">
+<div style="font-family:'Inter Tight',sans-serif;color:#011829;background:#F2F1ED;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:clip;">
 
   <input type="checkbox" id="pp-navtog" aria-hidden="true">
 
-  <nav class="r-pad" style="display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 56px;border-bottom:1px solid #E0DED6;position:sticky;top:0;background:rgba(242,241,237,.82);backdrop-filter:blur(12px);z-index:60;">
+  <nav class="r-pad" style="display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 56px;border-bottom:1px solid #E0DED6;position:sticky;top:0;background:rgba(242,241,237,.82);backdrop-filter:blur(12px);z-index:60;box-shadow:0 2px 16px rgba(1,24,41,.07);">
     <a href="SF Powerplay Reimagined.dc.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:26px;width:auto;display:block;"></a>
     <div class="r-navlinks" style="display:flex;gap:44px;font-size:18px;font-weight:500;color:#42423c;">
-      <a class="pp-link" href="Powerplay-Work.dc.html" style="color:#FF0055;border-bottom:2px solid #FF0055;padding-bottom:5px;">Work</a>
+      <a class="pp-link" href="Powerplay-Work.dc.html" style="color:#FF0055;border-bottom:2px solid #FF0055;padding-bottom:5px;" data-active="1">Work</a>
       <a class="pp-link" href="SF Powerplay Reimagined.dc.html#services">Services</a>
       <a class="pp-link" href="SF Powerplay Reimagined.dc.html#team">Team</a>
       <a class="pp-link" href="Powerplay-CaseStudies.dc.html">Case Studies</a>
@@ -83,7 +84,7 @@
 
   <!-- HEADER -->
   <header class="r-pad" style="padding:84px 56px 44px;">
-    <div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.22em;color:#FF0055;margin-bottom:28px;">PORTFOLIO / 2021&ndash;2025</div>
+    <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.22em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:28px;">PORTFOLIO / 2021&ndash;2025</div>
     <h1 style="font-size:76px;line-height:1.0;letter-spacing:-0.035em;font-weight:600;margin:0;max-width:1000px;text-wrap:balance">Work we&rsquo;ve shipped for teams that needed it to be <span style="background:linear-gradient(96deg,#E505F5,#FF0055);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">unforgettable.</span></h1>
   </header>
 
@@ -120,7 +121,7 @@
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">SF Symphony</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">VISUAL &middot; 2023</span></div>
       </a>
       <a class="pp-card" href="Powerplay-Portfolio.dc.html?p=swimlane" style="text-decoration:none;color:inherit;">
-        <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6e4dd;"><img src="site-images/swimlane.png" alt="Swimlane" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center;"></div>
+        <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#fff;padding:30px;"><img src="site-images/swimlane-logo.png" alt="Swimlane" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">Swimlane</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">EVENT &middot; 2023</span></div>
       </a>
 
@@ -144,14 +145,14 @@
       </div>
       <div style="display:flex;gap:64px;flex-wrap:wrap;">
         <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
-          <span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:4px;">EXPLORE</span>
+          <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:4px;">EXPLORE</span>
           <a class="pp-link" href="Powerplay-Work.dc.html" style="color:#c9c7be;">Work</a>
           <a class="pp-link" href="SF Powerplay Reimagined.dc.html#services" style="color:#c9c7be;">Services</a>
           <a class="pp-link" href="SF Powerplay Reimagined.dc.html#team" style="color:#c9c7be;">Team</a>
           <a class="pp-link" href="Powerplay-CaseStudies.dc.html" style="color:#c9c7be;">Case Studies</a>
         </div>
         <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
-          <span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.16em;color:#FF0055;margin-bottom:4px;">CONTACT</span>
+          <a class="pp-link" href="Powerplay-Contact.dc.html" style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:4px;text-decoration:none;">CONTACT</a>
           <a class="pp-link" href="mailto:sfpowerplay@gmail.com?subject=Let's work together" style="color:#c9c7be;">sfpowerplay@gmail.com</a>
           <a class="pp-link" href="tel:415-573-7576" style="color:#c9c7be;">415-573-7576</a>
           <a class="pp-link" href="https://www.linkedin.com/company/74351980" target="_blank" rel="noopener" style="color:#c9c7be;">LinkedIn</a>

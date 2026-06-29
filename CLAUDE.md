@@ -47,3 +47,12 @@ Load-bearing rules, distilled:
 - No em-dashes as design flourish. Real typographic quotes. Don't fake precise numbers.
 
 > Note on this environment: output is authored as Design Components (`.dc.html`) with inline styles, not Next.js/Tailwind/Motion files. Translate the skill's *principles* (type, color, layout, motion, copy discipline) into that medium — the React/Tailwind/GSAP code skeletons in the skill are reference for intent, not literal stack requirements here.
+
+
+## Powerplay brand palette (web)
+- **Black** `#011829` — primary dark / text / dark sections
+- **Folly** (pink) `#FF0055` — primary accent / eyebrow highlight
+- **Coquelicot** (orange) `#FF3D00`
+- **Palatinate** (purple) `#6E0D75` — "Powerplay purple" — the ONLY purple; do NOT use #E505F5
+- **Vanilla** `#F0F6C1`
+The hero gradient uses Folly; when the user says "Powerplay purple" they mean Palatinate #6E0D75.
