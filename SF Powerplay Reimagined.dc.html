@@ -24,7 +24,9 @@
   .pp-link{position:relative;text-decoration:none;color:inherit;}
   .pp-link::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
   .pp-link:hover::after{transform:scaleX(1);}
-  .pp-link[data-active]::after{display:none !important;}
+  .pp-link[data-active]::after{transform:scaleX(1);}
+  .pp-link.pp-active{color:#FF0055;}
+  .pp-link.pp-active::after{transform:scaleX(1);}
   .pp-cta{transition:box-shadow .2s;}
   .pp-cta:hover{box-shadow:inset 0 0 0 999px rgba(255,255,255,0.16);}
   .pp-arrow{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
@@ -69,8 +71,8 @@
     <a href="SF Powerplay Reimagined.dc.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:26px;width:auto;display:block;"></a>
     <div class="r-navlinks" style="display:flex;gap:44px;font-size:18px;font-weight:500;color:#42423c;">
       <a class="pp-link" href="Powerplay-Work.dc.html">Work</a>
-      <a class="pp-link" href="#services">Services</a>
-      <a class="pp-link" href="#team">Team</a>
+      <a class="pp-link {{ servicesClass }}" href="#services">Services</a>
+      <a class="pp-link {{ teamClass }}" href="#team">Team</a>
       <a class="pp-link" href="Powerplay-CaseStudies.dc.html">Case Studies</a>
     </div>
     <div style="display:flex;align-items:center;gap:14px;">
@@ -297,21 +299,42 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { i: 0, openId: null, navOpen: false };
+  state = { i: 0, openId: null, navOpen: false, activeSection: '' };
   componentDidMount() {
     const h = location.hash && location.hash.slice(1);
-    if (!h) return;
-    const tryScroll = (n) => {
-      const el = document.getElementById(h);
-      if (el) {
-        const y = el.getBoundingClientRect().top + window.scrollY - 96;
-        window.scrollTo(0, y);
-      } else if (n < 30) {
-        setTimeout(() => tryScroll(n + 1), 100);
-      }
+    if (h) {
+      const tryScroll = (n) => {
+        const el = document.getElementById(h);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 96;
+          window.scrollTo(0, y);
+        } else if (n < 30) {
+          setTimeout(() => tryScroll(n + 1), 100);
+        }
+      };
+      setTimeout(() => tryScroll(0), 150);
+    }
+
+    // scroll-spy: light up the Services / Team nav links when their section is centered in view
+    this._visible = new Set();
+    const ids = ['services', 'team'];
+    this._spy = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) this._visible.add(e.target.id);
+        else this._visible.delete(e.target.id);
+      });
+      const active = ids.find((id) => this._visible.has(id)) || '';
+      if (active !== this.state.activeSection) this.setState({ activeSection: active });
+    }, { rootMargin: '-50% 0px -50% 0px' });
+    const attach = (n) => {
+      const s = document.getElementById('services');
+      const t = document.getElementById('team');
+      if (s && t) { this._spy.observe(s); this._spy.observe(t); }
+      else if (n < 30) setTimeout(() => attach(n + 1), 100);
     };
-    setTimeout(() => tryScroll(0), 150);
+    attach(0);
   }
+  componentWillUnmount() { if (this._spy) this._spy.disconnect(); }
   renderVals() {
     const members = {
       skott: {
@@ -371,6 +394,8 @@ class Component extends DCLogic {
       navMenuClass: this.state.navOpen ? 'open' : '',
       toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
       closeNav: () => this.setState({ navOpen: false }),
+      servicesClass: this.state.activeSection === 'services' ? 'pp-active' : '',
+      teamClass: this.state.activeSection === 'team' ? 'pp-active' : '',
       openSkott: () => this.setState({ openId: "skott" }),
       openDarla: () => this.setState({ openId: "darla" }),
       closeBio: () => this.setState({ openId: null }),
