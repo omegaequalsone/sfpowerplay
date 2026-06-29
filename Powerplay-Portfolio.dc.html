@@ -201,6 +201,7 @@ class Component extends DCLogic {
   }
   renderVals() {
     const wix = (f, w, h) => 'https://static.wixstatic.com/media/' + f + '/v1/fit/w_' + w + ',h_' + h + ',q_90,enc_avif,quality_auto/' + f;
+    const src = (f, w, h) => f.indexOf('/') >= 0 ? f : wix(f, w, h);
     const DATA = {
       openai: {
         client: 'OpenAI Slush Event',
@@ -272,13 +273,33 @@ class Component extends DCLogic {
         ],
         imgs: ['1e56c4_8ae17c5a73d248a6957b96abc48029aa~mv2.jpg','1e56c4_890677bf7180470eaa759668fff69251~mv2.jpg','1e56c4_eff86525459d4202922418b6c86834a9~mv2.jpg','1e56c4_7ba9b9a51d114a9196534a8f0e1b1adc~mv2.jpg','1e56c4_3f065e7540d34d0daf30ae5ba8a7930c~mv2.jpg','1e56c4_f6c6bfa2ffd6499f8feeac66c3439ca5~mv2.jpg','1e56c4_c42ca99c207949b0940fcc6cd202d587~mv2.jpg','1e56c4_3961e01a4de64710b38476020dfdc580~mv2.jpg','1e56c4_cd1f358851914b5793c2204c7a52f290~mv2.jpg','1e56c4_dab3b5b8229f449192b5b794d096ba68~mv2.jpg','1e56c4_768cfc7b20664c84b742fe1c1ea5c211~mv2.jpg','1e56c4_81fb975eeaaa467f924ef0df26a77f9e~mv2.jpg','1e56c4_72f48bdc4c924267bc419c05ee4430ce~mv2.jpg'],
       },
+      sui: {
+        client: 'Sui',
+        title: 'Presentation, Events & Social',
+        year: '2022',
+        blurbs: [
+          "Sui, a fast-moving L1 blockchain, brought Powerplay on as an embedded, generalist design resource — frustrated with the slow turnarounds of larger agencies, they wanted same-day delivery from a team that knew their brand.",
+          "Over the course of a year we delivered a wide range of work — online education presentations, investor pitch decks, large-scale event designs, and social graphics — acting as the in-house design team they didn't yet have.",
+        ],
+        imgs: ['991c82_bdb0c2950f194bd8883d96cfda771eb6~mv2.jpg','1e56c4_ac2e20e189d245c4b6d7d4c432f36b20~mv2.jpg','1e56c4_a96cd5386bc44236af930e3119e1643d~mv2.jpg','1e56c4_3f40102c50f04438a048fb87c4452a26~mv2.jpg'],
+      },
+      psilo: {
+        client: 'Psilo Lifestyle Products',
+        title: 'Logo & Seasonal Packaging',
+        year: 'Ongoing',
+        blurbs: [
+          "Psilo is our pro-bono passion project — a lifestyle brand we built from a single logo mark into an ever-growing run of seasonal packaging.",
+          "The wordmark stays constant while the world around it shifts with each release: monochrome, silver-foil nature illustrations for the chocolate line, and saturated, psychedelic art for the gummies and one-off drops like Lemonheadz.",
+        ],
+        imgs: ['site-images/psilo-chocolate.jpg','site-images/psilo-chocolate-dielines.jpg','site-images/psilo-gummies.jpg','site-images/psilo-lemonheadz.jpg'],
+      },
     };
     const order = Object.keys(DATA);
     let slug = '';
     try { slug = new URLSearchParams(window.location.search).get('p') || ''; } catch (e) {}
     if (!DATA[slug]) slug = order[0];
     const p = DATA[slug];
-    const allShots = p.imgs.map((f, i) => ({ thumb: wix(f, 900, 507), full: wix(f, 1600, 900), alt: p.client + ' \u2014 ' + (i + 1) }));
+    const allShots = p.imgs.map((f, i) => ({ thumb: src(f, 900, 507), full: src(f, 1600, 900), alt: p.client + ' \u2014 ' + (i + 1) }));
     const idx = order.indexOf(slug);
     const nextSlug = order[(idx + 1) % order.length];
 
