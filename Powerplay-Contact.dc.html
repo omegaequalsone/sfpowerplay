@@ -104,19 +104,19 @@
     <div class="r-card" style="background:#F2F1ED;border-radius:14px;padding:48px;box-shadow:0 28px 64px rgba(0,0,0,.4);">
       <form onsubmit="{{ submit }}" novalidate style="display:flex;flex-direction:column;gap:30px;">
         <label style="display:block;">
-          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#8a887f;">YOUR NAME</span>
+          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#FF0055;">YOUR NAME</span>
           <input class="pp-field" type="text" name="name" required placeholder="Your name" style="{{ nameStyle }}">
         </label>
         <label style="display:block;">
-          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#8a887f;">EMAIL</span>
+          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#FF0055;">EMAIL</span>
           <input class="pp-field" type="email" name="email" required placeholder="your email" style="{{ emailStyle }}">
         </label>
         <label style="display:block;">
-          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#8a887f;">COMPANY</span>
+          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#FF0055;">COMPANY</span>
           <input class="pp-field" type="text" name="company" placeholder="Company name">
         </label>
         <label style="display:block;">
-          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#8a887f;">WHAT DO YOU NEED?</span>
+          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#FF0055;">WHAT DO YOU NEED?</span>
           <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:14px;">
             <sc-for list="{{ needs }}" as="p" hint-placeholder-count="5">
               <span onClick="{{ p.toggle }}" style="{{ p.style }}">{{ p.label }}</span>
@@ -124,7 +124,7 @@
           </div>
         </label>
         <label style="display:block;">
-          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#8a887f;">PROJECT DETAILS</span>
+          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#FF0055;">PROJECT DETAILS</span>
           <textarea class="pp-field" rows="3" name="message" placeholder="Timeline, scope, and anything else we should know."></textarea>
         </label>
         <button class="pp-cta" type="submit" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(96deg,#E505F5,#FF0055);color:#fff;font-size:16px;font-weight:600;padding:18px;border:none;border-radius:100px;cursor:pointer;width:100%;margin-top:6px;">Send inquiry <span class="pp-arrow">&rarr;</span></button>
