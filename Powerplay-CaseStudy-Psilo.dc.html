@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#F2F1ED;}
+  ::selection{background:#FF0055;color:#fff;}
+  .pp-card{overflow:hidden;}
+  body{text-wrap:pretty;}
+  h1,h2,h3,h4{text-wrap:balance;}
+  .pp-card img{transition:transform .8s cubic-bezier(.19,.7,.2,1);}
+  .pp-card:hover img{transform:scale(1.04);}
+  .pp-link{position:relative;text-decoration:none;color:inherit;}
+  .pp-link::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
+  .pp-link:hover::after{transform:scaleX(1);}
+  .pp-link[data-active]::after{display:none !important;}
+  .pp-cta{transition:box-shadow .2s;}
+  .pp-cta:hover{box-shadow:inset 0 0 0 999px rgba(255,255,255,0.16);}
+  .pp-arrow{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
+  .pp-cta:hover .pp-arrow,.pp-next:hover .pp-arrow{transform:translateX(6px);}
+  .pp-subnav{text-decoration:none;transition:color .2s;}
+  .pp-subnav:hover{color:#011829 !important;}
+
+  /* ===== responsive ===== */
+  .r-burger{display:none;}
+  .r-mobile-menu{display:none !important;}
+  @media (max-width:1023px){
+    .r-2col{grid-template-columns:1fr !important;gap:40px !important;}
+    .r-split{grid-template-columns:1fr !important;gap:26px !important;}
+    .r-stick{position:static !important;top:auto !important;}
+    .r-web{grid-template-columns:repeat(3,1fr) !important;}
+    .r-pad{padding-left:32px !important;padding-right:32px !important;}
+    .r-sec{padding-top:72px !important;padding-bottom:72px !important;}
+  }
+  @media (max-width:900px){
+    .r-navlinks{display:none !important;}
+    .r-cta-desktop{display:none !important;}
+    .r-burger{display:flex !important;}
+    .r-mobile-menu.open{display:flex !important;}
+  }
+  @media (max-width:639px){
+    .r-meta{grid-template-columns:repeat(2,1fr) !important;gap:18px 16px !important;}
+    .r-web{grid-template-columns:repeat(2,1fr) !important;}
+    .r-g3{grid-template-columns:repeat(2,1fr) !important;}
+    .r-diag{grid-template-columns:1fr !important;}
+    .r-pad{padding-left:20px !important;padding-right:20px !important;}
+    h1{font-size:clamp(40px,13vw,104px) !important;line-height:0.95 !important;}
+    h2{font-size:clamp(26px,7.5vw,42px) !important;}
+    h3{font-size:clamp(24px,7vw,38px) !important;}
+  }
+</style>
+</helmet>
+
+<div style="font-family:'Inter Tight',sans-serif;color:#011829;background:#F2F1ED;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:clip;">
+
+  <nav class="r-pad" style="display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 56px;border-bottom:1px solid #E0DED6;position:sticky;top:0;background:rgba(242,241,237,.82);backdrop-filter:blur(12px);z-index:60;box-shadow:0 2px 16px rgba(1,24,41,.07);">
+    <a href="SF Powerplay Reimagined.dc.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:26px;width:auto;display:block;"></a>
+    <div class="r-navlinks" style="display:flex;gap:44px;font-size:18px;font-weight:500;color:#42423c;">
+      <a class="pp-link" href="Powerplay-Work.dc.html">Work</a>
+      <a class="pp-link" href="SF Powerplay Reimagined.dc.html#services">Services</a>
+      <a class="pp-link" href="SF Powerplay Reimagined.dc.html#team">Team</a>
+      <a class="pp-link" href="Powerplay-CaseStudies.dc.html" style="color:#FF0055;border-bottom:2px solid #FF0055;padding-bottom:5px;" data-active="1">Case Studies</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a class="pp-cta r-cta-desktop" href="Powerplay-Contact.dc.html" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Start a project <span class="pp-arrow">&rarr;</span></a>
+      <button class="r-burger" onClick="{{ toggleNav }}" aria-label="Menu" style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:42px;height:42px;border:1px solid #d8d6cd;border-radius:9px;background:transparent;cursor:pointer;">
+        <span style="display:block;width:18px;height:2px;background:#011829;"></span>
+        <span style="display:block;width:18px;height:2px;background:#011829;"></span>
+        <span style="display:block;width:18px;height:2px;background:#011829;"></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="r-mobile-menu {{ navMenuClass }}" style="flex-direction:column;gap:2px;background:rgba(242,241,237,.98);backdrop-filter:blur(12px);border-bottom:1px solid #E0DED6;padding:10px 20px 18px;position:sticky;top:96px;z-index:59;">
+    <a href="Powerplay-Work.dc.html" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Work</a>
+    <a href="SF Powerplay Reimagined.dc.html#services" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Services</a>
+    <a href="SF Powerplay Reimagined.dc.html#team" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Team</a>
+    <a href="Powerplay-CaseStudies.dc.html" style="text-decoration:none;color:#FF0055;font-size:17px;font-weight:600;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Case Studies</a>
+    <a class="pp-cta" href="Powerplay-Contact.dc.html" style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:#011829;color:#fff;font-size:14px;font-weight:600;padding:13px 22px;border-radius:100px;text-decoration:none;margin-top:16px;">Start a project <span class="pp-arrow">&rarr;</span></a>
+  </div>
+
+  <!-- SUB-NAV -->
+  <div class="r-pad" style="position:sticky;top:96px;z-index:55;background:rgba(242,241,237,.92);backdrop-filter:blur(12px);border-bottom:1px solid #E0DED6;padding:0 56px;">
+    <div style="display:flex;gap:30px;height:54px;align-items:center;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;overflow-x:auto;white-space:nowrap;">
+      <a class="pp-subnav" href="Powerplay-CaseStudies.dc.html" style="color:#8c897e;">ALL</a>
+      <a class="pp-subnav" href="Powerplay-CaseStudy-Sui.dc.html" style="color:#9b988d;">01 SUI</a>
+      <a class="pp-subnav" href="Powerplay-CaseStudy-StandardModel.dc.html" style="color:#9b988d;">02 THE STANDARD MODEL</a>
+      <a class="pp-subnav" href="Powerplay-CaseStudy-MovementLabs.dc.html" style="color:#9b988d;">03 MOVEMENT LABS</a>
+      <a class="pp-subnav" href="Powerplay-CaseStudy-Psilo.dc.html" style="color:#FF0055;">04 PSILO</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="r-pad" style="padding:60px 56px 40px;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-top:0;">
+      <div>
+        <h1 style="font-size:104px;line-height:0.92;letter-spacing:-0.04em;font-weight:600;margin:0">Psilo</h1>
+      </div>
+      <p style="font-size:22px;line-height:1.4;color:#011829;font-weight:600;max-width:440px;margin:0;letter-spacing:-0.01em;">Our pro-bono passion project &mdash; a lifestyle brand we built from a single logo mark into an ever-growing run of seasonal packaging.</p>
+    </div>
+  </header>
+
+  <!-- HERO IMAGE -->
+  <section class="r-pad" style="padding:16px 56px 0;">
+    <div class="pp-card" onClick="{{ openLb }}" style="aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;">
+      <img class="pp-shot" src="site-images/psilo-chocolate.jpg" alt="Psilo Psychedelic Chocolate flagship bar packaging" style="width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="r-pad" style="padding:24px 56px 0;">
+    <div class="r-g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div class="pp-card" onClick="{{ openLb }}" style="aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="site-images/psilo-chocolate-dielines.jpg" alt="Psilo Psychedelic Chocolate production dielines" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pp-card" onClick="{{ openLb }}" style="aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="site-images/psilo-gummies.jpg" alt="Psilo Psychedelic Gummies and Lovecakes seasonal range" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="pp-card" onClick="{{ openLb }}" style="aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="site-images/psilo-lemonheadz.jpg" alt="Psilo Lemonheadz limited-drop packaging" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    </div>
+  </section>
+
+  <!-- META BAR -->
+  <section class="r-pad" style="padding:48px 56px;border-bottom:1px solid #E0DED6;">
+    <div class="r-meta" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
+      <div><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#8c897e;margin-bottom:10px;">CLIENT</div><div style="font-size:18px;font-weight:600;">Psilo Lifestyle Products</div></div>
+      <div><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#8c897e;margin-bottom:10px;">SCOPE</div><div style="font-size:18px;font-weight:600;">Logo · Packaging · Illustration</div></div>
+      <div><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#8c897e;margin-bottom:10px;">YEAR</div><div style="font-size:18px;font-weight:600;">Ongoing</div></div>
+      <div><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#8c897e;margin-bottom:10px;">ENGAGEMENT</div><div style="font-size:18px;font-weight:600;">Pro bono</div></div>
+    </div>
+  </section>
+
+  <!-- LEAD -->
+  <section class="r-split r-pad" style="padding:72px 56px 24px;display:grid;grid-template-columns:1fr 1.5fr;gap:80px;">
+    <div><div class="r-stick" style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.2em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;position:sticky;top:170px;">A PRO-BONO<br>PASSION PROJECT</div></div>
+    <div>
+      <p style="font-size:24px;line-height:1.5;letter-spacing:-0.01em;color:#011829;margin:0 0 22px;font-weight:500;">Psilo is the fun one &mdash; a lifestyle brand we took on pro bono, and the project where we get to be a little louder, weirder, and more hands-on than the day job usually allows.</p>
+      <p style="font-size:19px;line-height:1.65;color:#48473f;margin:0;">It started with one ask &mdash; a logo mark &mdash; and never really stopped. Today we design seasonal packaging across a growing family of products, treating every drop as its own small world to illustrate.</p>
+    </div>
+  </section>
+
+  <!-- LOGO -->
+  <section class="r-pad" style="padding:48px 56px 0;">
+    <div style="background:#fff;border-radius:10px;padding:96px 56px;display:flex;align-items:center;justify-content:center;">
+      <img src="site-images/psilo-logo.png" alt="Psilo Lifestyle Products logo mark" style="width:100%;max-width:640px;height:auto;display:block;">
+    </div>
+  </section>
+
+  <!-- SITUATION -->
+  <section class="r-split r-pad" style="padding:72px 56px 0;display:grid;grid-template-columns:1fr 1.5fr;gap:80px;">
+    <div><div class="r-stick" style="position:sticky;top:170px;">
+        <div style="border-top:2px solid #FF0055;width:46px;margin-bottom:20px;"></div>
+        <div style="font-family:'Space Mono',monospace;font-size:15px;letter-spacing:.18em;color:#FF0055;margin-bottom:10px;">01</div>
+        <div style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#011829;line-height:1.1;">Situation</div>
+      </div></div>
+    <div>
+      <h2 style="font-size:34px;line-height:1.5;letter-spacing:-0.03em;font-weight:600;margin:0 0 22px;"><span style="background:#FF0055;color:#fff;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:2px 12px;border-radius:2px;">A playful brand with no face.</span></h2>
+      <p style="font-size:19px;line-height:1.65;color:#48473f;margin:0 0 18px;">Psilo arrived with personality to spare and nothing to wear it on. They needed a mark that could read premium on a foil-stamped chocolate bar and still feel playful on a bag of gummies &mdash; without fracturing into two different brands.</p>
+      <p style="font-size:19px;line-height:1.65;color:#48473f;margin:0;">The answer was a confident, rounded wordmark: geometric enough to anchor a whole system, friendly enough to never take itself too seriously.</p>
+    </div>
+  </section>
+
+  <!-- ACTION -->
+  <section class="r-split r-pad" style="padding:72px 56px 0;display:grid;grid-template-columns:1fr 1.5fr;gap:80px;">
+    <div><div class="r-stick" style="position:sticky;top:170px;">
+        <div style="border-top:2px solid #FF0055;width:46px;margin-bottom:20px;"></div>
+        <div style="font-family:'Space Mono',monospace;font-size:15px;letter-spacing:.18em;color:#FF0055;margin-bottom:10px;">02</div>
+        <div style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#011829;line-height:1.1;">Action</div>
+      </div></div>
+    <div>
+      <h2 style="font-size:34px;line-height:1.5;letter-spacing:-0.03em;font-weight:600;margin:0 0 22px;"><span style="background:#FF0055;color:#fff;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:2px 12px;border-radius:2px;">One mark, many moods.</span></h2>
+      <p style="font-size:19px;line-height:1.65;color:#48473f;margin:0 0 18px;">With the logo set, we treated packaging as a flexible canvas rather than a fixed template. The mark stays constant; the world around it shifts with every release.</p>
+      <p style="font-size:19px;line-height:1.65;color:#48473f;margin:0;">Monochrome, silver-foil nature illustrations give the chocolate line a transcendent, collectible feel. The gummies run the other direction &mdash; saturated, psychedelic, and loud. Same brand, completely different mood.</p>
+    </div>
+  </section>
+
+  <!-- OUTPUT -->
+  <section class="r-split r-pad" style="padding:72px 56px 0;display:grid;grid-template-columns:1fr 1.5fr;gap:80px;">
+    <div><div class="r-stick" style="position:sticky;top:170px;">
+        <div style="border-top:2px solid #FF0055;width:46px;margin-bottom:20px;"></div>
+        <div style="font-family:'Space Mono',monospace;font-size:15px;letter-spacing:.18em;color:#FF0055;margin-bottom:10px;">03</div>
+        <div style="font-size:24px;font-weight:700;letter-spacing:-0.02em;color:#011829;line-height:1.1;">Output &amp; Results</div>
+      </div></div>
+    <div>
+      <h2 style="font-size:34px;line-height:1.5;letter-spacing:-0.03em;font-weight:600;margin:0 0 22px;"><span style="background:#FF0055;color:#fff;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:2px 12px;border-radius:2px;">A shelf that keeps growing.</span></h2>
+      <p style="font-size:19px;line-height:1.65;color:#48473f;margin:0 0 18px;">What began as one logo is now a full seasonal catalog &mdash; Psychedelic Chocolate, Psychedelic Gummies, Lovecakes, and one-off drops like Lemonheadz &mdash; each carrying its own illustrated identity while staying unmistakably Psilo.</p>
+      <p style="font-size:19px;line-height:1.65;color:#48473f;margin:0 0 36px;">Because it's pro bono and personal, Psilo stays a playground &mdash; a place to push typography, illustration, and packaging ideas that keep the rest of our work sharp.</p>
+    </div>
+  </section>
+
+  <!-- NEXT -->
+  <section class="r-pad" style="padding:80px 56px 56px;">
+    <a class="pp-next" href="Powerplay-CaseStudy-Sui.dc.html" style="display:block;text-decoration:none;color:inherit;">
+      <div style="border-top:1px solid #E0DED6;padding-top:34px;display:flex;justify-content:space-between;align-items:center;gap:24px;">
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.16em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:10px;">NEXT &mdash; CASE STUDY 01</div>
+          <div style="font-size:48px;font-weight:700;letter-spacing:-0.03em;">Sui</div>
+        </div>
+        <span class="pp-arrow" style="font-size:40px;color:#FF0055;">&rarr;</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="r-pad" style="background:#011829;color:#F2F1ED;padding:64px 56px 40px;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;margin-bottom:56px;">
+      <div style="max-width:360px;">
+        <img src="site-images/powerplay-white.png" alt="Powerplay" style="height:26px;width:auto;display:block;margin-bottom:20px;">
+        <p style="font-size:15px;line-height:1.6;color:#8a887f;margin:0;">A presentation, events, graphic, and visual design studio.</p>
+      </div>
+      <div style="display:flex;gap:64px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
+          <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:4px;">EXPLORE</span>
+          <a class="pp-link" href="Powerplay-Work.dc.html" style="color:#c9c7be;">Work</a>
+          <a class="pp-link" href="SF Powerplay Reimagined.dc.html#services" style="color:#c9c7be;">Services</a>
+          <a class="pp-link" href="SF Powerplay Reimagined.dc.html#team" style="color:#c9c7be;">Team</a>
+          <a class="pp-link" href="Powerplay-CaseStudies.dc.html" style="color:#c9c7be;">Case Studies</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
+          <a class="pp-link" href="Powerplay-Contact.dc.html" style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:4px;text-decoration:none;">CONTACT</a>
+          <a class="pp-link" href="mailto:sfpowerplay@gmail.com?subject=Let's work together" style="color:#c9c7be;">sfpowerplay@gmail.com</a>
+          <a class="pp-link" href="tel:415-573-7576" style="color:#c9c7be;">415-573-7576</a>
+          <a class="pp-link" href="https://www.linkedin.com/company/74351980" target="_blank" rel="noopener" style="color:#c9c7be;">LinkedIn</a>
+          <a class="pp-link" href="https://www.instagram.com/sfpowerplay" target="_blank" rel="noopener" style="color:#c9c7be;">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #173040;padding-top:24px;font-family:'Space Mono',monospace;font-size:12px;color:#76746c;flex-wrap:wrap;gap:12px;">
+      <span>&copy; 2026 Powerplay. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLb }}" style="position:fixed;inset:0;z-index:200;background:rgba(1,8,16,.93);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:56px;">
+      <button onClick="{{ closeLb }}" aria-label="Close" style="position:fixed;top:24px;right:28px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;">&times;</button>
+      <button onClick="{{ prev }}" aria-label="Previous" style="position:fixed;left:28px;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;">&larr;</button>
+      <button onClick="{{ next }}" aria-label="Next" style="position:fixed;right:28px;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;">&rarr;</button>
+      <img onClick="{{ stop }}" src="{{ lbSrc }}" alt="{{ lbAlt }}" style="max-width:88vw;max-height:84vh;width:auto;height:auto;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6);display:block;">
+      <div style="position:fixed;bottom:26px;left:50%;transform:translateX(-50%);font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.16em;color:rgba(255,255,255,.7);">{{ lbCount }}</div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lb: null, shots: [], navOpen: false };
+  componentDidMount() {
+    this._key = (e) => {
+      if (this.state.lb === null) return;
+      if (e.key === 'Escape') this.setState({ lb: null });
+      else if (e.key === 'ArrowLeft') this.setState(s => ({ lb: (s.lb - 1 + s.shots.length) % s.shots.length }));
+      else if (e.key === 'ArrowRight') this.setState(s => ({ lb: (s.lb + 1) % s.shots.length }));
+    };
+    window.addEventListener('keydown', this._key);
+  }
+  componentWillUnmount() { if (this._key) window.removeEventListener('keydown', this._key); }
+  renderVals() {
+    const st = this.state;
+    const openLb = (e) => {
+      const all = Array.from(document.querySelectorAll('img.pp-shot'));
+      const img = e.currentTarget.querySelector('img.pp-shot');
+      const idx = Math.max(0, all.indexOf(img));
+      this.setState({ shots: all.map(i => ({ src: i.currentSrc || i.src, alt: i.alt || '' })), lb: idx });
+    };
+    const isOpen = st.lb !== null && st.shots.length > 0;
+    const shot = isOpen ? st.shots[st.lb] : { src: '', alt: '' };
+    return {
+      openLb,
+      navMenuClass: st.navOpen ? 'open' : '',
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      lbOpen: isOpen,
+      lbSrc: shot.src,
+      lbAlt: shot.alt,
+      lbCount: isOpen ? (st.lb + 1) + ' / ' + st.shots.length : '',
+      closeLb: () => this.setState({ lb: null }),
+      stop: (e) => e.stopPropagation(),
+      prev: (e) => { e.stopPropagation(); this.setState(s => ({ lb: (s.lb - 1 + s.shots.length) % s.shots.length })); },
+      next: (e) => { e.stopPropagation(); this.setState(s => ({ lb: (s.lb + 1) % s.shots.length })); },
+    };
+  }
+}
+</script>
+</body>
+</html>
