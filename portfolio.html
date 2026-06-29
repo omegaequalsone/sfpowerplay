@@ -18,6 +18,7 @@
   body{text-wrap:pretty;}
   h1,h2,h3,h4{text-wrap:balance;}
   .pp-card{overflow:hidden;}
+  .folio-sq .r-g3 .pp-card{aspect-ratio:1/1 !important;}
   .pp-card img{transition:transform .8s cubic-bezier(.19,.7,.2,1);}
   .pp-card:hover img{transform:scale(1.04);}
   .pp-link{position:relative;text-decoration:none;color:inherit;}
@@ -54,7 +55,7 @@
 </style>
 </helmet>
 
-<div style="font-family:'Inter Tight',sans-serif;color:#011829;background:#F2F1ED;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:clip;">
+<div class="{{ rootClass }}" style="font-family:'Inter Tight',sans-serif;color:#011829;background:#F2F1ED;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:clip;">
 
   <nav class="r-pad" style="display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 56px;border-bottom:1px solid #E0DED6;position:sticky;top:0;background:rgba(242,241,237,.82);backdrop-filter:blur(12px);z-index:60;box-shadow:0 2px 16px rgba(1,24,41,.07);">
     <a href="index.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:31px;width:auto;display:block;"></a>
@@ -285,6 +286,7 @@ class Component extends DCLogic {
         imgs: ['991c82_bdb0c2950f194bd8883d96cfda771eb6~mv2.jpg','1e56c4_ac2e20e189d245c4b6d7d4c432f36b20~mv2.jpg','1e56c4_a96cd5386bc44236af930e3119e1643d~mv2.jpg','1e56c4_3f40102c50f04438a048fb87c4452a26~mv2.jpg'],
       },
       psilo: {
+        sq: true,
         client: 'Psilo Lifestyle Products',
         title: 'Logo & Seasonal Packaging',
         year: 'Ongoing',
@@ -294,7 +296,7 @@ class Component extends DCLogic {
           "With the logo set, we treated packaging as a flexible canvas rather than a fixed template. The mark stays constant; the world around it shifts with every release. Monochrome, silver-foil nature illustrations give the chocolate line a transcendent, collectible feel. The gummies run the other direction — saturated, psychedelic, and loud. Same brand, completely different mood.",
           "What began as one logo is now a full seasonal catalog — Psychedelic Chocolate, Psychedelic Gummies, Lovecakes, and one-off drops like Lemonheadz — each carrying its own illustrated identity while staying unmistakably Psilo.",
         ],
-        imgs: ['site-images/psilo-chocolate.jpg','site-images/psilo-chocolate-dielines.jpg','site-images/psilo-gummies.jpg','site-images/psilo-lemonheadz.jpg'],
+        imgs: ['site-images/psilo-chocolate.jpg','site-images/psilo-awake.jpg','site-images/psilo-gummies-eye.jpg','site-images/psilo-microdose-100.jpg','site-images/psilo-microdose-200.jpg','site-images/psilo-chocolate-dielines.jpg','site-images/psilo-gummies.jpg','site-images/psilo-lemonheadz.jpg'],
       },
     };
     const order = Object.keys(DATA);
@@ -323,6 +325,7 @@ class Component extends DCLogic {
       gridShots: allShots.slice(1),
       nextName: DATA[nextSlug].client,
       nextHref: 'portfolio.html?p=' + nextSlug,
+      rootClass: p.sq ? 'folio-sq' : '',
       navMenuClass: this.state.navOpen ? 'open' : '',
       toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
       openLb,
