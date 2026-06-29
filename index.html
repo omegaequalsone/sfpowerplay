@@ -24,6 +24,7 @@
   .pp-link{position:relative;text-decoration:none;color:inherit;}
   .pp-link::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
   .pp-link:hover::after{transform:scaleX(1);}
+  .r-navlinks .pp-link:hover{color:#6E0D75;}
   .pp-link[data-active]::after{transform:scaleX(1);}
   .pp-link.pp-active{color:#FF0055;}
   .pp-link.pp-active::after{transform:scaleX(1);}
@@ -69,15 +70,15 @@
 
   <!-- NAV -->
   <nav class="r-pad" style="display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 56px;border-bottom:1px solid #E0DED6;position:sticky;top:0;background:rgba(242,241,237,.82);backdrop-filter:blur(12px);z-index:60;box-shadow:0 2px 16px rgba(1,24,41,.07);">
-    <a href="index.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:26px;width:auto;display:block;"></a>
-    <div class="r-navlinks" style="display:flex;gap:44px;font-size:18px;font-weight:500;color:#42423c;">
+    <a href="index.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:31px;width:auto;display:block;"></a>
+    <div class="r-navlinks" style="display:flex;gap:44px;font-size:22px;font-weight:500;color:#42423c;">
       <a class="pp-link" href="work.html">Work</a>
       <a class="pp-link {{ servicesClass }}" href="#services">Services</a>
       <a class="pp-link {{ teamClass }}" href="#team">Team</a>
       <a class="pp-link" href="case-studies.html">Case Studies</a>
     </div>
     <div style="display:flex;align-items:center;gap:14px;">
-      <a class="pp-cta r-cta-desktop" href="contact.html" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Start a project <span class="pp-arrow">&rarr;</span></a>
+      <a class="pp-cta r-cta-desktop" href="contact.html" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:16px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Start a project <span class="pp-arrow">&rarr;</span></a>
       <button class="r-burger" onClick="{{ toggleNav }}" aria-label="Menu" style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:42px;height:42px;border:1px solid #d8d6cd;border-radius:9px;background:transparent;cursor:pointer;">
         <span style="display:block;width:18px;height:2px;background:#011829;"></span>
         <span style="display:block;width:18px;height:2px;background:#011829;"></span>
@@ -91,7 +92,7 @@
     <a href="#services" onClick="{{ closeNav }}" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Services</a>
     <a href="#team" onClick="{{ closeNav }}" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Team</a>
     <a href="case-studies.html" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Case Studies</a>
-    <a class="pp-cta" href="contact.html" style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:#011829;color:#fff;font-size:14px;font-weight:600;padding:13px 22px;border-radius:100px;text-decoration:none;margin-top:16px;">Start a project <span class="pp-arrow">&rarr;</span></a>
+    <a class="pp-cta" href="contact.html" style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:#011829;color:#fff;font-size:17px;font-weight:600;padding:13px 22px;border-radius:100px;text-decoration:none;margin-top:16px;">Start a project <span class="pp-arrow">&rarr;</span></a>
   </div>
 
   <!-- HERO -->
@@ -100,8 +101,8 @@
     <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:48px;gap:40px;flex-wrap:wrap;">
       <p style="font-size:20px;line-height:1.5;color:#48473f;max-width:500px;margin:0;">We provide design and production individually or as your embedded team.</p>
       <div style="display:flex;gap:13px;">
-        <a class="pp-cta" href="work.html" style="display:flex;align-items:center;gap:9px;background:linear-gradient(96deg,#E505F5,#FF0055);color:#fff;font-size:15px;font-weight:600;padding:16px 28px;border-radius:100px;text-decoration:none;">See the work <span class="pp-arrow">&rarr;</span></a>
-        <a href="#team" style="font-size:15px;font-weight:600;padding:16px 26px;border-radius:100px;border:1px solid #cdcbc1;color:#011829;text-decoration:none;transition:background .2s;" style-hover="background:#E7E4DC">About the studio</a>
+        <a class="pp-cta" href="work.html" style="display:flex;align-items:center;gap:9px;background:linear-gradient(96deg,#E505F5,#FF0055);color:#fff;font-size:18px;font-weight:600;padding:16px 28px;border-radius:100px;text-decoration:none;">See the work <span class="pp-arrow">&rarr;</span></a>
+        <a href="#team" style="font-size:18px;font-weight:600;padding:16px 26px;border-radius:100px;border:1px solid #cdcbc1;color:#011829;text-decoration:none;transition:background .2s;" style-hover="background:#E7E4DC">About the studio</a>
       </div>
     </div>
   </header>
@@ -238,7 +239,7 @@
       <div style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.22em;color:rgba(255,255,255,.82);margin-bottom:26px;">LET&rsquo;S WORK TOGETHER</div>
       <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;">
         <h2 style="font-size:68px;line-height:0.98;letter-spacing:-0.035em;font-weight:700;margin:0;max-width:760px;">Got something big coming up?</h2>
-        <a class="pp-cta" href="contact.html" style="display:flex;align-items:center;gap:10px;background:#011829;color:#fff;font-size:16px;font-weight:600;padding:18px 32px;border-radius:100px;text-decoration:none;white-space:nowrap;">Start a project <span class="pp-arrow">&rarr;</span></a>
+        <a class="pp-cta" href="contact.html" style="display:flex;align-items:center;gap:10px;background:#011829;color:#fff;font-size:19px;font-weight:600;padding:18px 32px;border-radius:100px;text-decoration:none;white-space:nowrap;">Start a project <span class="pp-arrow">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -288,8 +289,8 @@
             <p style="font-size:15.5px;line-height:1.65;color:#3c3b34;margin:0 0 16px;">{{ para }}</p>
           </sc-for>
           <div style="display:flex;gap:12px;margin-top:24px;">
-            <a class="pp-cta" href="{{ member.ig }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Instagram <span class="pp-arrow">&#8599;</span></a>
-            <a class="pp-cta" href="{{ member.li }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:transparent;border:1px solid #cdcbc1;color:#011829;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">LinkedIn <span class="pp-arrow">&#8599;</span></a>
+            <a class="pp-cta" href="{{ member.ig }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:16px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Instagram <span class="pp-arrow">&#8599;</span></a>
+            <a class="pp-cta" href="{{ member.li }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;background:transparent;border:1px solid #cdcbc1;color:#011829;font-size:16px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">LinkedIn <span class="pp-arrow">&#8599;</span></a>
           </div>
         </div>
       </div>
