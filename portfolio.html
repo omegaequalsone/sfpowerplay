@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -18,7 +19,8 @@
   body{text-wrap:pretty;}
   h1,h2,h3,h4{text-wrap:balance;}
   .pp-card{overflow:hidden;}
-  .folio-sq .r-g3 .pp-card{aspect-ratio:1/1 !important;}
+  .folio-sq .r-g3 .pp-card:not(.pp-wide){aspect-ratio:1/1 !important;}
+  .r-g3 .pp-wide{grid-column:1 / -1;}
   .pp-card img{transition:transform .8s cubic-bezier(.19,.7,.2,1);}
   .pp-card:hover img{transform:scale(1.04);}
   .pp-link{position:relative;text-decoration:none;color:inherit;}
@@ -111,7 +113,7 @@
   <section class="r-pad" style="padding:24px 56px 0;">
     <div class="r-g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
       <sc-for list="{{ gridShots }}" as="g" hint-placeholder-count="9">
-        <div class="pp-card" data-gallery="folio" onClick="{{ openLb }}" style="border-radius:8px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;aspect-ratio:16/9;">
+        <div class="pp-card {{ g.wideClass }}" data-gallery="folio" onClick="{{ openLb }}" style="border-radius:8px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;aspect-ratio:16/9;{{ g.wideStyle }}">
           <img class="pp-shot" data-gallery="folio" data-full="{{ g.full }}" data-thumb="{{ g.thumb }}" alt="{{ g.alt }}" style="width:100%;height:100%;object-fit:cover;display:block;background:#e6e4dd;">
         </div>
       </sc-for>
@@ -296,7 +298,7 @@ class Component extends DCLogic {
           "With the logo set, we treated packaging as a flexible canvas rather than a fixed template. The mark stays constant; the world around it shifts with every release. Monochrome, silver-foil nature illustrations give the chocolate line a transcendent, collectible feel. The gummies run the other direction — saturated, psychedelic, and loud. Same brand, completely different mood.",
           "What began as one logo is now a full seasonal catalog — Psychedelic Chocolate, Psychedelic Gummies, Lovecakes, and one-off drops like Lemonheadz — each carrying its own illustrated identity while staying unmistakably Psilo.",
         ],
-        imgs: ['site-images/psilo-chocolate.jpg','site-images/psilo-awake.jpg','site-images/psilo-gummies-eye.jpg','site-images/psilo-microdose-100.jpg','site-images/psilo-microdose-200.jpg','site-images/psilo-chocolate-dielines.jpg','site-images/psilo-gummies.jpg','site-images/psilo-lemonheadz.jpg'],
+        imgs: ['site-images/psilo-chocolate.jpg','site-images/psilo-awake.jpg','site-images/psilo-gummies-eye.jpg','site-images/psilo-microdose-100.jpg','site-images/psilo-microdose-200.jpg','site-images/psilo-lovecakes.jpg','site-images/psilo-chocolate-dielines.jpg','site-images/psilo-gummies.jpg','site-images/psilo-lemonheadz.jpg',{f:'site-images/psilo-microdose-banner-blue.jpg',ar:'2363/338'},{f:'site-images/psilo-microdose-banner-forest.jpg',ar:'2363/338'}],
       },
     };
     const order = Object.keys(DATA);
@@ -304,7 +306,17 @@ class Component extends DCLogic {
     try { slug = new URLSearchParams(window.location.search).get('p') || ''; } catch (e) {}
     if (!DATA[slug]) slug = order[0];
     const p = DATA[slug];
-    const allShots = p.imgs.map((f, i) => ({ thumb: src(f, 900, 507), full: src(f, 1600, 900), alt: p.client + ' \u2014 ' + (i + 1) }));
+    const allShots = p.imgs.map((it, i) => {
+      const o = typeof it === 'string' ? { f: it, ar: null } : it;
+      const wide = !!o.ar;
+      return {
+        thumb: src(o.f, 1600, 900),
+        full: src(o.f, 1600, 900),
+        alt: p.client + ' \u2014 ' + (i + 1),
+        wideClass: wide ? 'pp-wide' : '',
+        wideStyle: wide ? ('grid-column:1 / -1;aspect-ratio:' + o.ar) : '',
+      };
+    });
     const idx = order.indexOf(slug);
     const nextSlug = order[(idx + 1) % order.length];
 
