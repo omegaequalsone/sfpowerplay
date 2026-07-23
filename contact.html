@@ -39,6 +39,8 @@
   .pp-cta:hover .pp-arrow{transform:translateX(5px);}
   .pp-field{width:100%;background:transparent;border:none;border-bottom:1px solid #cdcbc1;color:#011829;font-family:'Inter Tight',sans-serif;font-size:17px;padding:14px 0;outline:none;transition:border-color .25s;}
   .pp-field:focus{border-color:#FF0055;}
+  .pp-social{color:#a3a199;display:inline-flex;transition:color .2s,transform .2s;}
+  .pp-social:hover{color:#FF0055;transform:translateY(-2px) scale(1.12);}
   .pp-field::placeholder{color:#a7a59c;}
   textarea.pp-field{resize:none;}
   .pp-mail{transition:opacity .25s;}
@@ -105,16 +107,24 @@
           <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#76746c;margin-bottom:10px;">PHONE</div>
           <a class="pp-mail" href="tel:415-573-7576" style="font-size:24px;font-weight:600;color:#F2F1ED;text-decoration:none;">415&nbsp;573&nbsp;7576</a>
         </div>
-        <div style="display:flex;gap:24px;margin-top:8px;font-size:14px;">
-          <a class="pp-link" href="https://www.linkedin.com/company/74351980" target="_blank" rel="noopener" style="color:#a3a199;">LinkedIn</a>
-          <a class="pp-link" href="https://www.instagram.com/sfpowerplay" target="_blank" rel="noopener" style="color:#a3a199;">Instagram</a>
+        <div style="display:flex;gap:16px;margin-top:8px;">
+          <a href="https://www.linkedin.com/company/74351980" target="_blank" rel="noopener" aria-label="LinkedIn" class="pp-social"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a href="https://www.instagram.com/sfpowerplay" target="_blank" rel="noopener" aria-label="Instagram" class="pp-social"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.66 1.34 1.07 2.13 1.38.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.67 1.07-1.34 1.38-2.13.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.94 19.86.63c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-10.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></a>
         </div>
       </div>
     </div>
 
     <!-- RIGHT — FORM -->
     <div class="r-card" style="background:#F2F1ED;border-radius:14px;padding:48px;box-shadow:0 28px 64px rgba(0,0,0,.4);">
-      <form action="https://formspree.io/f/xbdvkggl" method="POST" style="display:flex;flex-direction:column;gap:30px;">
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px;min-height:200px;justify-content:center;">
+          <div style="width:48px;height:48px;border-radius:50%;background:#FF0055;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;line-height:1;">&#10003;</div>
+          <div style="font-size:30px;font-weight:700;letter-spacing:-0.02em;color:#011829;">Thank you.</div>
+          <div style="font-size:16px;line-height:1.55;color:#46463f;">Thanks for reaching out. We&rsquo;ll get back in touch shortly.</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+      <form onSubmit="{{ submit }}" action="https://formspree.io/f/xbdvkggl" method="POST" style="display:flex;flex-direction:column;gap:30px;">
         <label style="display:block;">
           <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#8a887f;">YOUR NAME</span>
           <input class="pp-field" type="text" name="name" placeholder="Jane Doe" required>
@@ -142,19 +152,20 @@
         </label>
         <button type="submit" class="pp-cta" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(96deg,#E505F5,#FF0055);color:#fff;font-size:16px;font-weight:600;padding:18px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;margin-top:6px;font-family:inherit;">Send inquiry <span class="pp-arrow">&rarr;</span></button>
       </form>
+      </sc-if>
     </div>
 
   </section>
 
   <footer class="r-pad" style="padding:40px 56px;border-top:1px solid #2c2c30;display:flex;justify-content:space-between;align-items:center;font-family:'Space Mono',monospace;font-size:12px;color:#76746c;flex-wrap:wrap;gap:12px;">
-    <span>&copy; 2025 Powerplay. All rights reserved.</span>
+    <span>&copy; 2026 Powerplay. All rights reserved.</span>
   </footer>
 
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { sel: {}, navOpen: false };
+  state = { sel: {}, navOpen: false, sent: false };
   renderVals() {
     const opts = ["Presentation", "Event Graphics", "Visual Design", "AI Content", "Brand"];
     const base = {
@@ -176,6 +187,15 @@ class Component extends DCLogic {
     return {
       needs,
       selNeeds: opts.filter((l) => this.state.sel[l]).join(", "),
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      submit: (e) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+          .then((r) => { if (r.ok) this.setState({ sent: true }); else alert("Something went wrong. Please email sfpowerplay@gmail.com directly."); })
+          .catch(() => alert("Something went wrong. Please email sfpowerplay@gmail.com directly."));
+      },
       navMenuClass: this.state.navOpen ? 'open' : '',
       toggleNav: () => this.setState((s) => ({ navOpen: !s.navOpen })),
     };
