@@ -64,6 +64,28 @@
     h1{font-size:clamp(42px,11vw,80px) !important;line-height:1 !important;}
   }
 </style>
+<script>
+(function(){
+  document.addEventListener('submit', function(e){
+    var form = e.target;
+    if (!form || !form.action || form.action.indexOf('formspree.io') < 0) return;
+    e.preventDefault();
+    var card = form.closest('.r-card') || form.parentNode;
+    fetch(form.action, { method:'POST', body:new FormData(form), headers:{ Accept:'application/json' } })
+      .then(function(r){
+        if(r.ok){
+          card.innerHTML = '<div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px;min-height:200px;justify-content:center;">'+
+            '<div style="width:48px;height:48px;border-radius:50%;background:#FF0055;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;line-height:1;">&#10003;</div>'+
+            '<div style="font-size:30px;font-weight:700;letter-spacing:-0.02em;color:#011829;">Thank you.</div>'+
+            '<div style="font-size:16px;line-height:1.55;color:#46463f;">Thanks for reaching out. We&rsquo;ll get back in touch shortly.</div></div>';
+        } else {
+          alert('Something went wrong. Please email sfpowerplay@gmail.com directly.');
+        }
+      })
+      .catch(function(){ alert('Something went wrong. Please email sfpowerplay@gmail.com directly.'); });
+  }, true);
+})();
+</script>
 </helmet>
 
 <div style="font-family:'Inter Tight',sans-serif;color:#F2F1ED;background:#011829;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:clip;min-height:1024px;">
@@ -94,7 +116,7 @@
 
     <!-- LEFT -->
     <div>
-      <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.22em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:30px;">LET&rsquo;S WORK TOGETHER</div>
+      <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.22em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:30px;">LET&rsquo;S WORK TOGETHER</div>
       <h1 style="font-size:80px;line-height:0.96;letter-spacing:-0.04em;font-weight:600;margin:0">Got something big coming up?</h1>
       <p style="font-size:20px;line-height:1.55;color:#a3a199;max-width:440px;margin:32px 0 56px;">Tell us about the project. We&rsquo;ll get back within a day &mdash; solo engagement or embedded team, we&rsquo;ll figure out the right shape.</p>
 
@@ -124,7 +146,7 @@
         </div>
       </sc-if>
       <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
-      <form onSubmit="{{ submit }}" action="https://formspree.io/f/xbdvkggl" method="POST" style="display:flex;flex-direction:column;gap:30px;">
+      <form id="pp-form" onSubmit="{{ submit }}" action="https://formspree.io/f/xbdvkggl" method="POST" style="display:flex;flex-direction:column;gap:30px;">
         <label style="display:block;">
           <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#8a887f;">YOUR NAME</span>
           <input class="pp-field" type="text" name="name" placeholder="Jane Doe" required>
