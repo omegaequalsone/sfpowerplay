@@ -114,21 +114,22 @@
 
     <!-- RIGHT — FORM -->
     <div class="r-card" style="background:#F2F1ED;border-radius:14px;padding:48px;box-shadow:0 28px 64px rgba(0,0,0,.4);">
-      <div style="display:flex;flex-direction:column;gap:30px;">
+      <form action="https://formspree.io/f/xbdvkggl" method="POST" style="display:flex;flex-direction:column;gap:30px;">
         <label style="display:block;">
           <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#8a887f;">YOUR NAME</span>
-          <input class="pp-field" type="text" placeholder="Jane Doe">
+          <input class="pp-field" type="text" name="name" placeholder="Jane Doe" required>
         </label>
         <label style="display:block;">
           <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#8a887f;">EMAIL</span>
-          <input class="pp-field" type="email" placeholder="jane@company.com">
+          <input class="pp-field" type="email" name="email" placeholder="jane@company.com" required>
         </label>
         <label style="display:block;">
           <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#8a887f;">COMPANY</span>
-          <input class="pp-field" type="text" placeholder="Company name">
+          <input class="pp-field" type="text" name="company" placeholder="Company name">
         </label>
         <label style="display:block;">
           <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#8a887f;">WHAT DO YOU NEED?</span>
+          <input type="hidden" name="needs" value="{{ selNeeds }}">
           <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:14px;">
             <sc-for list="{{ needs }}" as="p" hint-placeholder-count="5">
               <span onClick="{{ p.toggle }}" style="{{ p.style }}">{{ p.label }}</span>
@@ -137,10 +138,10 @@
         </label>
         <label style="display:block;">
           <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;color:#8a887f;">PROJECT DETAILS</span>
-          <textarea class="pp-field" rows="3" placeholder="Timeline, scope, and anything else we should know."></textarea>
+          <textarea class="pp-field" name="message" rows="3" placeholder="Timeline, scope, and anything else we should know."></textarea>
         </label>
-        <a class="pp-cta" href="mailto:sfpowerplay@gmail.com?subject=Let's work together" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(96deg,#E505F5,#FF0055);color:#fff;font-size:16px;font-weight:600;padding:18px;border-radius:100px;text-decoration:none;margin-top:6px;">Send inquiry <span class="pp-arrow">&rarr;</span></a>
-      </div>
+        <button type="submit" class="pp-cta" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(96deg,#E505F5,#FF0055);color:#fff;font-size:16px;font-weight:600;padding:18px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;margin-top:6px;font-family:inherit;">Send inquiry <span class="pp-arrow">&rarr;</span></button>
+      </form>
     </div>
 
   </section>
@@ -174,6 +175,7 @@ class Component extends DCLogic {
     });
     return {
       needs,
+      selNeeds: opts.filter((l) => this.state.sel[l]).join(", "),
       navMenuClass: this.state.navOpen ? 'open' : '',
       toggleNav: () => this.setState((s) => ({ navOpen: !s.navOpen })),
     };
