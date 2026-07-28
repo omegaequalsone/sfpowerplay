@@ -3,19 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Work — Powerplay</title>
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Powerplay">
-<meta property="og:title" content="POWERPLAY: Brand / Presentation / Design-to-Build">
-<meta property="og:description" content="A powerful little design studio. Brand, presentation, and design-to-build for teams that need the work to land.">
-<meta property="og:url" content="https://sfpowerplay.com/work.html">
-<meta property="og:image" content="https://sfpowerplay.com/assets/pp-og-card.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="POWERPLAY: Brand / Presentation / Design-to-Build">
-<meta name="twitter:description" content="A powerful little design studio. Brand, presentation, and design-to-build for teams that need the work to land.">
-<meta name="twitter:image" content="https://sfpowerplay.com/assets/pp-og-card.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -36,8 +24,10 @@
   .pp-link{position:relative;text-decoration:none;color:inherit;}
   .pp-link::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
   .pp-link:hover::after{transform:scaleX(1);}
-  .pp-link[data-active]::after{display:none !important;}
-  .pp-cta{transition:box-shadow .2s;}
+  .r-navlinks .pp-link:hover{color:#6E0D75;}
+  .pp-link[data-active]::after{transform:scaleX(1);}
+  .pp-cta{transition:box-shadow .2s;white-space:nowrap;}
+  .r-navlinks{white-space:nowrap;}
   .pp-cta:hover{box-shadow:inset 0 0 0 999px rgba(255,255,255,0.16);}
   .pp-arrow{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
   .pp-cta:hover .pp-arrow{transform:translateX(5px);}
@@ -50,7 +40,7 @@
     .r-grid4{grid-template-columns:repeat(2,1fr) !important;}
     .r-pad{padding-left:32px !important;padding-right:32px !important;}
   }
-  @media (max-width:900px){
+  @media (max-width:1150px){
     .r-navlinks{display:none !important;}
     .r-cta-desktop{display:none !important;}
     .r-burger{display:flex !important;}
@@ -70,15 +60,15 @@
   <input type="checkbox" id="pp-navtog" aria-hidden="true">
 
   <nav class="r-pad" style="display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 56px;border-bottom:1px solid #E0DED6;position:sticky;top:0;background:rgba(242,241,237,.82);backdrop-filter:blur(12px);z-index:60;box-shadow:0 2px 16px rgba(1,24,41,.07);">
-    <a href="home.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:26px;width:auto;display:block;"></a>
-    <div class="r-navlinks" style="display:flex;gap:44px;font-size:18px;font-weight:500;color:#42423c;">
-      <a class="pp-link" href="work.html" style="color:#FF0055;border-bottom:2px solid #FF0055;padding-bottom:5px;" data-active="1">Work</a>
-      <a class="pp-link" href="home.html#services">Services</a>
-      <a class="pp-link" href="home.html#team">Team</a>
+    <a href="index.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:31px;width:auto;display:block;"></a>
+    <div class="r-navlinks" style="display:flex;gap:44px;font-size:22px;font-weight:500;color:#42423c;">
+      <a class="pp-link" href="work.html" style="color:#FF0055;" data-active="1">Work</a>
+      <a class="pp-link" href="index.html#services">Services</a>
+      <a class="pp-link" href="index.html#team">Team</a>
       <a class="pp-link" href="case-studies.html">Case Studies</a>
     </div>
     <div style="display:flex;align-items:center;gap:14px;">
-      <a class="pp-cta r-cta-desktop" href="contact.html" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Start a project <span class="pp-arrow">&rarr;</span></a>
+      <a class="pp-cta r-cta-desktop" href="contact.html" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:16px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Start a project <span class="pp-arrow">&rarr;</span></a>
       <label class="r-burger" for="pp-navtog" aria-label="Menu" style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:42px;height:42px;border:1px solid #d8d6cd;border-radius:9px;background:transparent;cursor:pointer;">
         <span style="display:block;width:18px;height:2px;background:#011829;"></span>
         <span style="display:block;width:18px;height:2px;background:#011829;"></span>
@@ -89,21 +79,21 @@
 
   <div class="r-mobile-menu" style="flex-direction:column;gap:2px;background:rgba(242,241,237,.98);backdrop-filter:blur(12px);border-bottom:1px solid #E0DED6;padding:10px 20px 18px;position:sticky;top:96px;z-index:59;">
     <a href="work.html" style="text-decoration:none;color:#FF0055;font-size:17px;font-weight:600;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Work</a>
-    <a href="home.html#services" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Services</a>
-    <a href="home.html#team" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Team</a>
+    <a href="index.html#services" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Services</a>
+    <a href="index.html#team" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Team</a>
     <a href="case-studies.html" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Case Studies</a>
-    <a class="pp-cta" href="contact.html" style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:#011829;color:#fff;font-size:14px;font-weight:600;padding:13px 22px;border-radius:100px;text-decoration:none;margin-top:16px;">Start a project <span class="pp-arrow">&rarr;</span></a>
+    <a class="pp-cta" href="contact.html" style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:#011829;color:#fff;font-size:17px;font-weight:600;padding:13px 22px;border-radius:100px;text-decoration:none;margin-top:16px;">Start a project <span class="pp-arrow">&rarr;</span></a>
   </div>
 
   <!-- HEADER -->
   <header class="r-pad" style="padding:84px 56px 44px;">
-    <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.22em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:28px;">PORTFOLIO / 2021&ndash;2025</div>
+    <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.22em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:28px;">PORTFOLIO / 2021&ndash;2026</div>
     <h1 style="font-size:76px;line-height:1.0;letter-spacing:-0.035em;font-weight:600;margin:0;max-width:1000px;text-wrap:balance">Work we&rsquo;ve shipped for teams that needed it to be <span style="background:linear-gradient(96deg,#E505F5,#FF0055);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">unforgettable.</span></h1>
   </header>
 
   <!-- GRID -->
   <section class="r-pad" style="padding:24px 56px 80px;">
-    <div class="r-grid4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
+    <div class="r-grid4" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
 
       <a class="pp-card" href="portfolio.html?p=openai" style="text-decoration:none;color:inherit;">
         <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6e4dd;"><img src="site-images/openai.jpg" alt="OpenAI" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
@@ -123,11 +113,11 @@
       </a>
       <a class="pp-card" href="portfolio.html?p=servicenow" style="text-decoration:none;color:inherit;">
         <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6e4dd;"><img src="site-images/servicenow.jpeg" alt="ServiceNow" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">ServiceNow</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">PRESENTATION &middot; 2023</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">ServiceNow</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">EVENT &middot; 2023</span></div>
       </a>
-      <a class="pp-card" href="case-study-sui.html" style="text-decoration:none;color:inherit;">
+      <a class="pp-card" href="portfolio.html?p=sui" style="text-decoration:none;color:inherit;">
         <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6e4dd;"><img src="site-images/sui.jpg" alt="Sui" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">Sui</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">CASE STUDY &middot; 2022</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">Sui</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">PRESENTATION &middot; 2022</span></div>
       </a>
       <a class="pp-card" href="portfolio.html?p=sfsymphony" style="text-decoration:none;color:inherit;">
         <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6e4dd;"><img src="site-images/sfsymphony.jpg" alt="SF Symphony" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
@@ -137,6 +127,10 @@
         <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#fff;padding:30px;"><img src="site-images/swimlane-logo.png" alt="Swimlane" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">Swimlane</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">EVENT &middot; 2023</span></div>
       </a>
+      <a class="pp-card" href="portfolio.html?p=psilo" style="text-decoration:none;color:inherit;">
+        <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#e6e4dd;"><img src="site-images/psilo-thumb.jpg" alt="Psilo" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">Psilo</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">PACKAGE &amp; GRAPHIC DESIGN &middot; ONGOING</span></div>
+      </a>
 
     </div>
   </section>
@@ -145,7 +139,7 @@
   <section class="r-pad" style="padding:0 56px 56px;">
     <div style="border-radius:10px;background:linear-gradient(96deg,#E505F5,#FF0055);color:#fff;padding:80px 64px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;">
       <h2 style="font-size:58px;line-height:0.98;letter-spacing:-0.035em;font-weight:700;margin:0;max-width:680px;">Have a project in mind?</h2>
-      <a class="pp-cta" href="contact.html" style="display:flex;align-items:center;gap:10px;background:#011829;color:#fff;font-size:16px;font-weight:600;padding:18px 32px;border-radius:100px;text-decoration:none;white-space:nowrap;">Start a project <span class="pp-arrow">&rarr;</span></a>
+      <a class="pp-cta" href="contact.html" style="display:flex;align-items:center;gap:10px;background:#011829;color:#fff;font-size:19px;font-weight:600;padding:18px 32px;border-radius:100px;text-decoration:none;white-space:nowrap;">Start a project <span class="pp-arrow">&rarr;</span></a>
     </div>
   </section>
 
@@ -160,8 +154,8 @@
         <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
           <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:4px;">EXPLORE</span>
           <a class="pp-link" href="work.html" style="color:#c9c7be;">Work</a>
-          <a class="pp-link" href="home.html#services" style="color:#c9c7be;">Services</a>
-          <a class="pp-link" href="home.html#team" style="color:#c9c7be;">Team</a>
+          <a class="pp-link" href="index.html#services" style="color:#c9c7be;">Services</a>
+          <a class="pp-link" href="index.html#team" style="color:#c9c7be;">Team</a>
           <a class="pp-link" href="case-studies.html" style="color:#c9c7be;">Case Studies</a>
         </div>
         <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">

@@ -3,19 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfolio — Powerplay</title>
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Powerplay">
-<meta property="og:title" content="POWERPLAY: Brand / Presentation / Design-to-Build">
-<meta property="og:description" content="A powerful little design studio. Brand, presentation, and design-to-build for teams that need the work to land.">
-<meta property="og:url" content="https://sfpowerplay.com/portfolio.html">
-<meta property="og:image" content="https://sfpowerplay.com/assets/pp-og-card.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="POWERPLAY: Brand / Presentation / Design-to-Build">
-<meta name="twitter:description" content="A powerful little design studio. Brand, presentation, and design-to-build for teams that need the work to land.">
-<meta name="twitter:image" content="https://sfpowerplay.com/assets/pp-og-card.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -31,13 +19,20 @@
   body{text-wrap:pretty;}
   h1,h2,h3,h4{text-wrap:balance;}
   .pp-card{overflow:hidden;}
+  .folio-sq .r-g3{grid-template-columns:repeat(15,1fr) !important;align-items:start;}
+  .folio-sq .pp-sq{grid-column:span 3;}
+  .folio-sq .pp-rect{grid-column:span 5;}
+  .folio-sq .pp-wide{grid-column:1 / -1;}
+  .folio-sq .pp-card img{object-fit:contain !important;}
   .pp-card img{transition:transform .8s cubic-bezier(.19,.7,.2,1);}
   .pp-card:hover img{transform:scale(1.04);}
   .pp-link{position:relative;text-decoration:none;color:inherit;}
   .pp-link::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
   .pp-link:hover::after{transform:scaleX(1);}
-  .pp-link[data-active]::after{display:none !important;}
-  .pp-cta{transition:box-shadow .2s;}
+  .r-navlinks .pp-link:hover{color:#6E0D75;}
+  .pp-link[data-active]::after{transform:scaleX(1);}
+  .pp-cta{transition:box-shadow .2s;white-space:nowrap;}
+  .r-navlinks{white-space:nowrap;}
   .pp-cta:hover{box-shadow:inset 0 0 0 999px rgba(255,255,255,0.16);}
   .pp-arrow{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
   .pp-cta:hover .pp-arrow,.pp-next:hover .pp-arrow{transform:translateX(6px);}
@@ -50,9 +45,12 @@
   @media (max-width:1023px){
     .r-2col{grid-template-columns:1fr !important;gap:28px !important;}
     .r-g3{grid-template-columns:repeat(2,1fr) !important;}
+    .folio-sq .r-g3{grid-template-columns:repeat(6,1fr) !important;}
+    .folio-sq .pp-sq{grid-column:span 2;}
+    .folio-sq .pp-rect{grid-column:span 3;}
     .r-pad{padding-left:32px !important;padding-right:32px !important;}
   }
-  @media (max-width:900px){
+  @media (max-width:1150px){
     .r-navlinks{display:none !important;}
     .r-cta-desktop{display:none !important;}
     .r-burger{display:flex !important;}
@@ -60,24 +58,26 @@
   }
   @media (max-width:639px){
     .r-g3{grid-template-columns:1fr !important;}
+    .folio-sq .r-g3{grid-template-columns:repeat(4,1fr) !important;}
+    .folio-sq .pp-sq{grid-column:span 2;}
+    .folio-sq .pp-rect{grid-column:span 4;}
     .r-pad{padding-left:20px !important;padding-right:20px !important;}
-    h1{font-size:clamp(40px,11vw,72px) !important;line-height:1 !important;}
   }
 </style>
 </helmet>
 
-<div style="font-family:'Inter Tight',sans-serif;color:#011829;background:#F2F1ED;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:clip;">
+<div class="{{ rootClass }}" style="font-family:'Inter Tight',sans-serif;color:#011829;background:#F2F1ED;width:100%;max-width:1440px;margin:0 auto;position:relative;overflow-x:clip;">
 
   <nav class="r-pad" style="display:flex;justify-content:space-between;align-items:center;height:96px;padding:0 56px;border-bottom:1px solid #E0DED6;position:sticky;top:0;background:rgba(242,241,237,.82);backdrop-filter:blur(12px);z-index:60;box-shadow:0 2px 16px rgba(1,24,41,.07);">
-    <a href="home.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:26px;width:auto;display:block;"></a>
-    <div class="r-navlinks" style="display:flex;gap:44px;font-size:18px;font-weight:500;color:#42423c;">
-      <a class="pp-link" href="work.html" style="color:#FF0055;border-bottom:2px solid #FF0055;padding-bottom:5px;" data-active="1">Work</a>
-      <a class="pp-link" href="home.html#services">Services</a>
-      <a class="pp-link" href="home.html#team">Team</a>
+    <a href="index.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:31px;width:auto;display:block;"></a>
+    <div class="r-navlinks" style="display:flex;gap:44px;font-size:22px;font-weight:500;color:#42423c;">
+      <a class="pp-link" href="work.html" style="color:#FF0055;" data-active="1">Work</a>
+      <a class="pp-link" href="index.html#services">Services</a>
+      <a class="pp-link" href="index.html#team">Team</a>
       <a class="pp-link" href="case-studies.html">Case Studies</a>
     </div>
     <div style="display:flex;align-items:center;gap:14px;">
-      <a class="pp-cta r-cta-desktop" href="contact.html" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:13px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Start a project <span class="pp-arrow">&rarr;</span></a>
+      <a class="pp-cta r-cta-desktop" href="contact.html" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:16px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Start a project <span class="pp-arrow">&rarr;</span></a>
       <button class="r-burger" onClick="{{ toggleNav }}" aria-label="Menu" style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:42px;height:42px;border:1px solid #d8d6cd;border-radius:9px;background:transparent;cursor:pointer;">
         <span style="display:block;width:18px;height:2px;background:#011829;"></span>
         <span style="display:block;width:18px;height:2px;background:#011829;"></span>
@@ -88,10 +88,10 @@
 
   <div class="r-mobile-menu {{ navMenuClass }}" style="flex-direction:column;gap:2px;background:rgba(242,241,237,.98);backdrop-filter:blur(12px);border-bottom:1px solid #E0DED6;padding:10px 20px 18px;position:sticky;top:96px;z-index:59;">
     <a href="work.html" style="text-decoration:none;color:#FF0055;font-size:17px;font-weight:600;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Work</a>
-    <a href="home.html#services" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Services</a>
-    <a href="home.html#team" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Team</a>
+    <a href="index.html#services" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Services</a>
+    <a href="index.html#team" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Team</a>
     <a href="case-studies.html" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Case Studies</a>
-    <a class="pp-cta" href="contact.html" style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:#011829;color:#fff;font-size:14px;font-weight:600;padding:13px 22px;border-radius:100px;text-decoration:none;margin-top:16px;">Start a project <span class="pp-arrow">&rarr;</span></a>
+    <a class="pp-cta" href="contact.html" style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:#011829;color:#fff;font-size:17px;font-weight:600;padding:13px 22px;border-radius:100px;text-decoration:none;margin-top:16px;">Start a project <span class="pp-arrow">&rarr;</span></a>
   </div>
 
   <!-- HEADER -->
@@ -99,7 +99,7 @@
     <a class="pp-back pp-link" href="work.html" style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#FF0055;margin-bottom:40px;"><span class="pp-arrow">&larr;</span> BACK TO WORK</a>
     <div class="r-2col" style="display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:end;">
       <div>
-        <div style="font-family:'Space Mono',monospace;font-size:15px;letter-spacing:.2em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:18px;">{{ titleLine }}</div>
+        <div style="font-family:'Space Mono',monospace;font-size:15px;letter-spacing:.2em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:18px;">{{ titleLine }}</div>
         <h1 style="font-size:72px;line-height:0.98;letter-spacing:-0.035em;font-weight:600;margin:0;">{{ client }}</h1>
         <div style="font-family:'Space Mono',monospace;font-size:14px;color:#8c897e;margin-top:20px;">{{ year }}</div>
       </div>
@@ -122,7 +122,7 @@
   <section class="r-pad" style="padding:24px 56px 0;">
     <div class="r-g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
       <sc-for list="{{ gridShots }}" as="g" hint-placeholder-count="9">
-        <div class="pp-card" data-gallery="folio" onClick="{{ openLb }}" style="border-radius:8px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;aspect-ratio:16/9;">
+        <div class="pp-card {{ g.cls }}" data-gallery="folio" onClick="{{ openLb }}" style="border-radius:8px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;aspect-ratio:16/9;{{ g.style }}">
           <img class="pp-shot" data-gallery="folio" data-full="{{ g.full }}" data-thumb="{{ g.thumb }}" alt="{{ g.alt }}" style="width:100%;height:100%;object-fit:cover;display:block;background:#e6e4dd;">
         </div>
       </sc-for>
@@ -134,7 +134,7 @@
     <a class="pp-next" href="{{ nextHref }}" style="display:block;text-decoration:none;color:inherit;">
       <div style="border-top:1px solid #E0DED6;padding-top:34px;display:flex;justify-content:space-between;align-items:center;gap:24px;">
         <div>
-          <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:10px;">NEXT PROJECT</div>
+          <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.16em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:10px;">NEXT PROJECT</div>
           <div style="font-size:44px;font-weight:700;letter-spacing:-0.03em;">{{ nextName }}</div>
         </div>
         <span class="pp-arrow" style="font-size:38px;color:#FF0055;">&rarr;</span>
@@ -153,8 +153,8 @@
         <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
           <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:4px;">EXPLORE</span>
           <a class="pp-link" href="work.html" style="color:#c9c7be;">Work</a>
-          <a class="pp-link" href="home.html#services" style="color:#c9c7be;">Services</a>
-          <a class="pp-link" href="home.html#team" style="color:#c9c7be;">Team</a>
+          <a class="pp-link" href="index.html#services" style="color:#c9c7be;">Services</a>
+          <a class="pp-link" href="index.html#team" style="color:#c9c7be;">Team</a>
           <a class="pp-link" href="case-studies.html" style="color:#c9c7be;">Case Studies</a>
         </div>
         <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
@@ -214,6 +214,7 @@ class Component extends DCLogic {
   }
   renderVals() {
     const wix = (f, w, h) => 'https://static.wixstatic.com/media/' + f + '/v1/fit/w_' + w + ',h_' + h + ',q_90,enc_avif,quality_auto/' + f;
+    const src = (f, w, h) => f.indexOf('/') >= 0 ? f : wix(f, w, h);
     const DATA = {
       openai: {
         client: 'OpenAI Slush Event',
@@ -285,13 +286,50 @@ class Component extends DCLogic {
         ],
         imgs: ['1e56c4_8ae17c5a73d248a6957b96abc48029aa~mv2.jpg','1e56c4_890677bf7180470eaa759668fff69251~mv2.jpg','1e56c4_eff86525459d4202922418b6c86834a9~mv2.jpg','1e56c4_7ba9b9a51d114a9196534a8f0e1b1adc~mv2.jpg','1e56c4_3f065e7540d34d0daf30ae5ba8a7930c~mv2.jpg','1e56c4_f6c6bfa2ffd6499f8feeac66c3439ca5~mv2.jpg','1e56c4_c42ca99c207949b0940fcc6cd202d587~mv2.jpg','1e56c4_3961e01a4de64710b38476020dfdc580~mv2.jpg','1e56c4_cd1f358851914b5793c2204c7a52f290~mv2.jpg','1e56c4_dab3b5b8229f449192b5b794d096ba68~mv2.jpg','1e56c4_768cfc7b20664c84b742fe1c1ea5c211~mv2.jpg','1e56c4_81fb975eeaaa467f924ef0df26a77f9e~mv2.jpg','1e56c4_72f48bdc4c924267bc419c05ee4430ce~mv2.jpg'],
       },
+      sui: {
+        client: 'Sui',
+        title: 'Presentation, Events & Social',
+        year: '2022',
+        blurbs: [
+          "Sui, a fast-moving L1 blockchain, brought Powerplay on as an embedded, generalist design resource — frustrated with the slow turnarounds of larger agencies, they wanted same-day delivery from a team that knew their brand.",
+          "Over the course of a year we delivered a wide range of work — online education presentations, investor pitch decks, large-scale event designs, and social graphics — acting as the in-house design team they didn't yet have.",
+        ],
+        imgs: ['991c82_bdb0c2950f194bd8883d96cfda771eb6~mv2.jpg','1e56c4_ac2e20e189d245c4b6d7d4c432f36b20~mv2.jpg','1e56c4_a96cd5386bc44236af930e3119e1643d~mv2.jpg','1e56c4_3f40102c50f04438a048fb87c4452a26~mv2.jpg'],
+      },
+      psilo: {
+        sq: true,
+        client: 'Psilo Lifestyle Products',
+        title: 'Logo & Seasonal Packaging',
+        year: 'Ongoing',
+        blurbs: [
+          "Psilo is our pro-bono passion project — the place we get to be a little louder, weirder, and more hands-on than the day job usually allows. It started with one ask, a logo mark, and never really stopped.",
+          "Psilo arrived with personality to spare and nothing to wear it on. They needed a mark that could read premium on a foil-stamped chocolate bar and still feel playful on a bag of gummies — without fracturing into two different brands. The answer was a confident, rounded wordmark: geometric enough to anchor a whole system, friendly enough to never take itself too seriously.",
+          "With the logo set, we treated packaging as a flexible canvas rather than a fixed template. The mark stays constant; the world around it shifts with every release. Monochrome, silver-foil nature illustrations give the chocolate line a transcendent, collectible feel. The gummies run the other direction — saturated, psychedelic, and loud. Same brand, completely different mood.",
+          "What began as one logo is now a full seasonal catalog — Psychedelic Chocolate, Psychedelic Gummies, Lovecakes, and one-off drops like Lemonheadz — each carrying its own illustrated identity while staying unmistakably Psilo.",
+        ],
+        imgs: ['site-images/psilo-chocolate.jpg',{f:'site-images/psilo-microdose-banner-blue.jpg',k:'wide',ar:'2363/338'},{f:'site-images/psilo-microdose-banner-forest.jpg',k:'wide',ar:'2363/338'},'site-images/psilo-awake.jpg','site-images/psilo-gummies-eye.jpg','site-images/psilo-microdose-100.jpg','site-images/psilo-microdose-200.jpg','site-images/psilo-lovecakes.jpg',{f:'site-images/psilo-chocolate-dielines.jpg',k:'rect'},{f:'site-images/psilo-gummies.jpg',k:'rect'},{f:'site-images/psilo-lemonheadz.jpg',k:'rect'}],
+      },
     };
     const order = Object.keys(DATA);
     let slug = '';
     try { slug = new URLSearchParams(window.location.search).get('p') || ''; } catch (e) {}
     if (!DATA[slug]) slug = order[0];
     const p = DATA[slug];
-    const allShots = p.imgs.map((f, i) => ({ thumb: wix(f, 900, 507), full: wix(f, 1600, 900), alt: p.client + ' \u2014 ' + (i + 1) }));
+    const allShots = p.imgs.map((it, i) => {
+      const o = typeof it === 'string' ? { f: it } : it;
+      const k = o.k || (p.sq ? 'sq' : 'std');
+      let cls = '', ar = '';
+      if (k === 'wide') { cls = 'pp-wide'; ar = o.ar || '2363/338'; }
+      else if (k === 'rect') { cls = 'pp-rect'; ar = o.ar || '16/10'; }
+      else if (k === 'sq') { cls = 'pp-sq'; ar = '1/1'; }
+      return {
+        thumb: src(o.f, 1600, 900),
+        full: src(o.f, 1600, 900),
+        alt: p.client + ' \u2014 ' + (i + 1),
+        cls: cls,
+        style: ar ? ('aspect-ratio:' + ar + ';') : '',
+      };
+    });
     const idx = order.indexOf(slug);
     const nextSlug = order[(idx + 1) % order.length];
 
@@ -312,6 +350,7 @@ class Component extends DCLogic {
       gridShots: allShots.slice(1),
       nextName: DATA[nextSlug].client,
       nextHref: 'portfolio.html?p=' + nextSlug,
+      rootClass: p.sq ? 'folio-sq' : '',
       navMenuClass: this.state.navOpen ? 'open' : '',
       toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
       openLb,
