@@ -230,26 +230,26 @@
 
     <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
 
-      <div class="pp-card" onClick="{{ openSkott }}" style="display:flex;gap:24px;align-items:stretch;background:#FBFAF7;border:1px solid #E0DED6;border-radius:12px;padding:20px;cursor:pointer;">
-        <div style="width:148px;flex-shrink:0;border-radius:8px;overflow:hidden;background:#e6e4dd;align-self:stretch;">
-          <img src="site-images/team-skott-2.jpg" alt="Skott Reader" style="width:100%;height:100%;min-height:180px;object-fit:cover;object-position:center 18%;display:block;">
-        </div>
-        <div style="display:flex;flex-direction:column;justify-content:center;padding:6px 0;">
-          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:#FF0055;margin-bottom:10px;">FOUNDER</span>
-          <span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;line-height:1.05;">Skott Reader</span>
-          <span style="font-size:15px;color:#6a685f;margin-top:6px;">Visual &amp; Graphic Designer</span>
-          <span class="pp-link" style="margin-top:18px;align-self:flex-start;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.12em;color:#011829;">READ BIO &nbsp;&rarr;</span>
-        </div>
-      </div>
-
       <div class="pp-card" onClick="{{ openDarla }}" style="display:flex;gap:24px;align-items:stretch;background:#FBFAF7;border:1px solid #E0DED6;border-radius:12px;padding:20px;cursor:pointer;">
         <div style="width:148px;flex-shrink:0;border-radius:8px;overflow:hidden;background:#e6e4dd;align-self:stretch;">
           <img src="site-images/team-darla.jpg" alt="Darla" style="width:100%;height:100%;min-height:180px;object-fit:cover;object-position:center 12%;display:block;">
         </div>
         <div style="display:flex;flex-direction:column;justify-content:center;padding:6px 0;">
-          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:#FF0055;margin-bottom:10px;">CO-FOUNDER</span>
+          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:#FF0055;margin-bottom:10px;">FOUNDER</span>
           <span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;line-height:1.05;">Darla Wigginton</span>
           <span style="font-size:15px;color:#6a685f;margin-top:6px;">Presentation Designer</span>
+          <span class="pp-link" style="margin-top:18px;align-self:flex-start;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.12em;color:#011829;">READ BIO &nbsp;&rarr;</span>
+        </div>
+      </div>
+
+      <div class="pp-card" onClick="{{ openSkott }}" style="display:flex;gap:24px;align-items:stretch;background:#FBFAF7;border:1px solid #E0DED6;border-radius:12px;padding:20px;cursor:pointer;">
+        <div style="width:148px;flex-shrink:0;border-radius:8px;overflow:hidden;background:#e6e4dd;align-self:stretch;">
+          <img src="site-images/team-skott-2.jpg" alt="Skott Reader" style="width:100%;height:100%;min-height:180px;object-fit:cover;object-position:center 18%;display:block;">
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;padding:6px 0;">
+          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:#FF0055;margin-bottom:10px;">CO-FOUNDER</span>
+          <span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;line-height:1.05;">Skott Reader</span>
+          <span style="font-size:15px;color:#6a685f;margin-top:6px;">Visual &amp; Graphic Designer</span>
           <span class="pp-link" style="margin-top:18px;align-self:flex-start;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.12em;color:#011829;">READ BIO &nbsp;&rarr;</span>
         </div>
       </div>
@@ -368,7 +368,7 @@ class Component extends DCLogic {
         title: "Visual & Graphic Designer",
         img: "site-images/team-skott-2.jpg",
         objPos: "center 18%",
-        kicker: "FOUNDER",
+        kicker: "CO-FOUNDER",
         bio: [
           "Skott is a seasoned visual and graphic designer. With a career spanning two decades working on both UX and marketing teams, he has left his creative mark on a diverse range of industries, including education, fintech, blockchain, retail, and social media.",
           "Skott takes an empathetic approach to design that is deeply rooted in understanding business objectives, user needs, and customer expectations. Clients and peers alike have praised him for his patient demeanor, ability to articulate design decisions and rationales, and talent for quickly grasping a brand or design system and extending it to any deliverable.",
@@ -383,7 +383,7 @@ class Component extends DCLogic {
         title: "Presentation Designer",
         img: "site-images/team-darla.jpg",
         objPos: "center 12%",
-        kicker: "CO-FOUNDER",
+        kicker: "FOUNDER",
         bio: [
           "Darla\u2019s years as a presentation designer have included designing for tech, social media, education, finance, healthcare, blockchain, retail, pharmaceutical, e-commerce, cyber security, fashion, and the performing arts.",
           "Her superpower is understanding what it takes to tell a story in a compelling way, while having the experience to juggle all the complexities of getting it there.",
