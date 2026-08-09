@@ -22,6 +22,67 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","serviceType":"Presentation design, pitch deck design and event graphics","provider":{"@type":"Organization","name":"Powerplay","url":"https://sfpowerplay.com/","address":{"@type":"PostalAddress","addressLocality":"San Francisco","addressRegion":"CA","addressCountry":"US"},"telephone":"+1-415-573-7576","email":"sfpowerplay@gmail.com"},"areaServed":"Worldwide","url":"https://sfpowerplay.com/services.html","description":"Presentation and keynote design, investor pitch decks, live and broadcast event graphics, AI visual content, brand systems and design production at volume. Powerplay is a San Francisco design studio working with teams anywhere.","hasOfferCatalog":{"@type":"OfferCatalog","name":"Design services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Presentation Design","description":"Keynotes, pitch decks, and investor narratives that hold a room."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Event Graphics","description":"Stage, screen, and environmental design for live and broadcast events."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI Visual Content","description":"AI-assisted image and content systems built for scale."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Brand & Visual Systems","description":"Identity, templates, and guidelines your team can run with."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Design Production","description":"Slide builds at volume, template rollouts, and last-minute changes at showtime."}}]}}
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#F2F1ED;}
+  ::selection{background:#FF0055;color:#fff;}
+  .pp-root{--g:linear-gradient(96deg,#E505F5,#FF0055);--a:#FF0055;}
+  .pp-card figure,.pp-card{overflow:hidden;}
+  body{text-wrap:pretty;}
+  h1,h2,h3,h4{text-wrap:balance;}
+  .pp-card img{transition:transform .8s cubic-bezier(.19,.7,.2,1);}
+  .pp-card:hover img{transform:scale(1.05);}
+  .pp-link{position:relative;text-decoration:none;color:inherit;}
+  .pp-link::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
+  .pp-link:hover::after{transform:scaleX(1);}
+  .r-navlinks .pp-link:hover{color:#6E0D75;}
+  .pp-link[data-active]::after{transform:scaleX(1);}
+  .pp-link.pp-active{color:#FF0055;}
+  .pp-link.pp-active::after{transform:scaleX(1);}
+  #work,#services,#team{scroll-margin-top:112px;}
+  .pp-cta{transition:box-shadow .2s;white-space:nowrap;}
+  .r-navlinks{white-space:nowrap;}
+  .pp-cta:hover{box-shadow:inset 0 0 0 999px rgba(255,255,255,0.16);}
+  .pp-arrow{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
+  .pp-cta:hover .pp-arrow{transform:translateX(5px);}
+  .pp-nav:hover{background:#202024;color:#fff;border-color:#202024;}
+  .pp-nav{transition:background .25s,color .25s,border-color .25s;}
+
+  /* ===== responsive ===== */
+  .r-burger{display:none;}
+  .r-mobile-menu{display:none !important;}
+  .r-wscroll{scrollbar-width:none;-ms-overflow-style:none;}
+  .r-wscroll::-webkit-scrollbar{display:none;}
+  /* client logo row — single line, scales with viewport, scrolls on small screens */
+  .r-logos{--logo-h:clamp(38px,4.2vw,70px);display:flex;align-items:center;justify-content:space-between;gap:clamp(20px,3vw,48px);flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;}
+  .r-logos::-webkit-scrollbar{display:none;}
+  .r-logo{height:var(--logo-h);width:auto;flex:0 0 auto;object-fit:contain;opacity:.82;}
+  .r-logo-wm{height:calc(var(--logo-h)*0.42);}
+  .r-logo-boost{height:calc(var(--logo-h)*1.5);}
+  @media (max-width:1023px){
+    .r-2col{grid-template-columns:1fr !important;gap:36px !important;}
+    .r-pad{padding-left:32px !important;padding-right:32px !important;}
+  }
+  @media (max-width:1150px){
+    .r-navlinks{display:none !important;}
+    .r-cta-desktop{display:none !important;}
+    .r-burger{display:flex !important;}
+    .r-mobile-menu.open{display:flex !important;}
+  }
+  @media (max-width:639px){
+    .r-srow{grid-template-columns:1fr !important;gap:6px !important;padding:22px 6px !important;}
+    .r-pad{padding-left:20px !important;padding-right:20px !important;}
+    .r-feat{height:340px !important;}
+    .r-wcard{flex:0 0 82vw !important;scroll-snap-align:start !important;}
+    .r-modal{flex-direction:column !important;max-height:88vh !important;overflow:auto !important;}
+    .r-modal-img{width:100% !important;height:200px !important;}
+    h1{font-size:clamp(38px,10vw,84px) !important;line-height:1 !important;}
+    h2{font-size:clamp(30px,7.5vw,68px) !important;}
+  }
+</style>
 <style>
 
     .sc-placeholder{background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
@@ -110,6 +171,9 @@ html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}
     h2{font-size:clamp(30px,8vw,58px) !important;}
   }
 
+/* in-copy links to project and case study pages */
+.sv-link{color:#6E0D75;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;transition:color .18s ease;}
+.sv-link:hover{color:#FF0055;}
 </style>
 </head>
 <body>
@@ -120,8 +184,8 @@ html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}
   <nav data-dc-tpl="7" class="r-pad" style="display: flex; justify-content: space-between; align-items: center; height: 96px; padding: 0px 56px; border-bottom: 1px solid rgb(224, 222, 214); position: sticky; top: 0px; background: rgba(242, 241, 237, 0.82); backdrop-filter: blur(12px); z-index: 60; box-shadow: 0 2px 16px rgba(1,24,41,.07);">
     <a data-dc-tpl="8" href="index.html" style="display: flex; align-items: center;"><img data-dc-tpl="9" src="assets/powerplay-logo.svg" alt="Powerplay" style="height: 31px; width: auto; display: block;"></a>
     <div data-dc-tpl="10" class="r-navlinks" style="display: flex; gap: 44px; font-size: 22px; font-weight: 500; color: rgb(66, 66, 60);">
-      <a data-dc-tpl="11" class="pp-link" href="work.html" style="color: rgb(255, 0, 85);" data-active="1">Work</a>
-      <a data-dc-tpl="12" class="pp-link" href="services.html">Services</a>
+      <a data-dc-tpl="11" class="pp-link" href="work.html">Work</a>
+      <a data-dc-tpl="12" class="pp-link" href="services.html" data-active="1" style="color: rgb(255, 0, 85);">Services</a>
       <a data-dc-tpl="13" class="pp-link" href="index.html#team">Team</a>
       <a data-dc-tpl="14" class="pp-link" href="case-studies.html">Case Studies</a>
     </div>
@@ -147,48 +211,48 @@ html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}
   
 
   
-  <main><section data-dc-tpl="71" class="r-pad" style="padding:80px 56px 16px; background:#F2F1ED; color: #011829;">
+  <main><section data-dc-tpl="71" class="r-pad" style="padding:80px 56px 16px; background: rgb(1, 24, 41); color: rgb(242, 241, 237);">
     <div data-dc-tpl="72" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 54px; gap: 40px; flex-wrap: wrap;">
-      <h1 data-dc-tpl="73" style="font-size: 52px; line-height: 1; letter-spacing: -0.03em; font-weight: 700; margin: 0px; max-width: none; flex: 1 1 100%;color:#011829;">Five things, done in-house, start to finish.</h1>
-      <p data-dc-tpl="74" style="line-height: 1.6;   margin: 8px 0px 0px;max-width:900px;font-size:18px;color:#48473f;">Presentation and pitch deck design, event and conference graphics, brand and template systems, and slide production at volume — for in-house teams, event producers, and founders who need the work to land the first time.</p>
+      <h1 data-dc-tpl="73" style="font-size: 52px; line-height: 1; letter-spacing: -0.03em; font-weight: 700; margin: 0px; max-width: none; flex: 1 1 100%; color: rgb(255, 0, 85);">Five things, done in-house, start to finish.</h1>
+      <p data-dc-tpl="74" style="font-size: 18px; line-height: 1.6; color: rgb(163, 161, 153); max-width: 900px; margin: 8px 0px 0px;">Presentation and pitch deck design, event and conference graphics, brand and template systems, and slide production at volume — for in-house teams, event producers, and founders who need the work to land the first time.</p>
     </div>
     <div data-dc-tpl="75" style="border-top: 1px solid rgba(1,24,41,0.14);">
       <div data-dc-tpl="76" class="r-srow" style="display: grid; grid-template-columns: 62px 1fr 1.4fr; align-items: center; gap: 24px; padding:16px 16px; border-bottom: 1px solid rgba(1,24,41,0.14);">
         <span data-dc-tpl="77" style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px; color: #FF0055;">01</span>
-        <span data-dc-tpl="78" style="font-size:25px;font-weight:500;letter-spacing:-0.01em;color:#6E0D75;">Presentation Design</span>
-        <span data-dc-tpl="79" style="font-size: 15px; color: #48473f; line-height: 1.5;">Keynotes, pitch decks, and investor narratives that hold a room.</span>
+        <span data-dc-tpl="78" style="font-size:25px;font-weight:500;letter-spacing:-0.01em;">Presentation Design</span>
+        <span data-dc-tpl="79" style="font-size: 15px; color: rgb(163, 161, 153); line-height: 1.5;">Keynotes, pitch decks, and investor narratives that hold a room.</span>
       </div>
       <div data-dc-tpl="80" class="r-srow" style="display: grid; grid-template-columns: 62px 1fr 1.4fr; align-items: center; gap: 24px; padding:16px 16px; border-bottom: 1px solid rgba(1,24,41,0.14);">
         <span data-dc-tpl="81" style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px; color: #FF0055;">02</span>
-        <span data-dc-tpl="82" style="font-size:25px;font-weight:500;letter-spacing:-0.01em;color:#6E0D75;">Event Graphics</span>
-        <span data-dc-tpl="83" style="font-size: 15px; color: #48473f; line-height: 1.5;">Stage, screen, and environmental design for live and broadcast events.</span>
+        <span data-dc-tpl="82" style="font-size:25px;font-weight:500;letter-spacing:-0.01em;">Event Graphics</span>
+        <span data-dc-tpl="83" style="font-size: 15px; color: rgb(163, 161, 153); line-height: 1.5;">Stage, screen, and environmental design for live and broadcast events.</span>
       </div>
       <div data-dc-tpl="84" class="r-srow" style="display: grid; grid-template-columns: 62px 1fr 1.4fr; align-items: center; gap: 24px; padding:16px 16px; border-bottom: 1px solid rgba(1,24,41,0.14);">
         <span data-dc-tpl="85" style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px; color: #FF0055;">03</span>
-        <span data-dc-tpl="86" style="font-size:25px;font-weight:500;letter-spacing:-0.01em;color:#6E0D75;">AI Visual Content</span>
-        <span data-dc-tpl="87" style="font-size: 15px; color: #48473f; line-height: 1.5;">AI-assisted image and content systems built for scale.</span>
+        <span data-dc-tpl="86" style="font-size:25px;font-weight:500;letter-spacing:-0.01em;">AI Visual Content</span>
+        <span data-dc-tpl="87" style="font-size: 15px; color: rgb(163, 161, 153); line-height: 1.5;">AI-assisted image and content systems built for scale.</span>
       </div>
       <div data-dc-tpl="88" class="r-srow" style="display: grid; grid-template-columns: 62px 1fr 1.4fr; align-items: center; gap: 24px; padding:16px 16px; border-bottom: 1px solid rgba(1,24,41,0.14);">
         <span data-dc-tpl="89" style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px; color: #FF0055;">04</span>
-        <span data-dc-tpl="90" style="font-size:25px;font-weight:500;letter-spacing:-0.01em;color:#6E0D75;">Brand &amp; Visual Systems</span>
-        <span data-dc-tpl="91" style="font-size: 15px; color: #48473f; line-height: 1.5;">Identity, templates, and guidelines your team can run with.</span>
+        <span data-dc-tpl="90" style="font-size:25px;font-weight:500;letter-spacing:-0.01em;">Brand &amp; Visual Systems</span>
+        <span data-dc-tpl="91" style="font-size: 15px; color: rgb(163, 161, 153); line-height: 1.5;">Identity, templates, and guidelines your team can run with.</span>
       </div>
       <div data-dc-tpl="92" class="r-srow" style="display: grid; grid-template-columns: 62px 1fr 1.4fr; align-items: center; gap: 24px; padding:16px 16px; border-bottom: 1px solid rgba(1,24,41,0.14);">
         <span data-dc-tpl="93" style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px; color: #FF0055;">05</span>
-        <span data-dc-tpl="94" style="font-size:25px;font-weight:500;letter-spacing:-0.01em;color:#6E0D75;">Design Production</span>
-        <span data-dc-tpl="95" style="font-size: 15px; color: #48473f; line-height: 1.5;">Slide builds at volume, template rollouts, and last-minute changes at showtime.</span>
+        <span data-dc-tpl="94" style="font-size:25px;font-weight:500;letter-spacing:-0.01em;">Design Production</span>
+        <span data-dc-tpl="95" style="font-size: 15px; color: rgb(163, 161, 153); line-height: 1.5;">Slide builds at volume, template rollouts, and last-minute changes at showtime.</span>
       </div>
     </div>
-    <a data-dc-tpl="96" class="pp-link" href="services.html" style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px; letter-spacing: 0.12em; color: #011829; display: inline-block; margin-top: 40px;">LEARN MORE ABOUT OUR SERVICES &nbsp;→</a>
+    
   </section>
   <section class="r-pad" style="padding:48px 56px 56px;">
     <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
       <div>
-        <h2 style="font-size:44px;line-height:1.05;letter-spacing:-0.03em;font-weight:700;margin:0;">How we work</h2>
+        <h2 style="font-size:52px;line-height:1.0;letter-spacing:-0.03em;font-weight:700;margin:0;">How we work</h2>
       </div>
       <div>
         <p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">Powerplay is a San Francisco design studio working with in-house design and marketing teams, event producers, and founders — onsite around the Bay Area, and remotely with teams anywhere.</p>
-        <p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">Engagements run from a single deck to an embedded team. Some clients bring us one keynote with three weeks’ notice; others keep us on for years, as Sui and The Standard Model have. We’re small on purpose — you work with the people doing the work.</p>
+        <p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">Engagements run from a single deck to an embedded team. Some clients bring us one keynote with three weeks’ notice; others keep us on for years, as <a class="sv-link" href="case-study-sui.html">Sui</a> and <a class="sv-link" href="case-study-standard-model.html">The Standard Model</a> have. We’re small on purpose — you work with the people doing the work.</p>
       </div>
     </div>
   </section>
@@ -197,9 +261,9 @@ html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}
     <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
       <div>
         <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.18em;color:#011829;opacity:.55;display:block;margin-bottom:14px;">01</span>
-        <h3 style="font-size:34px;line-height:1.05;letter-spacing:-0.025em;font-weight:700;margin:0;">Presentation &amp; Keynote Design</h3>
+        <h3 style="font-size:34px;line-height:1.05;letter-spacing:-0.02em;font-weight:500;margin:0;">Presentation &amp; Keynote Design</h3>
       </div>
-      <div><p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">Keynotes, conference talks, sales decks, and investor pitch decks — built in PowerPoint, Google Slides, or Keynote, inside whatever template your brand already runs on. We designed the slides for OpenAI’s speaker at Slush in Helsinki, redesigned presenter decks for Google I/O 2024, and rebuilt keynote content backstage at ServiceNow’s Sales Kickoff while rehearsals ran onstage.</p>
+      <div><p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">Keynotes, conference talks, sales decks, and investor pitch decks — built in PowerPoint, Google Slides, or Keynote, inside whatever template your brand already runs on. We designed the slides for <a class="sv-link" href="openai.html">OpenAI’s speaker at Slush in Helsinki</a>, redesigned presenter decks for <a class="sv-link" href="google-io.html">Google I/O 2024</a>, and rebuilt keynote content backstage at <a class="sv-link" href="servicenow.html">ServiceNow’s Sales Kickoff</a> while rehearsals ran onstage.</p>
         <p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">The job is the same every time: make the argument land, and make it look like it came from a company worth betting on.</p></div>
     </div>
   </section>
@@ -208,9 +272,9 @@ html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}
     <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
       <div>
         <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.18em;color:#011829;opacity:.55;display:block;margin-bottom:14px;">02</span>
-        <h3 style="font-size:34px;line-height:1.05;letter-spacing:-0.025em;font-weight:700;margin:0;">Event &amp; Conference Graphics</h3>
+        <h3 style="font-size:34px;line-height:1.05;letter-spacing:-0.02em;font-weight:500;margin:0;">Event &amp; Conference Graphics</h3>
       </div>
-      <div><p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">Stage, screen, and environmental design for live and broadcast events — main-stage content, LED and projection graphics, digital signage, wayfinding, and floorplans. We built presenter materials and looping digital signage for the Meta Brand Summit, and have handled event graphics for Google I/O and ServiceNow.</p>
+      <div><p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">Stage, screen, and environmental design for live and broadcast events — main-stage content, LED and projection graphics, digital signage, wayfinding, and floorplans. We built presenter materials and looping digital signage for the <a class="sv-link" href="meta.html">Meta Brand Summit</a>, and have handled event graphics for <a class="sv-link" href="google-io.html">Google I/O</a> and <a class="sv-link" href="servicenow.html">ServiceNow</a>.</p>
         <p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">We work onsite when that helps, and backstage when that’s what the day needs.</p></div>
     </div>
   </section>
@@ -219,9 +283,9 @@ html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}
     <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
       <div>
         <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.18em;color:#011829;opacity:.55;display:block;margin-bottom:14px;">03</span>
-        <h3 style="font-size:34px;line-height:1.05;letter-spacing:-0.025em;font-weight:700;margin:0;">AI Visual Content</h3>
+        <h3 style="font-size:34px;line-height:1.05;letter-spacing:-0.02em;font-weight:500;margin:0;">AI Visual Content</h3>
       </div>
-      <div><p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">AI-assisted image and content systems built for scale — generated imagery, illustration, and visual libraries that hold one consistent style across hundreds of assets. Useful when you need volume photography can’t cover on the budget or the deadline, and a coherence stock can’t give you. We used advanced Midjourney prompting to build the AI builder personas for Movement Labs.</p>
+      <div><p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">AI-assisted image and content systems built for scale — generated imagery, illustration, and visual libraries that hold one consistent style across hundreds of assets. Useful when you need volume photography can’t cover on the budget or the deadline, and a coherence stock can’t give you. <a class="sv-link" href="case-study-movement-labs.html">We used advanced Midjourney prompting to build the AI builder personas for Movement Labs.</a></p>
         <p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">The judgment stays human. Palette, type, and layout principles are designed by hand and approved before anything gets generated — AI is what carries that decision across a thousand assets instead of ten. It’s why a studio this small can take on agency-scale work: the brand comes out of our heads, and AI is how we get it everywhere.</p></div>
     </div>
   </section>
@@ -230,10 +294,10 @@ html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}
     <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
       <div>
         <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.18em;color:#011829;opacity:.55;display:block;margin-bottom:14px;">04</span>
-        <h3 style="font-size:34px;line-height:1.05;letter-spacing:-0.025em;font-weight:700;margin:0;">Brand &amp; Visual Systems</h3>
+        <h3 style="font-size:34px;line-height:1.05;letter-spacing:-0.02em;font-weight:500;margin:0;">Brand &amp; Visual Systems</h3>
       </div>
       <div><p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">Brand identity, templates, and guidelines your team can run with after we hand them over — logo, palette, typography, iconography, and the slide and document templates that keep it all consistent.</p>
-        <p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">We managed BitGo’s corporate identity, iconography, print and trade-show collateral through an aggressively timed refresh, and built The Standard Model’s brand and investor pitch system from nothing.</p></div>
+        <p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">We managed <a class="sv-link" href="bitgo.html">BitGo’s corporate identity, iconography, print and trade-show collateral</a> through an aggressively timed refresh, and built <a class="sv-link" href="case-study-standard-model.html">The Standard Model’s brand and investor pitch system</a> from nothing.</p></div>
     </div>
   </section>
 
@@ -241,10 +305,10 @@ html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}
     <div class="r-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
       <div>
         <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.18em;color:#011829;opacity:.55;display:block;margin-bottom:14px;">05</span>
-        <h3 style="font-size:34px;line-height:1.05;letter-spacing:-0.025em;font-weight:700;margin:0;">Design Production</h3>
+        <h3 style="font-size:34px;line-height:1.05;letter-spacing:-0.02em;font-weight:500;margin:0;">Design Production</h3>
       </div>
       <div><p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">Slide builds at volume, PowerPoint and Google Slides template rollouts, and last-minute changes at showtime. Plenty of teams already have the design — what they need is someone to produce two hundred slides against it by Thursday.</p>
-        <p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">We built the presentation templates the San Francisco Symphony’s team uses for fundraising and outreach, and ran same-day turnarounds as an embedded design team for Sui.</p></div>
+        <p style="font-size:18px;line-height:1.6;color:#48473f;margin:0 0 16px;">We built the <a class="sv-link" href="sf-symphony.html">presentation templates the San Francisco Symphony’s team uses</a> for fundraising and outreach, and ran <a class="sv-link" href="case-study-sui.html">same-day turnarounds as an embedded design team for Sui</a>.</p></div>
     </div>
   </section>
   <section class="r-pad" style="padding:8px 56px 96px;">
