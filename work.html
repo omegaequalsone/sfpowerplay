@@ -36,6 +36,8 @@
   h1,h2,h3,h4{text-wrap:balance;}
   .pp-card img{transition:transform .8s cubic-bezier(.19,.7,.2,1);}
   .pp-card:hover img{transform:scale(1.05);}
+  /* logos are letterboxed, so cap the hover zoom below the box or it clips */
+  .pp-card:hover .pp-logo{transform:scale(1.03);}
   .pp-link{position:relative;text-decoration:none;color:inherit;}
   .pp-link::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
   .pp-link:hover::after{transform:scaleX(1);}
@@ -139,7 +141,7 @@
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">SF Symphony</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">VISUAL &middot; 2023</span></div>
       </a>
       <a class="pp-card" href="swimlane.html" style="text-decoration:none;color:inherit;">
-        <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#fff;padding:30px;"><img src="site-images/swimlane-logo.png" alt="Swimlane" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+        <div style="aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:#fff;padding:30px;display:flex;align-items:center;justify-content:center;"><img class="pp-logo" src="site-images/swimlane-logo.png" alt="Swimlane" style="width:auto;height:auto;max-width:84%;max-height:84%;object-fit:contain;display:block;"></div>
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;">Swimlane</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:#8c897e;letter-spacing:.06em;white-space:nowrap;">EVENT &middot; 2023</span></div>
       </a>
       <a class="pp-card" href="psilo.html" style="text-decoration:none;color:inherit;">

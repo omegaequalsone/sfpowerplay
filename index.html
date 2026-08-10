@@ -38,6 +38,8 @@
   h1,h2,h3,h4{text-wrap:balance;}
   .pp-card img{transition:transform .8s cubic-bezier(.19,.7,.2,1);}
   .pp-card:hover img{transform:scale(1.05);}
+  /* logos are letterboxed, so cap the hover zoom below the box or it clips */
+  .pp-card:hover .pp-logo{transform:scale(1.03);}
   .pp-link{position:relative;text-decoration:none;color:inherit;}
   .pp-link::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1);}
   .pp-link:hover::after{transform:scaleX(1);}
@@ -166,8 +168,8 @@
       <div class="r-wtrack" style="display:flex;gap:24px;">
         <sc-for list="{{ work }}" as="w" hint-placeholder-count="4">
           <a class="pp-card r-wcard" href="{{ w.href }}" style="flex:0 0 300px;scroll-snap-align:start;text-decoration:none;color:inherit;cursor:pointer;">
-            <div style="height:300px;border-radius:6px;overflow:hidden;background:{{ w.bg }};padding:{{ w.pad }};box-sizing:border-box;">
-              <img src="{{ w.img }}" alt="{{ w.name }}" style="width:100%;height:100%;object-fit:{{ w.fit }};display:block;">
+            <div style="height:300px;border-radius:6px;overflow:hidden;background:{{ w.bg }};padding:{{ w.pad }};box-sizing:border-box;display:flex;align-items:center;justify-content:center;">
+              <img class="{{ w.cls }}" src="{{ w.img }}" alt="{{ w.name }}" style="width:{{ w.iw }};height:{{ w.ih }};max-width:{{ w.mx }};max-height:{{ w.mx }};object-fit:{{ w.fit }};display:block;">
             </div>
             <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;">
               <span style="font-size:19px;font-weight:600;letter-spacing:-0.01em;">{{ w.name }}</span>
@@ -422,9 +424,9 @@ class Component extends DCLogic {
       { name: "ServiceNow",       tag: "EVENT",           img: "site-images/servicenow.jpeg", href: "servicenow.html" },
       { name: "Sui",              tag: "PRESENTATION",    img: "site-images/sui.jpg",         href: "sui.html" },
       { name: "SF Symphony",      tag: "VISUAL CONTENT",  img: "site-images/sfsymphony.jpg",  href: "sf-symphony.html" },
-      { name: "Swimlane",         tag: "EVENT",           img: "site-images/swimlane-logo.png", href: "swimlane.html", bg: "#fff", fit: "contain", pad: "30px" },
+      { name: "Swimlane",         tag: "EVENT",           img: "site-images/swimlane-logo.png", href: "swimlane.html", bg: "#fff", fit: "contain", pad: "30px", cls: "pp-logo", iw: "auto", ih: "auto", mx: "84%" },
       { name: "Psilo",            tag: "PACKAGE & GRAPHIC DESIGN", img: "site-images/psilo-thumb.jpg", href: "psilo.html" },
-    ].map(w => ({ bg: "#e6e4dd", fit: "cover", pad: "0px", ...w }));
+    ].map(w => ({ bg: "#e6e4dd", fit: "cover", pad: "0px", cls: "", iw: "100%", ih: "100%", mx: "100%", ...w }));
     const scrollW = (dir) => { const el = document.getElementById('pp-wscroll'); if (el) el.scrollBy({ left: dir * Math.max(324, Math.round(el.clientWidth * 0.8)), behavior: 'smooth' }); };
     const btn = () => ({
       width: "48px", height: "48px", borderRadius: "50%",

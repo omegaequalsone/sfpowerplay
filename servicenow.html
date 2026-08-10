@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <title>ServiceNow — Keynote Presentation Design — Powerplay</title>
 <meta name="description" content="ServiceNow — Keynote Presentation Design (2024). We supported the ServiceNow design team onsite at MGM Grand for their 2024 Sales Kickoff in Las Vegas. Speakers arrived before the show to rehearse and needed last-minute slide red">
@@ -97,11 +100,15 @@ html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}
   .pp-back:hover .pp-arrow{transform:translateX(-5px);}
 
   .pp-arrow-l{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
+  .pp-arrow-u{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
   .pp-prev:hover .pp-arrow-l{transform:translateX(-6px);}
+  .pp-all:hover .pp-arrow-u{transform:translateY(-4px);}
+  .pp-pnav{align-items:center;}
   @media (max-width:639px){
-    .pp-pnav{grid-template-columns:1fr !important;gap:28px !important;}
+    .pp-pnav{grid-template-columns:1fr !important;gap:24px !important;justify-items:start !important;}
     .pp-pnav .pp-next{justify-content:flex-start !important;text-align:left !important;flex-direction:row-reverse;}
-    .pp-pnav span[style*="font-size: 30px"]{font-size:24px !important;}
+    .pp-pnav .pp-all{justify-self:start !important;}
+    .pp-pnav .pp-nav-name{font-size:24px !important;}
   }
   /* ===== responsive ===== */
   .r-burger{display:none;}
@@ -171,9 +178,9 @@ html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}
       </div>
       <div data-dc-tpl="36">
         
-          <p data-dc-tpl="38" style="font-size: 17px; line-height: 1.65; color: rgb(72, 71, 63); margin: 0px 0px 16px;"><span class="sc-interp">We supported the ServiceNow design team onsite at MGM Grand for their 2024 Sales Kickoff in Las Vegas. Speakers arrived before the show to rehearse and needed last-minute slide redesigns, additional content built, and customized animations.</span></p>
+          <p data-dc-tpl="38" style="font-size: 18px; line-height: 1.6; color: rgb(72, 71, 63); margin: 0px 0px 16px;"><span class="sc-interp">We supported the ServiceNow design team onsite at MGM Grand for their 2024 Sales Kickoff in Las Vegas. Speakers arrived before the show to rehearse and needed last-minute slide redesigns, additional content built, and customized animations.</span></p>
         
-          <p data-dc-tpl="38" style="font-size: 17px; line-height: 1.65; color: rgb(72, 71, 63); margin: 0px 0px 16px;"><span class="sc-interp">We worked backstage to deliver these assets quickly as the team ran through onstage rehearsals — providing any additional designs they envisioned, supporting their C-suite executives, and making sure the show went off without a hitch.</span></p>
+          <p data-dc-tpl="38" style="font-size: 18px; line-height: 1.6; color: rgb(72, 71, 63); margin: 0px 0px 16px;"><span class="sc-interp">We worked backstage to deliver these assets quickly as the team ran through onstage rehearsals — providing any additional designs they envisioned, supporting their C-suite executives, and making sure the show went off without a hitch.</span></p>
         
       </div>
     </div>
@@ -223,20 +230,21 @@ html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}
 
   
   <section data-dc-tpl="47" class="r-pad" style="padding: 80px 56px 56px;">
-    <div class="pp-pnav" style="border-top: 1px solid rgb(224, 222, 214); padding-top: 34px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
-      <a class="pp-prev" rel="prev" href="google-io.html" style="display: flex; align-items: flex-start; gap: 16px; text-decoration: none; color: inherit;">
-        <span class="pp-arrow-l" style="font-size: 34px; line-height: 1; color: rgb(255, 0, 85); flex: none;">&larr;</span>
+    <div class="pp-pnav" style="border-top:1px solid #E0DED6;padding-top:34px;display:grid;grid-template-columns:1fr auto 1fr;gap:32px;">
+      <a class="pp-prev" rel="prev" href="google-io.html" style="display:flex;align-items:flex-start;gap:16px;text-decoration:none;color:inherit;">
+        <span class="pp-arrow-l" style="font-size:34px;line-height:1;color:#FF0055;flex:none;">&larr;</span>
         <span>
-          <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px; letter-spacing: 0.16em; color: rgb(255, 255, 255); background: rgb(255, 0, 85); padding: 3px 9px; border-radius: 2px; display: inline-block; margin-bottom: 10px;">PREVIOUS PROJECT</span>
-          <span style="display: block; font-size: 30px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1;">Google I/O 2024</span>
+          <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:10px;">PREVIOUS PROJECT</span>
+          <span class="pp-nav-name" style="display:block;font-size:30px;font-weight:700;letter-spacing:-0.03em;line-height:1.1;">Google I/O 2024</span>
         </span>
       </a>
-      <a class="pp-next" rel="next" href="sf-symphony.html" style="display: flex; align-items: flex-start; justify-content: flex-end; gap: 16px; text-align: right; text-decoration: none; color: inherit;">
+      <a class="pp-all pp-link" href="work.html" style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#FF0055;text-decoration:none;white-space:nowrap;justify-self:center;"><span class="pp-arrow-u">&uarr;</span>ALL WORK</a>
+      <a class="pp-next" rel="next" href="sui.html" style="display:flex;align-items:flex-start;justify-content:flex-end;gap:16px;text-align:right;text-decoration:none;color:inherit;">
         <span>
-          <span style="font-family: &quot;Space Mono&quot;, monospace; font-size: 13px; letter-spacing: 0.16em; color: rgb(255, 255, 255); background: rgb(255, 0, 85); padding: 3px 9px; border-radius: 2px; display: inline-block; margin-bottom: 10px;">NEXT PROJECT</span>
-          <span style="display: block; font-size: 30px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1;">San Francisco Symphony</span>
+          <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:10px;">NEXT PROJECT</span>
+          <span class="pp-nav-name" style="display:block;font-size:30px;font-weight:700;letter-spacing:-0.03em;line-height:1.1;">Sui</span>
         </span>
-        <span class="pp-arrow" style="font-size: 34px; line-height: 1; color: rgb(255, 0, 85); flex: none;">&rarr;</span>
+        <span class="pp-arrow" style="font-size:34px;line-height:1;color:#FF0055;flex:none;">&rarr;</span>
       </a>
     </div>
   </section>
