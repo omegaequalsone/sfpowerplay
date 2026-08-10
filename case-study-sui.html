@@ -286,17 +286,34 @@
 class Component extends DCLogic {
   state = { lb: null, shots: [], navOpen: false, heroPlaying: true };
   heroVideo() { return document.querySelector('video.pp-hero-video'); }
+  playHero() {
+    const v = this.heroVideo();
+    if (!v) return;
+    // React renders neither the `muted` nor the `loop` boolean attribute, so the
+    // browser sees an unmuted autoplay video and blocks it. Set both as
+    // properties AND reflect them to attributes before asking it to play.
+    v.muted = true; v.defaultMuted = true; v.loop = true; v.playsInline = true;
+    v.setAttribute('muted', ''); v.setAttribute('loop', '');
+    const p = v.play();
+    if (p && p.catch) p.catch(() => {});
+  }
   syncHero() {
     const v = this.heroVideo();
     if (!v) return;
-    // React does not render the `muted`/`loop` boolean attributes, so set them
-    // as properties or the hero will neither autoplay nor loop.
-    v.muted = true; v.defaultMuted = true; v.loop = true;
+    if (!v.__ppWired) {
+      v.__ppWired = true;
+      // Retry as the media becomes ready; a play() issued too early is a no-op.
+      ['loadedmetadata', 'loadeddata', 'canplay'].forEach(ev =>
+        v.addEventListener(ev, () => { if (this.state.heroPlaying) this.playHero(); }));
+      // Last resort: a few browsers only release playback after any gesture.
+      const kick = () => { if (this.state.heroPlaying) this.playHero(); };
+      ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(ev =>
+        document.addEventListener(ev, kick, { once: true, passive: true }));
+    }
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce && this._heroInit === undefined) { this.setState({ heroPlaying: false }); }
+    if (reduce && this._heroInit === undefined) this.setState({ heroPlaying: false });
     this._heroInit = true;
-    if (this.state.heroPlaying && !reduce) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
-    else { v.pause(); }
+    if (this.state.heroPlaying && !reduce) this.playHero(); else v.pause();
   }
   componentDidMount() {
     this.syncHero();
