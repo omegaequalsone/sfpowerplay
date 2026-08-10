@@ -49,6 +49,11 @@
   .pp-subnav{text-decoration:none;transition:color .2s;}
   .pp-subnav:hover{color:#011829 !important;}
 
+  .pp-gscroll{scrollbar-width:none;-ms-overflow-style:none;}
+  .pp-gscroll::-webkit-scrollbar{display:none;}
+  .pp-gscroll:focus-visible{outline:2px solid #FF0055;outline-offset:4px;border-radius:10px;}
+  @media (max-width:1023px){ .pp-gitem{flex:0 0 62vw !important;} }
+  @media (max-width:639px){ .pp-gitem{flex:0 0 84vw !important;} }
   /* ===== responsive ===== */
   .r-burger{display:none;}
   .r-mobile-menu{display:none !important;}
@@ -127,10 +132,11 @@
     </div>
   </header>
 
-  <!-- HERO IMAGE -->
+  <!-- HERO VIDEO -->
   <section class="r-pad" style="padding:16px 56px 0;">
-    <div class="pp-card" onClick="{{ openLb }}" style="aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;">
-      <img class="pp-shot" src="https://static.wixstatic.com/media/991c82_bdb0c2950f194bd8883d96cfda771eb6~mv2.jpg/v1/fill/w_1600,h_900,al_c,q_90,enc_auto/991c82_bdb0c2950f194bd8883d96cfda771eb6~mv2.jpg" alt="Sui flagship event" style="width:100%;height:100%;object-fit:cover;display:block;">
+    <div class="pp-card" style="position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#e6e4dd;">
+      <video class="pp-hero-video" src="site-video/sui-kyoto.mp4" poster="site-video/sui-kyoto-poster.jpg" autoplay muted loop playsinline preload="metadata" disablepictureinpicture aria-label="Sui Builder House Kyoto — stage, screen graphics, and event environment" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+      <button onClick="{{ toggleHero }}" aria-label="{{ heroLabel }}" style="position:absolute;right:16px;bottom:16px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(18,18,22,.5);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;font-size:13px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;">{{ heroIcon }}</button>
     </div>
   </section>
 
@@ -153,12 +159,28 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
+  <!-- GALLERY — CAROUSEL -->
   <section class="r-pad" style="padding:48px 56px 0;">
-    <div class="r-g3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-      <div class="pp-card" onClick="{{ openLb }}" style="aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="https://static.wixstatic.com/media/1e56c4_ac2e20e189d245c4b6d7d4c432f36b20~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_90,enc_auto/1e56c4_ac2e20e189d245c4b6d7d4c432f36b20~mv2.jpg" alt="Sui event stage" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div class="pp-card" onClick="{{ openLb }}" style="aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="https://static.wixstatic.com/media/1e56c4_a96cd5386bc44236af930e3119e1643d~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_90,enc_auto/1e56c4_a96cd5386bc44236af930e3119e1643d~mv2.jpg" alt="Sui keynote graphics" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
-      <div class="pp-card" onClick="{{ openLb }}" style="aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="https://static.wixstatic.com/media/1e56c4_3f40102c50f04438a048fb87c4452a26~mv2.jpg/v1/fill/w_1600,h_900,al_c,q_90,enc_auto/1e56c4_3f40102c50f04438a048fb87c4452a26~mv2.jpg" alt="Sui event environment" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:20px;">
+      <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#8c897e;">FROM THE WORK &nbsp;&middot;&nbsp; 10 FRAMES</div>
+      <div class="r-garrows" style="display:flex;gap:11px;">
+        <button onClick="{{ gPrev }}" aria-label="Scroll gallery left" style="width:48px;height:48px;border-radius:50%;border:1px solid #cdcbc1;background:transparent;font-family:'Inter Tight',sans-serif;font-size:18px;color:#011829;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;">&larr;</button>
+        <button onClick="{{ gNext }}" aria-label="Scroll gallery right" style="width:48px;height:48px;border-radius:50%;border:1px solid #cdcbc1;background:transparent;font-family:'Inter Tight',sans-serif;font-size:18px;color:#011829;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;">&rarr;</button>
+      </div>
+    </div>
+    <div class="pp-gscroll" id="pp-gscroll" tabindex="0" role="group" aria-label="Project image gallery, scrollable" style="overflow-x:auto;margin:0 -10px;padding:0 10px 10px;scroll-snap-type:x mandatory;scroll-padding-left:10px;">
+      <div style="display:flex;gap:20px;">
+        <div class="pp-card pp-gitem" onClick="{{ openLb }}" style="flex:0 0 440px;aspect-ratio:3/2;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="site-images/sui-1-thumb.jpg" data-full="site-images/sui-1.jpg" alt="Sui Builder House Kyoto — opening talk on the main stage with Sui brand screen graphics" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="pp-card pp-gitem" onClick="{{ openLb }}" style="flex:0 0 440px;aspect-ratio:3/2;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="site-images/sui-2-thumb.jpg" data-full="site-images/sui-2.jpg" alt="Sui Builder House Kyoto — main stage, brand screen, and hedge-wall set with audience" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="pp-card pp-gitem" onClick="{{ openLb }}" style="flex:0 0 440px;aspect-ratio:3/2;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="site-images/sui-3-thumb.jpg" data-full="site-images/sui-3.jpg" alt="Sui Validator Summit — “Post-Mainnet goals” presentation slide on the main stage" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="pp-card pp-gitem" onClick="{{ openLb }}" style="flex:0 0 440px;aspect-ratio:3/2;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="site-images/sui-4-thumb.jpg" data-full="site-images/sui-4.jpg" alt="Sui Validator Summit — technical presentation slide on transaction gas bucketing" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="pp-card pp-gitem" onClick="{{ openLb }}" style="flex:0 0 440px;aspect-ratio:3/2;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="https://static.wixstatic.com/media/991c82_bdb0c2950f194bd8883d96cfda771eb6~mv2.jpg/v1/fill/w_1600,h_900,al_c,q_90,enc_auto/991c82_bdb0c2950f194bd8883d96cfda771eb6~mv2.jpg" alt="Sui flagship event" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="pp-card pp-gitem" onClick="{{ openLb }}" style="flex:0 0 440px;aspect-ratio:3/2;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="https://static.wixstatic.com/media/1e56c4_ac2e20e189d245c4b6d7d4c432f36b20~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_90,enc_auto/1e56c4_ac2e20e189d245c4b6d7d4c432f36b20~mv2.jpg" alt="Sui event stage" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="pp-card pp-gitem" onClick="{{ openLb }}" style="flex:0 0 440px;aspect-ratio:3/2;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="https://static.wixstatic.com/media/1e56c4_a96cd5386bc44236af930e3119e1643d~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_90,enc_auto/1e56c4_a96cd5386bc44236af930e3119e1643d~mv2.jpg" alt="Sui keynote graphics" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="pp-card pp-gitem" onClick="{{ openLb }}" style="flex:0 0 440px;aspect-ratio:3/2;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="https://static.wixstatic.com/media/1e56c4_3f40102c50f04438a048fb87c4452a26~mv2.jpg/v1/fill/w_1600,h_900,al_c,q_90,enc_auto/1e56c4_3f40102c50f04438a048fb87c4452a26~mv2.jpg" alt="Sui event environment" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="pp-card pp-gitem" onClick="{{ openLb }}" style="flex:0 0 440px;aspect-ratio:3/2;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="site-images/sui-5-thumb.jpg" data-full="site-images/sui-5.jpg" alt="Sui Validator Summit Paris — networking lounge with schedule screen and “Build Beyond” wall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="pp-card pp-gitem" onClick="{{ openLb }}" style="flex:0 0 440px;aspect-ratio:3/2;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="site-images/sui-6-thumb.jpg" data-full="site-images/sui-6.jpg" alt="Sui Validator Summit Paris — Builder House venue, stage, and wayfinding screens" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      </div>
     </div>
   </section>
 
@@ -262,8 +284,22 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { lb: null, shots: [], navOpen: false };
+  state = { lb: null, shots: [], navOpen: false, heroPlaying: true };
+  heroVideo() { return document.querySelector('video.pp-hero-video'); }
+  syncHero() {
+    const v = this.heroVideo();
+    if (!v) return;
+    // React does not render the `muted`/`loop` boolean attributes, so set them
+    // as properties or the hero will neither autoplay nor loop.
+    v.muted = true; v.defaultMuted = true; v.loop = true;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce && this._heroInit === undefined) { this.setState({ heroPlaying: false }); }
+    this._heroInit = true;
+    if (this.state.heroPlaying && !reduce) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    else { v.pause(); }
+  }
   componentDidMount() {
+    this.syncHero();
     this._key = (e) => {
       if (this.state.lb === null) return;
       if (e.key === 'Escape') this.setState({ lb: null });
@@ -273,18 +309,24 @@ class Component extends DCLogic {
     window.addEventListener('keydown', this._key);
   }
   componentWillUnmount() { if (this._key) window.removeEventListener('keydown', this._key); }
+  componentDidUpdate() { this.syncHero(); }
   renderVals() {
     const st = this.state;
     const openLb = (e) => {
       const all = Array.from(document.querySelectorAll('img.pp-shot'));
       const img = e.currentTarget.querySelector('img.pp-shot');
       const idx = Math.max(0, all.indexOf(img));
-      this.setState({ shots: all.map(i => ({ src: i.currentSrc || i.src, alt: i.alt || '' })), lb: idx });
+      this.setState({ shots: all.map(i => ({ src: i.getAttribute('data-full') || i.currentSrc || i.src, alt: i.alt || '' })), lb: idx });
     };
     const isOpen = st.lb !== null && st.shots.length > 0;
     const shot = isOpen ? st.shots[st.lb] : { src: '', alt: '' };
     return {
       openLb,
+      gPrev: () => { const el = document.getElementById('pp-gscroll'); if (el) el.scrollBy({ left: -Math.max(460, Math.round(el.clientWidth * 0.8)), behavior: 'smooth' }); },
+      gNext: () => { const el = document.getElementById('pp-gscroll'); if (el) el.scrollBy({ left:  Math.max(460, Math.round(el.clientWidth * 0.8)), behavior: 'smooth' }); },
+      toggleHero: () => this.setState(s2 => ({ heroPlaying: !s2.heroPlaying })),
+      heroLabel: st.heroPlaying ? 'Pause background video' : 'Play background video',
+      heroIcon: st.heroPlaying ? '❙❙' : '▶',
       navMenuClass: st.navOpen ? 'open' : '',
       toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
       lbOpen: isOpen,
