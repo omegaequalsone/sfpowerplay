@@ -185,7 +185,7 @@ ${host.outerHTML}
     'case-studies.html': ['Case Studies — Powerplay',
       'How Powerplay works, in depth: a mini-brand and pitch system for The Standard Model, an embedded design team for Sui, and early-stage brand building for Movement Labs.'],
     'contact.html': ['Contact — Start a Project with Powerplay',
-      'Get in touch with Powerplay about presentation design, live event graphics, brand systems, or embedded design support for your team. Based in San Francisco.'],
+      'Get in touch with Powerplay about presentation design, live event graphics, brand systems, or embedded design support for your team.'],
     'portfolio.html': ['Project — Powerplay',
       'A Powerplay project — presentation design, event graphics and brand work for teams that need it to be unforgettable.'],
     'case-study-standard-model.html': ['The Standard Model — Brand & Pitch System Case Study — Powerplay',
