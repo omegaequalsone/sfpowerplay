@@ -52,8 +52,8 @@
   .pp-gscroll{scrollbar-width:none;-ms-overflow-style:none;}
   .pp-gscroll::-webkit-scrollbar{display:none;}
   .pp-gscroll:focus-visible{outline:2px solid #FF0055;outline-offset:4px;border-radius:10px;}
-  @media (max-width:1023px){ .pp-gitem{flex:0 0 62vw !important;} }
-  @media (max-width:639px){ .pp-gitem{flex:0 0 84vw !important;} }
+  @media (max-width:1023px){ .pp-gitem{flex:0 0 62vw !important;} .pp-gitem.pp-sheet{flex:0 0 86vw !important;} }
+  @media (max-width:639px){ .pp-gitem{flex:0 0 84vw !important;} .pp-gitem.pp-sheet{flex:0 0 92vw !important;} }
   .pp-arrow-l{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
   .pp-arrow-u{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
   .pp-prev:hover .pp-arrow-l{transform:translateX(-6px);}
@@ -173,7 +173,7 @@
   <!-- GALLERY — CAROUSEL -->
   <section class="r-pad" style="padding:48px 56px 0;">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:20px;">
-      <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#8c897e;">FROM THE WORK &nbsp;&middot;&nbsp; 10 FRAMES</div>
+      <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#8c897e;">FROM THE WORK &nbsp;&middot;&nbsp; 13 FRAMES</div>
       <div class="r-garrows" style="display:flex;gap:11px;">
         <button onClick="{{ gPrev }}" aria-label="Scroll gallery left" style="width:48px;height:48px;border-radius:50%;border:1px solid #cdcbc1;background:transparent;font-family:'Inter Tight',sans-serif;font-size:18px;color:#011829;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;">&larr;</button>
         <button onClick="{{ gNext }}" aria-label="Scroll gallery right" style="width:48px;height:48px;border-radius:50%;border:1px solid #cdcbc1;background:transparent;font-family:'Inter Tight',sans-serif;font-size:18px;color:#011829;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;">&rarr;</button>
@@ -191,6 +191,9 @@
         <div class="pp-card pp-gitem" onClick="{{ openLb }}" style="flex:0 0 440px;aspect-ratio:3/2;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="https://static.wixstatic.com/media/1e56c4_3f40102c50f04438a048fb87c4452a26~mv2.jpg/v1/fill/w_1600,h_900,al_c,q_90,enc_auto/1e56c4_3f40102c50f04438a048fb87c4452a26~mv2.jpg" alt="Sui event environment" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div class="pp-card pp-gitem" onClick="{{ openLb }}" style="flex:0 0 440px;aspect-ratio:3/2;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="site-images/sui-5-thumb.jpg" data-full="site-images/sui-5.jpg" alt="Sui Validator Summit Paris — networking lounge with schedule screen and “Build Beyond” wall" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div class="pp-card pp-gitem" onClick="{{ openLb }}" style="flex:0 0 440px;aspect-ratio:3/2;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#e6e4dd;cursor:zoom-in;"><img class="pp-shot" src="site-images/sui-6-thumb.jpg" data-full="site-images/sui-6.jpg" alt="Sui Validator Summit Paris — Builder House venue, stage, and wayfinding screens" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+        <div class="pp-card pp-gitem pp-sheet" onClick="{{ openLb }}" style="flex:0 0 640px;aspect-ratio:2.18;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#F8FAFC;cursor:zoom-in;display:flex;align-items:center;justify-content:center;"><img class="pp-shot" src="site-images/sui-deck-1-thumb.jpg" data-full="site-images/sui-deck-1.jpg" alt="Sui Builder House Paris report — results, hackathon, sponsor and visitor feedback slides" loading="lazy" style="width:auto;height:auto;max-width:92%;max-height:92%;object-fit:contain;display:block;"></div>
+        <div class="pp-card pp-gitem pp-sheet" onClick="{{ openLb }}" style="flex:0 0 640px;aspect-ratio:2.18;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#F8FAFC;cursor:zoom-in;display:flex;align-items:center;justify-content:center;"><img class="pp-shot" src="site-images/sui-deck-2-thumb.jpg" data-full="site-images/sui-deck-2.jpg" alt="Sui presentation template — instructions, margins, opening and title slide layouts" loading="lazy" style="width:auto;height:auto;max-width:92%;max-height:92%;object-fit:contain;display:block;"></div>
+        <div class="pp-card pp-gitem pp-sheet" onClick="{{ openLb }}" style="flex:0 0 640px;aspect-ratio:2.18;scroll-snap-align:start;border-radius:10px;overflow:hidden;background:#F8FAFC;cursor:zoom-in;display:flex;align-items:center;justify-content:center;"><img class="pp-shot" src="site-images/sui-deck-3-thumb.jpg" data-full="site-images/sui-deck-3.jpg" alt="Sui presentation template — closing and divider slide layouts" loading="lazy" style="width:auto;height:auto;max-width:92%;max-height:92%;object-fit:contain;display:block;"></div>
       </div>
     </div>
   </section>
