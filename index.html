@@ -418,14 +418,14 @@ class Component extends DCLogic {
     const member = this.state.openId ? members[this.state.openId] : null;
     const work = [
       { name: "OpenAI",           tag: "EVENT GRAPHICS",  img: "site-images/openai.jpg",      href: "openai.html" },
+      { name: "Sui",              tag: "PRESENTATION",    img: "site-images/sui.jpg",         href: "sui.html" },
+      { name: "SF Symphony",      tag: "VISUAL CONTENT",  img: "site-images/sfsymphony.jpg",  href: "sf-symphony.html" },
+      { name: "Psilo",            tag: "PACKAGE & GRAPHIC DESIGN", img: "site-images/psilo-thumb.jpg", href: "psilo.html" },
       { name: "Meta Brand Summit",tag: "EVENT",           img: "site-images/meta.png",        href: "meta.html" },
       { name: "BitGo",            tag: "VISUAL DESIGN",   img: "site-images/bitgo.png",       href: "bitgo.html" },
       { name: "Google I/O 2024",  tag: "EVENT GRAPHICS",  img: "site-images/googleio.jpg",    href: "google-io.html" },
       { name: "ServiceNow",       tag: "EVENT",           img: "site-images/servicenow.jpeg", href: "servicenow.html" },
-      { name: "Sui",              tag: "PRESENTATION",    img: "site-images/sui.jpg",         href: "sui.html" },
-      { name: "SF Symphony",      tag: "VISUAL CONTENT",  img: "site-images/sfsymphony.jpg",  href: "sf-symphony.html" },
       { name: "Swimlane",         tag: "EVENT",           img: "site-images/swimlane-logo.png", href: "swimlane.html", bg: "#fff", fit: "contain", pad: "30px", cls: "pp-logo", iw: "auto", ih: "auto", mx: "84%" },
-      { name: "Psilo",            tag: "PACKAGE & GRAPHIC DESIGN", img: "site-images/psilo-thumb.jpg", href: "psilo.html" },
     ].map(w => ({ bg: "#e6e4dd", fit: "cover", pad: "0px", cls: "", iw: "100%", ih: "100%", mx: "100%", ...w }));
     const scrollW = (dir) => { const el = document.getElementById('pp-wscroll'); if (el) el.scrollBy({ left: dir * Math.max(324, Math.round(el.clientWidth * 0.8)), behavior: 'smooth' }); };
     const btn = () => ({
