@@ -87,9 +87,9 @@
     <a href="index.html" style="display:flex;align-items:center;"><img src="assets/powerplay-logo.svg" alt="Powerplay" style="height:31px;width:auto;display:block;"></a>
     <div class="r-navlinks" style="display:flex;gap:44px;font-size:22px;font-weight:500;color:#42423c;">
       <a class="pp-link" href="work.html" style="color:#FF0055;" data-active="1">Work</a>
+      <a class="pp-link" href="case-studies.html">Case Studies</a>
       <a class="pp-link" href="services.html">Services</a>
       <a class="pp-link" href="index.html#team">Team</a>
-      <a class="pp-link" href="case-studies.html">Case Studies</a>
     </div>
     <div style="display:flex;align-items:center;gap:14px;">
       <a class="pp-cta r-cta-desktop" href="contact.html" style="display:flex;align-items:center;gap:8px;background:#011829;color:#fff;font-size:16px;font-weight:600;padding:12px 20px;border-radius:100px;text-decoration:none;">Start a project <span class="pp-arrow">&rarr;</span></a>
@@ -103,9 +103,9 @@
 
   <div class="r-mobile-menu {{ navMenuClass }}" style="flex-direction:column;gap:2px;background:rgba(242,241,237,.98);backdrop-filter:blur(12px);border-bottom:1px solid #E0DED6;padding:10px 20px 18px;position:sticky;top:96px;z-index:59;">
     <a href="work.html" style="text-decoration:none;color:#FF0055;font-size:17px;font-weight:600;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Work</a>
+    <a href="case-studies.html" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Case Studies</a>
     <a href="services.html" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Services</a>
     <a href="index.html#team" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Team</a>
-    <a href="case-studies.html" style="text-decoration:none;color:#42423c;font-size:17px;font-weight:500;padding:13px 4px;border-bottom:1px solid #E5E3DB;">Case Studies</a>
     <a class="pp-cta" href="contact.html" style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:#011829;color:#fff;font-size:17px;font-weight:600;padding:13px 22px;border-radius:100px;text-decoration:none;margin-top:16px;">Start a project <span class="pp-arrow">&rarr;</span></a>
   </div>
 
@@ -171,9 +171,9 @@
         <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
           <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:4px;">EXPLORE</span>
           <a class="pp-link" href="work.html" style="color:#c9c7be;">Work</a>
+          <a class="pp-link" href="case-studies.html" style="color:#c9c7be;">Case Studies</a>
           <a class="pp-link" href="services.html" style="color:#c9c7be;">Services</a>
           <a class="pp-link" href="index.html#team" style="color:#c9c7be;">Team</a>
-          <a class="pp-link" href="case-studies.html" style="color:#c9c7be;">Case Studies</a>
         </div>
         <div style="display:flex;flex-direction:column;gap:13px;font-size:14px;">
           <a class="pp-link" href="contact.html" style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#fff;background:#6E0D75;padding:3px 9px;border-radius:2px;display:inline-block;margin-bottom:4px;text-decoration:none;">CONTACT</a>
@@ -234,6 +234,40 @@ class Component extends DCLogic {
     const wix = (f, w, h) => 'https://static.wixstatic.com/media/' + f + '/v1/fit/w_' + w + ',h_' + h + ',q_90,enc_avif,quality_auto/' + f;
     const src = (f, w, h) => f.indexOf('/') >= 0 ? f : wix(f, w, h);
     const DATA = {
+      sui: {
+        client: 'Sui',
+        title: 'Presentation, Events & Social',
+        year: '2022',
+        caseStudy: 'case-study-sui.html',
+        blurbs: [
+          "Sui, a fast-moving L1 blockchain, brought Powerplay on as an embedded, generalist design resource — frustrated with the slow turnarounds of larger agencies, they wanted same-day delivery from a team that knew their brand.",
+          "Over the course of a year we delivered a wide range of work — online education presentations, investor pitch decks, large-scale event designs, and social graphics — acting as the in-house design team they didn't yet have.",
+        ],
+        imgs: ['991c82_bdb0c2950f194bd8883d96cfda771eb6~mv2.jpg','1e56c4_ac2e20e189d245c4b6d7d4c432f36b20~mv2.jpg','1e56c4_a96cd5386bc44236af930e3119e1643d~mv2.jpg','1e56c4_3f40102c50f04438a048fb87c4452a26~mv2.jpg'],
+      },
+      sfsymphony: {
+        client: 'San Francisco Symphony',
+        title: 'Presentation Design',
+        year: '2021',
+        blurbs: [
+          "San Francisco Symphony commissioned brand-experience company COLLINS to build an evolved visual identity for the orchestra.",
+          "Powerplay drove that vision through the Symphony\u2019s PowerPoint presentation templates \u2014 in a way that empowered their administrative team to deliver visually compelling presentations for fundraising and outreach.",
+        ],
+        imgs: ['1e56c4_89a74081e8d843a9b3862c4a0be65a32~mv2.png','1e56c4_1a79c7ea602a42c9bfe844fc2caf7326~mv2.png','1e56c4_dcef86ab328149c5a5e826003c605df9~mv2.png','1e56c4_c6926e551b6e485d99595e5680d003c7~mv2.png','1e56c4_f112e530f9594770ac70a1e5d9ac7c3c~mv2.png','1e56c4_5eb8a56b23254d698f2c2c5b705843c5~mv2.png','1e56c4_6dbea3c50ede4e3883f9a35a9b7406d0~mv2.png','1e56c4_803b5208f64f40aa8259f5aa21a4d7a4~mv2.png','1e56c4_8c0eddf208a440efaa51667139f2a2a9~mv2.png','1e56c4_f1c9b92327164674896ab8b1223892ad~mv2.png','1e56c4_351ae03ff1cc4f0e903f0976377e805c~mv2.png','1e56c4_7c873ccb86ff4586b967c91216610b00~mv2.png','1e56c4_b1c9a9033a52452caf8950b72082d1fd~mv2.png','1e56c4_cfcdeb0e2c414357a54be141858cc8fa~mv2.png','1e56c4_5cbf60f3f0e44d76b0522e17ac973196~mv2.png','1e56c4_d2acd3dd6598409390c08f6c4bd53616~mv2.png','1e56c4_7ddc0212744d4870a324b4e00aa4abde~mv2.png'],
+      },
+      psilo: {
+        sq: true,
+        client: 'Psilo Lifestyle Products',
+        title: 'Logo & Seasonal Packaging',
+        year: 'Ongoing',
+        blurbs: [
+          "Psilo is our pro-bono passion project — the place we get to be a little louder, weirder, and more hands-on than the day job usually allows. It started with one ask, a logo mark, and never really stopped.",
+          "Psilo arrived with personality to spare and nothing to wear it on. They needed a mark that could read premium on a foil-stamped chocolate bar and still feel playful on a bag of gummies — without fracturing into two different brands. The answer was a confident, rounded wordmark: geometric enough to anchor a whole system, friendly enough to never take itself too seriously.",
+          "With the logo set, we treated packaging as a flexible canvas rather than a fixed template. The mark stays constant; the world around it shifts with every release. Monochrome, silver-foil nature illustrations give the chocolate line a transcendent, collectible feel. The gummies run the other direction — saturated, psychedelic, and loud. Same brand, completely different mood.",
+          "What began as one logo is now a full seasonal catalog — Psychedelic Chocolate, Psychedelic Gummies, Lovecakes, and one-off drops like Lemonheadz — each carrying its own illustrated identity while staying unmistakably Psilo.",
+        ],
+        imgs: ['site-images/psilo-chocolate.jpg',{f:'site-images/psilo-microdose-banner-blue.jpg',k:'wide',ar:'2363/338'},{f:'site-images/psilo-microdose-banner-forest.jpg',k:'wide',ar:'2363/338'},'site-images/psilo-awake.jpg','site-images/psilo-gummies-eye.jpg','site-images/psilo-microdose-100.jpg','site-images/psilo-microdose-200.jpg','site-images/psilo-lovecakes.jpg',{f:'site-images/psilo-chocolate-dielines.jpg',k:'rect'},{f:'site-images/psilo-gummies.jpg',k:'rect'},{f:'site-images/psilo-lemonheadz.jpg',k:'rect'}],
+      },
       openai: {
         client: 'OpenAI Slush Event',
         title: 'Keynote Design',
@@ -284,16 +318,6 @@ class Component extends DCLogic {
         ],
         imgs: ['1e56c4_9475c7a2479b4d08a31ceb0226646a91~mv2.jpeg','1e56c4_790bab0646394aba9f6c1e479e4b0b7f~mv2.jpeg','1e56c4_d057f6880d55455088cabbd7e5c61115~mv2.jpeg','1e56c4_2b87d0f1f20944ae9bf595b4e4d0fe94~mv2.jpeg','1e56c4_020d0232e4ae40879f968a12a208e239~mv2.jpeg','1e56c4_91cf59466d5643fc8d0d5c9b02c424df~mv2.jpeg','1e56c4_fdc4bda8b9b14b9785c0f2af2c68ffb8~mv2.jpeg','1e56c4_76190e522b43434f8f56084a30f1564c~mv2.jpeg'],
       },
-      sfsymphony: {
-        client: 'San Francisco Symphony',
-        title: 'Presentation Design',
-        year: '2021',
-        blurbs: [
-          "San Francisco Symphony commissioned brand-experience company COLLINS to build an evolved visual identity for the orchestra.",
-          "Powerplay drove that vision through the Symphony\u2019s PowerPoint presentation templates \u2014 in a way that empowered their administrative team to deliver visually compelling presentations for fundraising and outreach.",
-        ],
-        imgs: ['1e56c4_89a74081e8d843a9b3862c4a0be65a32~mv2.png','1e56c4_1a79c7ea602a42c9bfe844fc2caf7326~mv2.png','1e56c4_dcef86ab328149c5a5e826003c605df9~mv2.png','1e56c4_c6926e551b6e485d99595e5680d003c7~mv2.png','1e56c4_f112e530f9594770ac70a1e5d9ac7c3c~mv2.png','1e56c4_5eb8a56b23254d698f2c2c5b705843c5~mv2.png','1e56c4_6dbea3c50ede4e3883f9a35a9b7406d0~mv2.png','1e56c4_803b5208f64f40aa8259f5aa21a4d7a4~mv2.png','1e56c4_8c0eddf208a440efaa51667139f2a2a9~mv2.png','1e56c4_f1c9b92327164674896ab8b1223892ad~mv2.png','1e56c4_351ae03ff1cc4f0e903f0976377e805c~mv2.png','1e56c4_7c873ccb86ff4586b967c91216610b00~mv2.png','1e56c4_b1c9a9033a52452caf8950b72082d1fd~mv2.png','1e56c4_cfcdeb0e2c414357a54be141858cc8fa~mv2.png','1e56c4_5cbf60f3f0e44d76b0522e17ac973196~mv2.png','1e56c4_d2acd3dd6598409390c08f6c4bd53616~mv2.png','1e56c4_7ddc0212744d4870a324b4e00aa4abde~mv2.png'],
-      },
       swimlane: {
         client: 'Swimlane',
         title: 'PowerPoint & Event Design',
@@ -303,30 +327,6 @@ class Component extends DCLogic {
           "Ahead of the SKO, we worked with their C-suite executives to hone content, design custom slides, build data visualizations, and create bespoke, on-brand imagery using generative AI.",
         ],
         imgs: ['1e56c4_8ae17c5a73d248a6957b96abc48029aa~mv2.jpg','1e56c4_890677bf7180470eaa759668fff69251~mv2.jpg','1e56c4_eff86525459d4202922418b6c86834a9~mv2.jpg','1e56c4_7ba9b9a51d114a9196534a8f0e1b1adc~mv2.jpg','1e56c4_3f065e7540d34d0daf30ae5ba8a7930c~mv2.jpg','1e56c4_f6c6bfa2ffd6499f8feeac66c3439ca5~mv2.jpg','1e56c4_c42ca99c207949b0940fcc6cd202d587~mv2.jpg','1e56c4_3961e01a4de64710b38476020dfdc580~mv2.jpg','1e56c4_cd1f358851914b5793c2204c7a52f290~mv2.jpg','1e56c4_dab3b5b8229f449192b5b794d096ba68~mv2.jpg','1e56c4_768cfc7b20664c84b742fe1c1ea5c211~mv2.jpg','1e56c4_81fb975eeaaa467f924ef0df26a77f9e~mv2.jpg','1e56c4_72f48bdc4c924267bc419c05ee4430ce~mv2.jpg'],
-      },
-      sui: {
-        client: 'Sui',
-        title: 'Presentation, Events & Social',
-        year: '2022',
-        caseStudy: 'case-study-sui.html',
-        blurbs: [
-          "Sui, a fast-moving L1 blockchain, brought Powerplay on as an embedded, generalist design resource — frustrated with the slow turnarounds of larger agencies, they wanted same-day delivery from a team that knew their brand.",
-          "Over the course of a year we delivered a wide range of work — online education presentations, investor pitch decks, large-scale event designs, and social graphics — acting as the in-house design team they didn't yet have.",
-        ],
-        imgs: ['991c82_bdb0c2950f194bd8883d96cfda771eb6~mv2.jpg','1e56c4_ac2e20e189d245c4b6d7d4c432f36b20~mv2.jpg','1e56c4_a96cd5386bc44236af930e3119e1643d~mv2.jpg','1e56c4_3f40102c50f04438a048fb87c4452a26~mv2.jpg'],
-      },
-      psilo: {
-        sq: true,
-        client: 'Psilo Lifestyle Products',
-        title: 'Logo & Seasonal Packaging',
-        year: 'Ongoing',
-        blurbs: [
-          "Psilo is our pro-bono passion project — the place we get to be a little louder, weirder, and more hands-on than the day job usually allows. It started with one ask, a logo mark, and never really stopped.",
-          "Psilo arrived with personality to spare and nothing to wear it on. They needed a mark that could read premium on a foil-stamped chocolate bar and still feel playful on a bag of gummies — without fracturing into two different brands. The answer was a confident, rounded wordmark: geometric enough to anchor a whole system, friendly enough to never take itself too seriously.",
-          "With the logo set, we treated packaging as a flexible canvas rather than a fixed template. The mark stays constant; the world around it shifts with every release. Monochrome, silver-foil nature illustrations give the chocolate line a transcendent, collectible feel. The gummies run the other direction — saturated, psychedelic, and loud. Same brand, completely different mood.",
-          "What began as one logo is now a full seasonal catalog — Psychedelic Chocolate, Psychedelic Gummies, Lovecakes, and one-off drops like Lemonheadz — each carrying its own illustrated identity while staying unmistakably Psilo.",
-        ],
-        imgs: ['site-images/psilo-chocolate.jpg',{f:'site-images/psilo-microdose-banner-blue.jpg',k:'wide',ar:'2363/338'},{f:'site-images/psilo-microdose-banner-forest.jpg',k:'wide',ar:'2363/338'},'site-images/psilo-awake.jpg','site-images/psilo-gummies-eye.jpg','site-images/psilo-microdose-100.jpg','site-images/psilo-microdose-200.jpg','site-images/psilo-lovecakes.jpg',{f:'site-images/psilo-chocolate-dielines.jpg',k:'rect'},{f:'site-images/psilo-gummies.jpg',k:'rect'},{f:'site-images/psilo-lemonheadz.jpg',k:'rect'}],
       },
     };
     const order = Object.keys(DATA);
