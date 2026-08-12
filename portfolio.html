@@ -50,7 +50,7 @@
   .r-navlinks{white-space:nowrap;}
   .pp-cta:hover{box-shadow:inset 0 0 0 999px rgba(255,255,255,0.16);}
   .pp-arrow{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1);}
-  .pp-cta:hover .pp-arrow,.pp-next:hover .pp-arrow{transform:translateX(6px);}
+  .pp-cta:hover .pp-arrow,.pp-next:hover .pp-arrow,.pp-cs:hover .pp-arrow{transform:translateX(6px);}
   .pp-back .pp-arrow{transition:transform .3s cubic-bezier(.2,.7,.2,1);}
   .pp-back:hover .pp-arrow{transform:translateX(-5px);}
 
@@ -122,6 +122,9 @@
         <sc-for list="{{ blurbs }}" as="para" hint-placeholder-count="2">
           <p style="font-size:17px;line-height:1.65;color:#48473f;margin:0 0 16px;">{{ para }}</p>
         </sc-for>
+        <sc-if value="{{ hasCaseStudy }}" hint-placeholder-val="{{ false }}">
+          <a class="pp-cs pp-link" href="{{ caseStudyHref }}" style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;color:#FF0055;text-decoration:none;margin-top:6px;">READ THE CASE STUDY <span class="pp-arrow">&rarr;</span></a>
+        </sc-if>
       </div>
     </div>
   </header>
@@ -305,6 +308,7 @@ class Component extends DCLogic {
         client: 'Sui',
         title: 'Presentation, Events & Social',
         year: '2022',
+        caseStudy: 'case-study-sui.html',
         blurbs: [
           "Sui, a fast-moving L1 blockchain, brought Powerplay on as an embedded, generalist design resource — frustrated with the slow turnarounds of larger agencies, they wanted same-day delivery from a team that knew their brand.",
           "Over the course of a year we delivered a wide range of work — online education presentations, investor pitch decks, large-scale event designs, and social graphics — acting as the in-house design team they didn't yet have.",
@@ -360,6 +364,8 @@ class Component extends DCLogic {
       titleLine: p.title,
       year: p.year,
       blurbs: p.blurbs,
+      hasCaseStudy: !!p.caseStudy,
+      caseStudyHref: p.caseStudy || '',
       heroThumb: allShots[0].thumb,
       heroFull: allShots[0].full,
       gridShots: allShots.slice(1),
