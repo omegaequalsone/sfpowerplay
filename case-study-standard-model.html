@@ -267,6 +267,18 @@
         <div class="pp-card" data-gallery="social" onClick="{{ openLb }}" style="height:124px;flex:none;background:#F4F1EA;border:1px solid #E0DED6;border-radius:10px;overflow:hidden;cursor:zoom-in;"><img class="pp-shot" data-gallery="social" src="site-images/social/li-helloworld3.jpg" alt="Standard Model Bio — &lsquo;the human body does not&rsquo; quote post" style="height:100%;width:auto;display:block;"></div>
       </div>
     </div>
+
+      <!-- Four-up news cards. They share a 1.914 aspect, so equal columns land at a
+           common height without cropping. max-width matches the natural single-row
+           width of the 124px-tall social row above (1250px at >=1440 viewports), so the
+           two blocks end on the same right edge; narrower viewports cap to the container.
+           If the row above gains or loses an image, remeasure this number. -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:start;max-width:1250px;">
+        <div class="pp-card" data-gallery="social" onClick="{{ openLb }}" style="background:#F4F1EA;border:1px solid #E0DED6;border-radius:10px;overflow:hidden;cursor:zoom-in;"><img class="pp-shot" data-gallery="social" src="site-images/social/news-protege-eval.png" alt="Standard Model Bio — Protege independent blind evaluations announcement" style="width:100%;height:auto;display:block;"></div>
+        <div class="pp-card" data-gallery="social" onClick="{{ openLb }}" style="background:#F4F1EA;border:1px solid #E0DED6;border-radius:10px;overflow:hidden;cursor:zoom-in;"><img class="pp-shot" data-gallery="social" src="site-images/social/news-benchmarking.webp" alt="Standard Model Bio × Protege — &lsquo;Benchmarking the Frontiers on Cancer&rsquo;" style="width:100%;height:auto;display:block;"></div>
+        <div class="pp-card" data-gallery="social" onClick="{{ openLb }}" style="background:#F4F1EA;border:1px solid #E0DED6;border-radius:10px;overflow:hidden;cursor:zoom-in;"><img class="pp-shot" data-gallery="social" src="site-images/social/news-kevin-podcast.webp" alt="Standard Model Bio — Kevin Brown, Agentic AI Infrastructure in Healthcare podcast panel" style="width:100%;height:auto;display:block;"></div>
+        <div class="pp-card" data-gallery="social" onClick="{{ openLb }}" style="background:#F4F1EA;border:1px solid #E0DED6;border-radius:10px;overflow:hidden;cursor:zoom-in;"><img class="pp-shot" data-gallery="social" src="site-images/social/news-zeroshot.webp" alt="Standard Model Bio — &lsquo;Zero Shot Results&rsquo; announcement" style="width:100%;height:auto;display:block;"></div>
+      </div>
   </section>
 
   <!-- ===================== BRANDMARK (DARK · text left / image right) ===================== -->
@@ -332,8 +344,29 @@
     </div>
   </section>
 
-  <!-- ===================== BIOMEDICAL DIAGRAMS (LIGHT · full width) ===================== -->
+  <!-- ===================== MOTION & FILM (LIGHT · full width) ===================== -->
   <section class="r-sec r-pad" style="background:#F2F1ED;padding:104px 56px;">
+    <div style="max-width:1328px;margin:0 auto;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:30px;">
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.22em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:18px;">MOTION &amp; FILM</div>
+          <h2 style="font-size:40px;line-height:1.3;letter-spacing:-0.03em;font-weight:600;margin:0;max-width:720px;color:#011829;">The system, set in motion.</h2>
+        </div>
+        <p style="font-size:16px;line-height:1.55;color:#6a685f;max-width:380px;margin:0;">A narrated product film for TrialFront, the company&rsquo;s trial-design platform. 2:46 &mdash; press play for sound.</p>
+      </div>
+
+      <p style="font-size:19px;line-height:1.7;color:#48473f;max-width:1040px;margin:0 0 22px;">Video is another surface of the system, so we make it the same way we make everything else. This one began as a script and a rough video sketch from Standard Model&rsquo;s head of data science &mdash; the argument and the evidence were theirs. We took it from there: designing every frame, building the motion, directing and timing an AI narration track, then scoring and mixing the final cut. Just under three minutes, carried from sketch to finished film.</p>
+
+      <p style="font-size:19px;line-height:1.7;color:#48473f;max-width:1040px;margin:0 0 40px;">It holds together because it&rsquo;s built from the same parts as everything else: the Standard Model brand palette, DM Serif Display and Inter Tight, the mono labels, the chart language from the decks. The data animates at publication standard rather than being simplified for motion, so it reads as the brand moving, not as a video about the brand.</p>
+
+      <div class="pp-card" style="position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#161837;border:1px solid #E0DED6;">
+        <video class="pp-film" src="site-video/smb-trialfront.mp4" poster="site-video/smb-trialfront-poster.jpg" controls="controls" preload="metadata" playsinline="playsinline" aria-label="TrialFront product film for Standard Model Bio, with narration" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BIOMEDICAL DIAGRAMS (LIGHT · full width) ===================== -->
+  <section class="r-sec r-pad" style="background:#F2F1ED;padding:104px 56px;border-top:1px solid #E0DED6;">
     <div style="max-width:1328px;margin:0 auto;">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:30px;">
         <div>
@@ -350,27 +383,6 @@
         <div class="pp-card" data-gallery="diagrams" onClick="{{ openLb }}" style="background:#F4F1EA;border:1px solid #E0DED6;border-radius:14px;overflow:hidden;cursor:zoom-in;"><img class="pp-shot" data-gallery="diagrams" src="site-images/diagrams/cancer-2.png" alt="Non-coding driver mutations and gene expression — figure" style="width:100%;height:auto;display:block;"></div>
         <div class="pp-card" data-gallery="diagrams" onClick="{{ openLb }}" style="background:#F4F1EA;border:1px solid #E0DED6;border-radius:14px;overflow:hidden;cursor:zoom-in;"><img class="pp-shot" data-gallery="diagrams" src="site-images/diagrams/cancer-3.png" alt="Training on contiguous nucleotides — figure" style="width:100%;height:auto;display:block;"></div>
         <div class="pp-card" data-gallery="diagrams" onClick="{{ openLb }}" style="background:#F4F1EA;border:1px solid #E0DED6;border-radius:14px;overflow:hidden;cursor:zoom-in;"><img class="pp-shot" data-gallery="diagrams" src="site-images/diagrams/cancer-4.png" alt="Schematic of GenVarFormer (GVF) — figure" style="width:100%;height:auto;display:block;"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== MOTION & FILM (LIGHT · full width) ===================== -->
-  <section class="r-sec r-pad" style="background:#F2F1ED;padding:104px 56px;border-top:1px solid #E0DED6;">
-    <div style="max-width:1328px;margin:0 auto;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:30px;">
-        <div>
-          <div style="font-family:'Space Mono',monospace;font-size:14px;letter-spacing:.22em;color:#fff;background:#FF0055;padding:3px 9px;border-radius:2px;display:inline-block;;margin-bottom:18px;">MOTION &amp; FILM</div>
-          <h2 style="font-size:40px;line-height:1.3;letter-spacing:-0.03em;font-weight:600;margin:0;max-width:720px;"><span style="background:#FF0055;color:#fff;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:2px 12px;border-radius:2px;">The system, set in motion.</span></h2>
-        </div>
-        <p style="font-size:16px;line-height:1.55;color:#6a685f;max-width:380px;margin:0;">A narrated product film for TrialFront, the company&rsquo;s trial-design platform. 2:46 &mdash; press play for sound.</p>
-      </div>
-
-      <p style="font-size:19px;line-height:1.7;color:#48473f;max-width:1040px;margin:0 0 22px;">Video is another surface of the system, so we make it the same way we make everything else. This one began as a script and a rough video sketch from Standard Model&rsquo;s head of data science &mdash; the argument and the evidence were theirs. We took it from there: designing every frame, building the motion, directing and timing an AI narration track, then scoring and mixing the final cut. Just under three minutes, carried from sketch to finished film.</p>
-
-      <p style="font-size:19px;line-height:1.7;color:#48473f;max-width:1040px;margin:0 0 40px;">It holds together because it&rsquo;s built from the same parts as everything else: the Standard Model brand palette, DM Serif Display and Inter Tight, the mono labels, the chart language from the decks. The data animates at publication standard rather than being simplified for motion, so it reads as the brand moving, not as a video about the brand.</p>
-
-      <div class="pp-card" style="position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#161837;border:1px solid #E0DED6;">
-        <video class="pp-film" src="site-video/smb-trialfront.mp4" poster="site-video/smb-trialfront-poster.jpg" controls="controls" preload="metadata" playsinline="playsinline" aria-label="TrialFront product film for Standard Model Bio, with narration" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
       </div>
     </div>
   </section>
